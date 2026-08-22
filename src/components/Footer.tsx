@@ -71,7 +71,7 @@ export function Footer() {
             </div>
 
             {/* Columns 2-5 Grid */}
-            <div className="lg:col-span-8 grid grid-cols-2 sm:grid-cols-4 gap-8 sm:gap-10 lg:pl-10 lg:border-l lg:border-slate-200">
+            <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 lg:pl-10 lg:border-l lg:border-slate-200">
               {/* Column 2: Quick Links */}
               <div>
                 <div className="text-xs uppercase tracking-wider text-[#0A4ABF] font-medium mb-5 border-b border-slate-200 pb-2">Company</div>
@@ -117,21 +117,21 @@ export function Footer() {
               <div>
                 <div className="text-xs uppercase tracking-wider text-[#0A4ABF] font-medium mb-5 border-b border-slate-200 pb-2">Reach Us</div>
                 <ul className="space-y-4 text-xs text-slate-600 font-light">
-                  <li className="flex gap-2">
+                  <li className="flex gap-2 min-w-0">
                     <IconMapPin className="h-4 w-4 text-[#0A4ABF] shrink-0" />
-                    <span>112, Pushpanjali Vedanta, Vayu Vihar Road, Agra — 282010, U.P, India</span>
+                    <span className="min-w-0 break-words">112, Pushpanjali Vedanta, Vayu Vihar Road, Agra — 282010, U.P, India</span>
                   </li>
-                  <li className="flex gap-2 hover:text-[#0A4ABF] transition-colors">
+                  <li className="flex gap-2 min-w-0 hover:text-[#0A4ABF] transition-colors">
                     <IconPhone className="h-4 w-4 text-[#0A4ABF] shrink-0" />
-                    <a href="tel:+918130720777">+91 813-0720-777</a>
+                    <a href="tel:+918130720777" className="min-w-0 break-words">+91 813-0720-777</a>
                   </li>
-                  <li className="flex gap-2 hover:text-[#0A4ABF] transition-colors">
+                  <li className="flex gap-2 min-w-0 hover:text-[#0A4ABF] transition-colors">
                     <IconMail className="h-4 w-4 text-[#0A4ABF] shrink-0" />
-                    <a href="mailto:support@smsmengineers.in">support@smsmengineers.in</a>
+                    <a href="mailto:support@smsmengineers.in" className="min-w-0 break-words">support@smsmengineers.in</a>
                   </li>
-                  <li className="flex gap-2 hover:text-[#0A4ABF] transition-colors">
+                  <li className="flex gap-2 min-w-0 hover:text-[#0A4ABF] transition-colors">
                     <IconBrandWhatsapp className="h-4 w-4 text-[#0A4ABF] shrink-0" />
-                    <a href="https://wa.me/918130720777" target="_blank" rel="noopener noreferrer">WhatsApp Support</a>
+                    <a href="https://wa.me/918130720777" target="_blank" rel="noopener noreferrer" className="min-w-0 break-words">WhatsApp Support</a>
                   </li>
                   <li className="flex gap-2 hover:text-[#0A4ABF] transition-colors">
                     <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" className="text-[#0A4ABF] hover:underline flex items-center gap-1 font-semibold">

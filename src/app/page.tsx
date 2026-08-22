@@ -445,10 +445,10 @@ export default function Home() {
             const isLeft = prod.imageSide === "left";
             return (
               <Reveal key={prod.id}>
-                <div className="grid lg:grid-cols-12 gap-12 items-center">
+                <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   {/* Image Column */}
                   <div className={`lg:col-span-6 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="aspect-[16/10] border border-slate-200 rounded-xl shadow-lg relative overflow-hidden group">
+                    <div className="aspect-[16/10] border border-slate-200 rounded-2xl shadow-lg relative overflow-hidden group">
                       <Image
                         src={prod.image}
                         alt={prod.name}
@@ -458,7 +458,7 @@ export default function Home() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-[#071A35] via-[#071A35]/40 to-transparent z-10" />
                       <div className="absolute inset-0 grid-lines opacity-10 z-10" />
-                      <div className="absolute inset-0 flex flex-col justify-between p-8 z-20">
+                      <div className="hidden lg:flex absolute inset-0 flex-col justify-between p-8 z-20">
                         <span className="text-xs uppercase font-semibold text-[#00AEEF] tracking-wide">{prod.category}</span>
                         <h3 className="text-4xl font-semibold text-white font-display transition-colors">{prod.name}</h3>
                       </div>
@@ -466,10 +466,10 @@ export default function Home() {
                   </div>
 
                   {/* Details Column */}
-                  <div className={`lg:col-span-6 ${isLeft ? "lg:order-2" : "lg:order-1"} space-y-6`}>
+                  <div className={`lg:col-span-6 ${isLeft ? "lg:order-2" : "lg:order-1"} space-y-4 sm:space-y-6`}>
                     <span className="text-xs uppercase text-[#0A4ABF] font-medium tracking-wide">{prod.category}</span>
-                    <h3 className="text-3xl font-medium text-[#071A35] font-display">{prod.name}</h3>
-                    <p className="text-slate-600 font-light leading-relaxed">{prod.desc}</p>
+                    <h3 className="text-2xl sm:text-3xl font-medium text-[#071A35] font-display">{prod.name}</h3>
+                    <p className="text-slate-600 text-sm sm:text-base font-light leading-relaxed">{prod.desc}</p>
 
                     <ul className="space-y-2 text-sm text-slate-500 font-medium">
                       {prod.specs.map((spec, i) => (
