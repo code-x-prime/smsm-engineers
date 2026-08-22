@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Award, ShieldCheck, Trophy, Sparkles } from "lucide-react";
+import { Award, ShieldCheck, Trophy, Sparkles, ArrowRight, FileCheck2 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 
 export default function Awards() {
@@ -16,41 +16,98 @@ export default function Awards() {
     { title: "CE Mechanical Clearance", desc: "Our dispensers and gyroshakers comply with international safety rules and electric insulation parameters." },
   ];
 
+  const credentials = [
+    {
+      badge: "Govt",
+      accent: "#00AEEF",
+      title: "DPIIT Recognition Certificate",
+      org: "Ministry of Commerce & Industry",
+      desc: "Official recognition issued to SMSM Engineers Private Limited under registration DIPP8079 for innovative paint tinting machinery development.",
+      href: "/downloads/dipp_recognition.pdf",
+      cta: "View & Verify PDF Certificate",
+    },
+    {
+      badge: "B2B",
+      accent: "#0A4ABF",
+      title: "Kamdhenu Recommendation Letter",
+      org: "Kamdhenu Paints Limited",
+      desc: "Official endorsement detailing operational efficiency, calibration performance, and quality of service provided to their POS tinting channels.",
+      href: "/downloads/kamdhenu_recommendation.pdf",
+      cta: "View & Verify PDF Letter",
+    },
+    {
+      badge: "Audit",
+      accent: "#071A35",
+      title: "Popular Paints Recommendation",
+      org: "Popular Paints & Chemicals",
+      desc: "Corporate performance certificate certifying SMSM Engineers’ maintenance reliability and delta-E color calibration parameters.",
+      href: "/downloads/popular_recommendation.pdf",
+      cta: "View & Verify PDF Letter",
+    },
+  ];
+
+  const stats = [
+    { value: "3+", label: "Industry Awards" },
+    { value: "2", label: "Global Certifications" },
+    { value: "3", label: "Verified Credentials" },
+  ];
+
   return (
-    <main className="bg-brand-bg pt-28">
+    <main className="bg-brand-bg min-h-screen pt-28">
       {/* Hero Header */}
-      <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
+      <section className="relative min-h-[480px] md:min-h-[52vh] flex items-end bg-slate-950 text-white overflow-hidden pb-16 md:pb-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#071A35] via-slate-950 to-[#0A4ABF]/30" />
         <div className="absolute inset-0 grid-lines opacity-10" />
-        <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold block mb-4">Milestones achieved</span>
-          <h1 className="hero-heading text-4xl md:text-6xl tracking-tight max-w-4xl">
-            Awards & Recognitions
-          </h1>
-          <p className="mt-6 text-white/70 text-lg md:text-xl max-w-2xl font-light leading-relaxed">
-            CE certified, ISO aligned, and recognized by national coating organizations for uncompromised engineering services.
-          </p>
+        <div className="absolute top-0 right-0 w-[420px] h-[420px] bg-[#00AEEF]/15 rounded-full blur-[130px] pointer-events-none" />
+        <div className="absolute bottom-0 left-[10%] w-72 h-72 bg-[#0A4ABF]/20 rounded-full blur-[110px] pointer-events-none" />
+
+        <div className="relative max-w-[1400px] w-full mx-auto px-6 z-20 md:pb-16">
+          <div className="max-w-3xl space-y-6">
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold">
+              Milestones Achieved
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight font-display leading-[1.08]">
+              Awards & Recognitions
+            </h1>
+            <p className="text-white/80 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+              CE certified, ISO aligned, and recognized by national coating organizations for uncompromised engineering services.
+            </p>
+          </div>
+
+          <div className="hidden md:flex gap-10 mt-14 max-w-3xl border-t border-white/10 pt-8">
+            {stats.map((s) => (
+              <div key={s.label}>
+                <div className="text-2xl lg:text-3xl font-medium text-white font-display">{s.value}</div>
+                <div className="text-[11px] uppercase tracking-wider text-white/50 font-semibold mt-1">{s.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
-        <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
-        <span>/</span>
-        <span className="text-slate-800 font-medium">Awards & Recognitions</span>
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
+          <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
+          <span>/</span>
+          <span className="text-slate-800 font-medium">Awards & Recognitions</span>
+        </div>
       </div>
 
       {/* Main content grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-2 gap-12">
           {/* Certificates list */}
           <Reveal className="space-y-8">
             <span className="text-[#0A4ABF] text-sm uppercase tracking-widest font-semibold block">Standards Compliance</span>
-            <h2 className="section-heading text-3xl md:text-4xl text-[#071A35]">Quality Certifications</h2>
+            <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-medium">Quality Certifications</h2>
             <div className="space-y-6">
               {certificates.map((c) => (
-                <div key={c.title} className="p-6 border border-slate-200 hover:border-[#00AEEF] rounded-xl transition-all bg-brand-bg">
+                <div key={c.title} className="p-6 brand-card bg-brand-bg">
                   <div className="flex gap-4">
-                    <ShieldCheck className="h-8 w-8 text-[#00AEEF] shrink-0" />
+                    <div className="h-12 w-12 icon-chip shrink-0">
+                      <ShieldCheck className="h-6 w-6" />
+                    </div>
                     <div>
                       <h3 className="text-lg font-medium text-[#071A35] font-display">{c.title}</h3>
                       <p className="text-slate-600 text-sm mt-1 leading-relaxed font-light">{c.desc}</p>
@@ -64,12 +121,12 @@ export default function Awards() {
           {/* Awards List */}
           <Reveal className="space-y-8">
             <span className="text-[#0A4ABF] text-sm uppercase tracking-widest font-semibold block">Industry Standing</span>
-            <h2 className="section-heading text-3xl md:text-4xl text-[#071A35]">Accolades</h2>
-            <div className="space-y-6">
+            <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-medium">Accolades</h2>
+            <div className="space-y-4">
               {awardsList.map((a) => (
-                <div key={a.title} className="flex gap-4 p-6 border-b border-slate-100 last:border-b-0">
-                  <div className="h-10 w-10 bg-[#00AEEF]/10 rounded-xl grid place-items-center shrink-0">
-                    <Trophy className="h-5 w-5 text-[#00AEEF]" />
+                <div key={a.title} className="flex gap-4 p-5 rounded-2xl border border-slate-100 bg-slate-50 hover:border-[#00AEEF]/40 hover:shadow-md transition-all">
+                  <div className="h-11 w-11 bg-[#00AEEF]/10 rounded-xl grid place-items-center shrink-0 text-[#0A4ABF]">
+                    <Trophy className="h-5 w-5" />
                   </div>
                   <div>
                     <div className="text-xs font-medium text-slate-400">{a.year}</div>
@@ -84,8 +141,8 @@ export default function Awards() {
       </section>
 
       {/* Official Credentials & Recommendation Letters */}
-      <section className="py-20 bg-brand-bg border-t border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
+      <section className="py-16 md:py-24 bg-gradient-to-b from-brand-bg to-white border-t border-b border-slate-100">
+        <div className="max-w-[1400px] mx-auto px-6">
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
             <span className="text-[#0A4ABF] text-xs uppercase tracking-[0.2em] font-semibold block">Corporate Verification</span>
             <h2 className="text-3xl md:text-5xl font-medium text-[#071A35] font-display">Credentials & Recommendations</h2>
@@ -95,84 +152,58 @@ export default function Awards() {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
-            {/* DIPP */}
-            <div className="bg-white border border-slate-200 p-8 rounded-xl hover:shadow-xl transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-12 w-12 bg-[#00AEEF]/10 rounded-xl grid place-items-center mb-6 text-[#0A4ABF] font-medium text-xs uppercase">
-                  Govt
+            {credentials.map((c) => (
+              <div key={c.title} className="brand-card bg-white p-8 flex flex-col justify-between group">
+                <div>
+                  <div
+                    className="h-12 w-12 rounded-xl grid place-items-center mb-6 font-medium text-xs uppercase"
+                    style={{ background: `${c.accent}1A`, color: c.accent }}
+                  >
+                    {c.badge}
+                  </div>
+                  <h3 className="text-xl font-medium text-[#071A35] font-display mb-2 group-hover:text-[#0A4ABF] transition-colors">
+                    {c.title}
+                  </h3>
+                  <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">{c.org}</p>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
+                    {c.desc}
+                  </p>
                 </div>
-                <h3 className="text-xl font-medium text-[#071A35] font-display mb-2 group-hover:text-[#0A4ABF] transition-colors">
-                  DPIIT Recognition Certificate
-                </h3>
-                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">Ministry of Commerce & Industry</p>
-                <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
-                  Official recognition issued to SMSM Engineers Private Limited under registration DIPP8079 for innovative paint tinting machinery development.
-                </p>
-              </div>
-              <div>
                 <a
-                  href="/downloads/dipp_recognition.pdf"
+                  href={c.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full text-center block bg-[#071A35] hover:bg-[#00AEEF] hover:text-white text-white font-medium text-sm px-6 py-3 rounded-xl transition-all"
+                  className="w-full text-center inline-flex items-center justify-center gap-2 bg-[#071A35] hover:bg-[#0A4ABF] text-white font-medium text-sm px-6 py-3.5 rounded-full transition-all hover:-translate-y-0.5 hover:shadow-lg"
                 >
-                  View & Verify PDF Certificate
+                  <FileCheck2 className="h-4 w-4" /> {c.cta}
                 </a>
               </div>
-            </div>
-
-            {/* Kamdhenu */}
-            <div className="bg-white border border-slate-200 p-8 rounded-xl hover:shadow-xl transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-12 w-12 bg-[#0A4ABF]/10 rounded-xl grid place-items-center mb-6 text-[#0A4ABF] font-medium text-xs uppercase">
-                  B2B
-                </div>
-                <h3 className="text-xl font-medium text-[#071A35] font-display mb-2 group-hover:text-[#0A4ABF] transition-colors">
-                  Kamdhenu Recommendation Letter
-                </h3>
-                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">Kamdhenu Paints Limited</p>
-                <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
-                  Official endorsement detailing operational efficiency, calibration performance, and quality of service provided to their POS tinting channels.
-                </p>
-              </div>
-              <div>
-                <a
-                  href="/downloads/kamdhenu_recommendation.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center block bg-[#071A35] hover:bg-[#00AEEF] hover:text-white text-white font-medium text-sm px-6 py-3 rounded-xl transition-all"
-                >
-                  View & Verify PDF Letter
-                </a>
-              </div>
-            </div>
-
-            {/* Popular */}
-            <div className="bg-white border border-slate-200 p-8 rounded-xl hover:shadow-xl transition-all flex flex-col justify-between group">
-              <div>
-                <div className="h-12 w-12 bg-[#071A35]/10 rounded-xl grid place-items-center mb-6 text-[#071A35] font-medium text-xs uppercase">
-                  Audit
-                </div>
-                <h3 className="text-xl font-medium text-[#071A35] font-display mb-2 group-hover:text-[#0A4ABF] transition-colors">
-                  Popular Paints Recommendation
-                </h3>
-                <p className="text-slate-500 text-xs font-medium uppercase tracking-wider mb-4">Popular Paints & Chemicals</p>
-                <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
-                  Corporate performance certificate certifying SMSM Engineers&apos; maintenance reliability and delta-E color calibration parameters.
-                </p>
-              </div>
-              <div>
-                <a
-                  href="/downloads/popular_recommendation.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full text-center block bg-[#071A35] hover:bg-[#00AEEF] hover:text-white text-white font-medium text-sm px-6 py-3 rounded-xl transition-all"
-                >
-                  View & Verify PDF Letter
-                </a>
-              </div>
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="py-16 md:py-24 bg-[#071A35] text-white relative overflow-hidden">
+        <div className="absolute inset-0 grid-lines opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071A35] to-[#0A4ABF]/50" />
+        <div className="relative max-w-4xl mx-auto px-6 text-center z-10 space-y-8">
+          <Reveal>
+            <div className="h-14 w-14 rounded-2xl bg-white/10 grid place-items-center mx-auto mb-2">
+              <Sparkles className="h-7 w-7 text-[#00AEEF]" />
+            </div>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-medium tracking-tight leading-tight font-display">
+              Trusted Engineering, Verified Standards
+            </h2>
+            <p className="text-white/70 max-w-2xl mx-auto text-base md:text-lg mt-4 font-light">
+              Connect with our alliance desk to request additional compliance documentation or discuss a custom engineering project.
+            </p>
+            <div className="pt-4">
+              <Link href="/contact" className="inline-flex items-center gap-2 bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-white hover:text-[#071A35] transition-all hover:-translate-y-0.5 shadow-lg">
+                Contact Us <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
     </main>

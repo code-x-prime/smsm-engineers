@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, ChevronRight, Activity, Cpu, Code, HelpCircle, BookOpen, Compass } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, ChevronRight, Sparkles, FileCheck2, MessageCircleQuestion } from "lucide-react";
 
 type ServiceDetails = {
   name: string;
@@ -239,10 +239,11 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       />
 
       {/* Hero Banner */}
-      <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#0A4ABF]/20 to-transparent pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 z-10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0A4ABF]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Column */}
             <div className="lg:col-span-7 space-y-6">
@@ -250,18 +251,20 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <ArrowLeft className="h-4 w-4" /> Back to Services
               </Link>
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-medium block mb-2">{service.category}</span>
-                <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl tracking-tight font-display font-medium leading-tight">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-[#00AEEF] text-xs uppercase tracking-[0.2em] font-semibold mb-4">
+                  {service.category}
+                </span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight font-display leading-[1.08]">
                   {service.name}
                 </h1>
               </div>
-              <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+              <p className="text-white/80 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                 {service.desc}
               </p>
               <div className="pt-2 flex flex-wrap gap-4">
                 <Link
                   href="/query-form"
-                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-medium px-6 py-3 rounded-xl transition-colors text-sm"
+                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-semibold px-7 py-3.5 rounded-full transition-all text-sm shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
                 >
                   Request Service Assessment <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -281,37 +284,46 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
-              {/* Decorative design elements */}
-              <div className="hidden sm:block absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-[#00AEEF]/40 rounded-tr-2xl pointer-events-none" />
-              <div className="hidden sm:block absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-[#00AEEF]/40 rounded-bl-2xl pointer-events-none" />
+              {/* Floating badge */}
+              <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-white shadow-2xl rounded-2xl p-5 items-center gap-3 border border-slate-100 max-w-[220px] z-20">
+                <div className="h-11 w-11 icon-chip shrink-0">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-[#071A35] font-display leading-snug">Engineered Support</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
-        <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
-        <span>/</span>
-        <Link href="/services" className="hover:text-slate-800 transition-colors">Services</Link>
-        <span>/</span>
-        <span className="text-slate-800 font-medium">{service.name}</span>
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
+          <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
+          <span>/</span>
+          <Link href="/services" className="hover:text-slate-800 transition-colors">Services</Link>
+          <span>/</span>
+          <span className="text-slate-800 font-medium">{service.name}</span>
+        </div>
       </div>
 
       {/* Service Overview */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-12 gap-10 md:gap-12">
           <div className="md:col-span-8 space-y-6">
-            <h2 className="text-2xl font-medium text-[#071A35] font-display">Service Overview</h2>
-            <p className="text-slate-600 text-lg leading-relaxed font-light">{service.overview}</p>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">Overview</span>
+            <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display">Service Overview</h2>
+            <p className="text-slate-600 text-base md:text-lg leading-relaxed font-light">{service.overview}</p>
 
             {/* Benefits */}
             <div className="pt-6 space-y-4">
               <h3 className="text-xl font-medium text-[#071A35] font-display">Key Service Benefits</h3>
               <ul className="grid sm:grid-cols-2 gap-4">
                 {service.benefits.map((b, idx) => (
-                  <li key={idx} className="flex gap-2 text-slate-600 text-sm">
-                    <CheckCircle2 className="h-5 w-5 text-[#00AEEF] shrink-0" />
+                  <li key={idx} className="flex gap-3 text-slate-600 text-sm leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl p-4 hover:border-[#00AEEF]/40 transition-colors">
+                    <CheckCircle2 className="h-5 w-5 text-[#00AEEF] shrink-0 mt-0.5" />
                     <span>{b}</span>
                   </li>
                 ))}
@@ -319,12 +331,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="md:col-span-4 bg-brand-bg border border-slate-200 p-6 rounded-xl h-fit space-y-4">
+          <div className="md:col-span-4 brand-card bg-brand-bg p-6 h-fit space-y-4">
+            <div className="h-11 w-11 icon-chip">
+              <MessageCircleQuestion className="h-5 w-5" />
+            </div>
             <h3 className="font-medium text-[#071A35] font-display text-lg">Inquire About This Service</h3>
-            <p className="text-xs text-slate-500">Need specific customized pricing or a technician site visit?</p>
+            <p className="text-xs text-slate-500 leading-relaxed">Need specific customized pricing or a technician site visit?</p>
             <Link
               href="/query-form"
-              className="w-full text-center block bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium p-3 rounded-xl text-sm transition-colors"
+              className="w-full text-center block bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium p-3.5 rounded-full text-sm transition-all shadow-lg hover:-translate-y-0.5"
             >
               Get Custom Quote
             </Link>
@@ -334,16 +349,22 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {/* Dynamic Download Portal for downloads page */}
       {slug === "downloads" && (
-        <section className="py-16 bg-white border-b border-slate-100">
-          <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-medium text-[#071A35] font-display mb-8 text-center">Corporate Credentials & Technical Catalog</h2>
-            <div className="grid md:grid-cols-3 gap-8">
+        <section className="py-16 md:py-24 bg-gradient-to-b from-brand-bg to-white border-b border-slate-100">
+          <div className="max-w-[1400px] mx-auto px-6">
+            <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+              <span className="text-[#0A4ABF] text-xs uppercase tracking-[0.2em] font-semibold block">Verified Documents</span>
+              <h2 className="text-2xl md:text-4xl font-medium text-[#071A35] font-display">Corporate Credentials & Technical Catalog</h2>
+            </div>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
               {/* DIPP */}
-              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="brand-card bg-white p-6 flex flex-col justify-between">
                 <div>
+                  <div className="h-11 w-11 icon-chip mb-4">
+                    <FileCheck2 className="h-5 w-5" />
+                  </div>
                   <span className="text-[#00AEEF] text-xs font-medium uppercase">Government Registry</span>
-                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Startup India DPIIT Recognition</h3>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3 font-display">Startup India DPIIT Recognition</h3>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
                     Verify our official certificate of recognition issued by the Department for Promotion of Industry and Internal Trade (DIPP8079).
                   </p>
                 </div>
@@ -351,18 +372,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="/downloads/dipp_recognition.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-3 rounded-full transition-all w-full shadow-lg hover:-translate-y-0.5"
                 >
                   Download Certificate (PDF)
                 </a>
               </div>
 
               {/* Kamdhenu */}
-              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="brand-card bg-white p-6 flex flex-col justify-between">
                 <div>
+                  <div className="h-11 w-11 icon-chip mb-4">
+                    <FileCheck2 className="h-5 w-5" />
+                  </div>
                   <span className="text-[#00AEEF] text-xs font-medium uppercase">Client Verification</span>
-                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Kamdhenu Paints Recommendation</h3>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3 font-display">Kamdhenu Paints Recommendation</h3>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
                     Official evaluation letter detailing engineering service parameters, calibration audits, and operational maintenance SLA compliance.
                   </p>
                 </div>
@@ -370,18 +394,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="/downloads/kamdhenu_recommendation.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-3 rounded-full transition-all w-full shadow-lg hover:-translate-y-0.5"
                 >
                   Download Letter (PDF)
                 </a>
               </div>
 
               {/* Popular */}
-              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="brand-card bg-white p-6 flex flex-col justify-between sm:col-span-2 md:col-span-1">
                 <div>
+                  <div className="h-11 w-11 icon-chip mb-4">
+                    <FileCheck2 className="h-5 w-5" />
+                  </div>
                   <span className="text-[#00AEEF] text-xs font-medium uppercase">Client Verification</span>
-                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Popular Paints Recommendation</h3>
-                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3 font-display">Popular Paints Recommendation</h3>
+                  <p className="text-slate-600 text-sm font-light leading-relaxed mb-6">
                     Corporate quality endorsement certifying SMSM Engineers&apos; equipment maintenance logs and spectrophotometric calibration audits.
                   </p>
                 </div>
@@ -389,7 +416,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="/downloads/popular_recommendation.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-3 rounded-full transition-all w-full shadow-lg hover:-translate-y-0.5"
                 >
                   Download Letter (PDF)
                 </a>
@@ -400,15 +427,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       )}
 
       {/* Process Timeline */}
-      <section className="py-16 bg-brand-bg border-t border-b border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-10 text-center">Service Implementation Timeline</h2>
-          <div className="grid md:grid-cols-3 gap-8">
-            {service.timeline.map((item) => (
-              <div key={item.step} className="bg-white border border-slate-200 p-6 rounded-xl">
-                <span className="text-[#00AEEF] text-xs font-medium uppercase tracking-wider">{item.step}</span>
-                <h3 className="text-lg font-medium text-[#071A35] font-display mt-1 mb-2">{item.label}</h3>
-                <p className="text-slate-600 text-sm font-light leading-relaxed">{item.desc}</p>
+      <section className="py-16 md:py-24 bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 grid-lines opacity-5" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
+          <div className="text-center max-w-2xl mx-auto mb-12 space-y-3">
+            <span className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold block">How It Works</span>
+            <h2 className="text-2xl md:text-4xl font-medium font-display">Service Implementation Timeline</h2>
+          </div>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
+            {service.timeline.map((item, idx) => (
+              <div key={item.step} className="relative bg-white/[0.04] border border-white/10 p-6 rounded-2xl hover:bg-white/[0.08] hover:border-[#00AEEF]/40 transition-all hover:-translate-y-1 overflow-hidden">
+                <span className="absolute right-4 top-2 text-5xl font-medium text-white/[0.05] font-display select-none">0{idx + 1}</span>
+                <span className="text-[#00AEEF] text-xs font-medium uppercase tracking-wider relative z-10">{item.step}</span>
+                <h3 className="text-lg font-medium text-white font-display mt-1 mb-2 relative z-10">{item.label}</h3>
+                <p className="text-white/65 text-sm font-light leading-relaxed relative z-10">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -416,10 +449,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Technical Expertise Parameters */}
-      <section className="py-16 bg-white">
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-6 text-center">Technical Parameters & Standards</h2>
-          <div className="border border-slate-200 rounded-xl overflow-x-auto">
+          <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display mb-6 text-center">Technical Parameters & Standards</h2>
+          <div className="border border-slate-200 rounded-2xl overflow-x-auto shadow-sm">
             <table className="w-full text-sm text-left min-w-[420px]">
               <tbody>
                 {Object.entries(service.expertise).map(([key, val]) => (
@@ -435,14 +468,15 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Related Services */}
-      <section className="py-16 bg-brand-bg border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-8">Related Support Programs</h2>
+      <section className="py-16 md:py-24 bg-gradient-to-b from-brand-bg to-white border-t border-slate-100">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Explore More</span>
+          <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display mb-10">Related Support Programs</h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {relatedServices.map(([key, item]) => (
-              <Link key={key} href={`/services/${key}`} className="bg-white border border-slate-200 p-6 rounded-xl hover:shadow-lg transition-all group">
+              <Link key={key} href={`/services/${key}`} className="brand-card bg-white p-6 group">
                 <span className="text-xs uppercase text-slate-400 font-medium">{item.category}</span>
-                <h3 className="text-lg font-medium text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display">{item.name}</h3>
+                <h3 className="text-lg font-medium text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display transition-colors">{item.name}</h3>
                 <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">{item.desc}</p>
                 <div className="text-[#00AEEF] text-xs font-medium mt-4 inline-flex items-center gap-1">
                   Learn Details <ChevronRight className="h-3.5 w-3.5" />
@@ -454,13 +488,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       </section>
 
       {/* Bottom CTA Block */}
-      <section className="py-16 bg-[#071A35] text-white text-center relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-[#071A35] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071A35] to-[#0A4ABF]/50" />
         <div className="relative z-10 max-w-2xl mx-auto px-6 space-y-6">
-          <h2 className="text-3xl font-medium font-display">Need Custom Engineering Solutions?</h2>
-          <p className="text-white/70 text-sm font-light">Contact our engineering group today to schedule a detailed factory overview or system configuration analysis.</p>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-medium font-display">Need Custom Engineering Solutions?</h2>
+          <p className="text-white/70 text-sm md:text-base font-light">Contact our engineering group today to schedule a detailed factory overview or system configuration analysis.</p>
           <div className="pt-2">
-            <Link href="/contact" className="bg-[#00AEEF] hover:bg-white text-[#071A35] font-medium px-8 py-3 rounded-xl transition-colors text-sm inline-block">
+            <Link href="/contact" className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-semibold px-8 py-3.5 rounded-full transition-all text-sm shadow-lg hover:-translate-y-0.5">
               Contact Systems Engineer
             </Link>
           </div>
