@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ArrowUpRight, CheckCircle2, ChevronRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight, CheckCircle2, ChevronRight, Sparkles } from "lucide-react";
 
 type ProductDetails = {
   name: string;
@@ -192,10 +192,11 @@ export default async function ProductDetailPage({ params }: PageProps) {
       />
 
       {/* Product Hero */}
-      <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
+      <section className="relative py-16 md:py-24 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#0A4ABF]/20 to-transparent pointer-events-none" />
-        <div className="relative max-w-7xl mx-auto px-6 z-10">
+        <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-[#0A4ABF]/20 rounded-full blur-[140px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="relative max-w-[1400px] mx-auto px-6 z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6">
@@ -203,18 +204,20 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 <ArrowLeft className="h-4 w-4" /> Back to Products Catalog
               </Link>
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-bold block mb-2">{product.category}</span>
-                <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl tracking-tight font-display font-bold leading-tight">
+                <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-[#00AEEF] text-xs uppercase tracking-[0.2em] font-semibold mb-4">
+                  {product.category}
+                </span>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-medium tracking-tight font-display leading-[1.08]">
                   {product.name}
                 </h1>
               </div>
-              <p className="text-white/80 text-lg md:text-xl font-light leading-relaxed max-w-2xl">
+              <p className="text-white/80 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-2xl">
                 {product.desc}
               </p>
               <div className="pt-2 flex flex-wrap gap-4">
                 <Link
                   href="/query-form"
-                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-bold px-6 py-3 rounded-sm transition-colors text-sm"
+                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-semibold px-7 py-3.5 rounded-full transition-all text-sm shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
                 >
                   Request Technical Quote <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -223,7 +226,7 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
             {/* Right Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 shadow-2xl group bg-slate-950">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-slate-950">
                 <Image
                   src={product.image}
                   alt={product.name}
@@ -234,32 +237,41 @@ export default async function ProductDetailPage({ params }: PageProps) {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
-              {/* Decorative design elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-[#00AEEF]/40 pointer-events-none" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-[#00AEEF]/40 pointer-events-none" />
+              {/* Floating badge */}
+              <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-white shadow-2xl rounded-2xl p-5 items-center gap-3 border border-slate-100 max-w-[220px] z-20">
+                <div className="h-11 w-11 icon-chip shrink-0">
+                  <Sparkles className="h-5 w-5" />
+                </div>
+                <div>
+                  <div className="text-sm font-medium text-[#071A35] font-display leading-snug">Engineered for Precision</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
       {/* Breadcrumb */}
-      <div className="max-w-7xl mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
-        <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
-        <span>/</span>
-        <Link href="/products" className="hover:text-slate-800 transition-colors">Products</Link>
-        <span>/</span>
-        <span className="text-slate-800 font-medium">{product.name}</span>
+      <div className="bg-white border-b border-slate-200">
+        <div className="max-w-[1400px] mx-auto px-6 py-4 text-sm text-slate-500 flex gap-2">
+          <Link href="/" className="hover:text-slate-800 transition-colors">Home</Link>
+          <span>/</span>
+          <Link href="/products" className="hover:text-slate-800 transition-colors">Products</Link>
+          <span>/</span>
+          <span className="text-slate-800 font-medium">{product.name}</span>
+        </div>
       </div>
 
       {/* Technical Specifications */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+      <section className="py-16 md:py-24 bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 grid md:grid-cols-2 gap-12">
           {/* Key Features */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-[#071A35] font-display">Key Engineering Features</h2>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">What Sets It Apart</span>
+            <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display">Key Engineering Features</h2>
             <ul className="space-y-4">
               {product.features.map((feature, idx) => (
-                <li key={idx} className="flex gap-3 text-slate-600 text-sm leading-relaxed">
+                <li key={idx} className="flex gap-3 text-slate-600 text-sm leading-relaxed bg-slate-50 border border-slate-200 rounded-2xl p-4 hover:border-[#00AEEF]/40 transition-colors">
                   <CheckCircle2 className="h-5 w-5 text-[#00AEEF] shrink-0 mt-0.5" />
                   <span>{feature}</span>
                 </li>
@@ -269,23 +281,24 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
           {/* Specs Table */}
           <div className="space-y-6">
-            <h2 className="text-2xl font-bold text-[#071A35] font-display">Technical Parameters</h2>
-            <div className="border border-slate-200 rounded-sm overflow-hidden">
-              <table className="w-full text-sm text-left">
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">Specification Sheet</span>
+            <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display">Technical Parameters</h2>
+            <div className="border border-slate-200 rounded-2xl overflow-x-auto shadow-sm">
+              <table className="w-full text-sm text-left min-w-[420px]">
                 <tbody>
                   {Object.entries(product.specs).map(([key, val]) => (
                     <tr key={key} className="border-b border-slate-200 last:border-b-0">
-                      <td className="bg-brand-bg px-6 py-4 font-bold text-[#071A35] w-1/3">{key}</td>
+                      <td className="bg-brand-bg px-6 py-4 font-medium text-[#071A35] w-1/3 whitespace-nowrap">{key}</td>
                       <td className="px-6 py-4 text-slate-600">{val}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="pt-4">
+            <div className="pt-2">
               <Link
                 href="/query-form"
-                className="inline-flex items-center gap-2 bg-[#0A4ABF] text-white font-bold px-6 py-3 rounded-sm hover:bg-[#071A35] transition-colors"
+                className="inline-flex items-center gap-2 bg-[#0A4ABF] text-white font-semibold px-7 py-3.5 rounded-full hover:bg-[#071A35] transition-all shadow-lg hover:-translate-y-0.5 hover:shadow-xl"
               >
                 Inquire Configuration Price <ArrowUpRight className="h-4 w-4" />
               </Link>
@@ -295,16 +308,17 @@ export default async function ProductDetailPage({ params }: PageProps) {
       </section>
 
       {/* Related Products */}
-      <section className="py-20 bg-brand-bg border-t border-slate-100">
-        <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#071A35] font-display mb-8">Related Solutions</h2>
+      <section className="py-16 md:py-24 bg-gradient-to-b from-brand-bg to-white border-t border-slate-100">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Explore More</span>
+          <h2 className="text-2xl md:text-3xl font-medium text-[#071A35] font-display mb-10">Related Solutions</h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {relatedProducts.map(([key, item]) => (
-              <Link key={key} href={`/products/${key}`} className="bg-white border border-slate-200 p-6 rounded-sm hover:shadow-lg transition-all group">
-                <span className="text-xs uppercase text-slate-400 font-bold">{item.category}</span>
-                <h3 className="text-lg font-bold text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display">{item.name}</h3>
+              <Link key={key} href={`/products/${key}`} className="brand-card bg-white p-6 group">
+                <span className="text-xs uppercase text-slate-400 font-medium">{item.category}</span>
+                <h3 className="text-lg font-medium text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display transition-colors">{item.name}</h3>
                 <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">{item.desc}</p>
-                <div className="text-[#00AEEF] text-xs font-bold mt-4 inline-flex items-center gap-1">
+                <div className="text-[#00AEEF] text-xs font-medium mt-4 inline-flex items-center gap-1">
                   View Specs <ChevronRight className="h-3.5 w-3.5" />
                 </div>
               </Link>

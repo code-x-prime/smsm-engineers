@@ -49,7 +49,7 @@ export default function ProductsPage() {
       <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-extrabold block mb-4">Precision Machinery</span>
+          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold block mb-4">Precision Machinery</span>
           <h1 className="hero-heading text-4xl md:text-6xl tracking-tight max-w-4xl">
             Our Products Showcase
           </h1>
@@ -72,19 +72,19 @@ export default function ProductsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {products.map((p, idx) => (
               <Reveal key={p.slug} delay={idx * 0.05}>
-                <div className="border border-slate-200 p-8 rounded-sm hover:shadow-xl transition-all h-full bg-brand-bg flex flex-col justify-between group">
+                <div className="border border-slate-200 p-8 rounded-xl hover:shadow-xl transition-all h-full bg-brand-bg flex flex-col justify-between group">
                   <div>
-                    <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-bold block mb-2">{p.category}</span>
-                    <h2 className="text-2xl font-bold text-[#071A35] font-display mb-4 group-hover:text-[#0A4ABF] transition-colors">{p.name}</h2>
+                    <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-medium block mb-2">{p.category}</span>
+                    <h2 className="text-2xl font-medium text-[#071A35] font-display mb-4 group-hover:text-[#0A4ABF] transition-colors">{p.name}</h2>
                     <p className="text-slate-600 text-sm leading-relaxed mb-6 font-light">{p.desc}</p>
-                    <div className="text-xs text-slate-400 bg-white border border-slate-100 p-3 rounded-sm font-semibold mb-6">
+                    <div className="text-xs text-slate-400 bg-white border border-slate-100 p-3 rounded-xl font-semibold mb-6">
                       Spec: {p.spec}
                     </div>
                   </div>
                   <div>
                     <Link
                       href={`/products/${p.slug}`}
-                      className="inline-flex items-center gap-2 bg-[#071A35] text-white font-bold text-sm px-5 py-2.5 rounded-sm hover:bg-[#0A4ABF] transition-colors"
+                      className="inline-flex items-center gap-2 bg-[#071A35] text-white font-medium text-sm px-5 py-2.5 rounded-xl hover:bg-[#0A4ABF] transition-colors"
                     >
                       Specifications <ArrowRight className="h-4 w-4" />
                     </Link>

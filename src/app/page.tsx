@@ -130,31 +130,31 @@ export default function Home() {
   const servicesShowcase = [
     {
       slug: "amc",
-      name: "AMC Equipment Maintenance",
-      desc: "Preventive monthly diagnostics, nozzle cleaning, parts replacement, and color calibration for dispensers of any make/brand.",
+      name: "Annual Maintenance Contract (AMC)",
+      desc: "Comprehensive and non-comprehensive Tinting System support for Auto, Manual, and Gyro dispensers with an ITIL-based helpdesk.",
       icon: ShieldCheck,
-      details: ["24/7 hotline service SLA", "Emergency dispatch within 24 hours", "Genuine spares guarantee"],
+      details: ["State-of-the-art facilities in 35 locations", "SLA-aligned breakdown resolution", "Preventive maintenance & upgrades"],
     },
     {
       slug: "color-consultancy",
       name: "Color Consultancy",
-      desc: "Spectrophotometric database calculations and raw pigment volume optimization for industrial paint factories.",
+      desc: "End-to-end tinting system solutions — colourants, fandecks, shade card formulations, and technical sales support.",
       icon: Layers,
-      details: ["Kubelka-Munk matching math", "Delta evaluation certifications", "Base-coat mapping"],
+      details: ["16 Colourants & Databank", "Formulations on popular shade cards", "Base development & sales enablement"],
     },
     {
       slug: "pcb-design",
       name: "PCB Designing",
-      desc: "Custom electronic control board schematic routing, reflow assembly, and firmware programming for step-motor units.",
+      desc: "2-layer and multilayer, high-density PCB designs for medical, IoT, HMI, and industrial control hardware.",
       icon: Cpu,
-      details: ["1 to 8 Layers structural layouts", "Noise-immune trace mapping", "RoHS compliant assemblies"],
+      details: ["Layout design, prototyping & assembly", "Medical, IoT & wireless applications", "RoHS compliant assemblies"],
     },
     {
       slug: "software",
       name: "Software Development",
-      desc: "Custom formulation database apps, serial communication drivers (USB/COM), and mobile paint visualizers.",
+      desc: "A strategic software partner delivering turnkey solutions built on proven methodologies for startups and enterprises.",
       icon: Database,
-      details: ["Cross-platform React frameworks", "Offline-first databases", "ERP connection API integration"],
+      details: ["Turnkey business solutions", "Advanced engineering practices", "Value-driven partnerships"],
     },
     {
       slug: "engineering-consultancy",
@@ -263,18 +263,17 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="space-y-6"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-[#00AEEF] w-fit">
+              <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-xs font-medium uppercase tracking-widest text-[#00AEEF] w-fit">
                 <Shield className="h-4 w-4" /> {slides[currentSlide].tagline}
               </div>
 
-              {/* SLJ-style Typography: Elegant Serif Font combined with Strong Colors */}
-              <h1 className="text-5xl md:text-7xl lg:text-[86px] leading-[1] font-extrabold tracking-tight" style={{ fontFamily: "Georgia, serif" }}>
+              {/* Clean modern sans typography, tight tracking, fully responsive */}
+              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-[1.08] font-semibold tracking-tight">
                 {slides[currentSlide].title1}{" "}
-                <span className="text-[#00AEEF] italic font-serif block sm:inline">
+                <span className="text-[#00AEEF] block sm:inline">
                   {slides[currentSlide].titleHighlight}
                 </span>
-                <br />
-                <span className="text-white block mt-2 text-4xl md:text-5xl lg:text-[56px] font-sans font-light tracking-wide uppercase">
+                <span className="text-white/85 block mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-normal normal-case">
                   {slides[currentSlide].title2}
                 </span>
               </h1>
@@ -293,13 +292,13 @@ export default function Home() {
             >
               <Link
                 href="/products"
-                className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-sm transition-all transform hover:-translate-y-0.5 shadow-lg"
+                className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all transform hover:-translate-y-0.5 shadow-lg"
               >
                 Start Your Project <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/query-form"
-                className="inline-flex items-center gap-2 border border-white/20 hover:border-white bg-white/5 hover:bg-white/15 text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-sm transition-all"
+                className="inline-flex items-center gap-2 border border-white/20 hover:border-white bg-white/5 hover:bg-white/15 text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-all"
               >
                 View Portfolio
               </Link>
@@ -324,7 +323,7 @@ export default function Home() {
         </button>
 
         {/* Bottom Slide Progress Counter (SLJ Inspired 01 / 03) */}
-        <div className="absolute bottom-12 left-6 z-20 flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-white/60">
+        <div className="absolute bottom-12 left-6 z-20 flex items-center gap-4 text-xs font-medium uppercase tracking-widest text-white/60">
           <span className="text-white text-lg font-display">0{currentSlide + 1}</span>
           <div className="w-16 h-[2px] bg-white/20 relative">
             <motion.div
@@ -358,10 +357,10 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center text-center">
             {trustStats.map((stat) => (
               <div key={stat.label} className="space-y-1">
-                <div className="text-3xl md:text-5xl font-extrabold text-[#071A35] font-display">
+                <div className="text-3xl md:text-5xl font-semibold text-[#071A35] font-display">
                   <Counter to={stat.value} suffix={stat.suffix} />
                 </div>
-                <div className="text-xs uppercase tracking-wider text-slate-400 font-bold">
+                <div className="text-xs uppercase tracking-wider text-slate-400 font-medium">
                   {stat.label}
                 </div>
               </div>
@@ -376,7 +375,7 @@ export default function Home() {
           {/* Large Image Left */}
           <div className="lg:col-span-6 relative">
             <Reveal>
-              <div className="aspect-[4/3] rounded-sm text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
+              <div className="aspect-[4/3] rounded-xl text-white flex flex-col justify-between shadow-2xl relative overflow-hidden group">
                 <Image
                   src="/images/about_laboratory.png"
                   alt="SMSM Engineers R&D Laboratory"
@@ -386,12 +385,12 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#071A35] via-[#071A35]/60 to-[#071A35]/10 z-10" />
                 <div className="absolute inset-0 grid-lines opacity-10 z-10" />
-                <div className="h-16 w-16 bg-[#00AEEF]/20 rounded-sm grid place-items-center relative z-20 m-8">
+                <div className="h-16 w-16 bg-[#00AEEF]/20 rounded-xl grid place-items-center relative z-20 m-8">
                   <Shield className="h-8 w-8 text-[#00AEEF]" />
                 </div>
                 <div className="relative z-20 p-8 pt-0">
                   <span className="text-[10px] uppercase tracking-wider text-white/80 block mb-1">Establishment</span>
-                  <h3 className="text-3xl font-extrabold font-display">Engineered Since 2013</h3>
+                  <h3 className="text-3xl font-semibold font-display">Engineered Since 2013</h3>
                   <p className="text-sm text-white/80 font-light mt-2 max-w-sm">
                     Agra based campus supporting R&D laboratories, custom electronic circuit reflow lines, and assembly setups.
                   </p>
@@ -403,7 +402,7 @@ export default function Home() {
           {/* Content Right */}
           <div className="lg:col-span-6 space-y-6">
             <Reveal>
-              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block">About SMSM Engineers</span>
+              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">About SMSM Engineers</span>
               <h2 className="section-heading text-4xl md:text-5xl text-[#071A35] font-display">
                 Precision & Quality in Industrial Operations
               </h2>
@@ -412,7 +411,7 @@ export default function Home() {
               </p>
 
               <div className="border-t border-slate-100 pt-6">
-                <h4 className="font-bold text-slate-800 text-sm mb-4">Key Corporate Achievements</h4>
+                <h4 className="font-medium text-slate-800 text-sm mb-4">Key Corporate Achievements</h4>
                 <ul className="grid sm:grid-cols-2 gap-3 text-sm text-slate-600">
                   <li className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-[#00AEEF] shrink-0" /> ISO-aligned quality compliance</li>
                   <li className="flex gap-2"><CheckCircle2 className="h-5 w-5 text-[#00AEEF] shrink-0" /> Supply chains across 22+ states</li>
@@ -422,7 +421,7 @@ export default function Home() {
               </div>
 
               <div className="pt-4">
-                <Link href="/about" className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-wider text-[#0A4ABF] hover:underline">
+                <Link href="/about" className="inline-flex items-center gap-1 text-xs font-medium uppercase tracking-wider text-[#0A4ABF] hover:underline">
                   Read Corporate Message <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -436,7 +435,7 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 space-y-[100px]">
 
           <Reveal className="text-center max-w-3xl mx-auto">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block mb-2">Our Catalog</span>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Our Catalog</span>
             <h2 className="section-heading text-4xl md:text-5xl text-[#071A35] font-display">
               Preserved Industrial Products
             </h2>
@@ -449,7 +448,7 @@ export default function Home() {
                 <div className="grid lg:grid-cols-12 gap-12 items-center">
                   {/* Image Column */}
                   <div className={`lg:col-span-6 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="aspect-[16/10] border border-slate-200 rounded-sm shadow-lg relative overflow-hidden group">
+                    <div className="aspect-[16/10] border border-slate-200 rounded-xl shadow-lg relative overflow-hidden group">
                       <Image
                         src={prod.image}
                         alt={prod.name}
@@ -460,16 +459,16 @@ export default function Home() {
                       <div className="absolute inset-0 bg-gradient-to-t from-[#071A35] via-[#071A35]/40 to-transparent z-10" />
                       <div className="absolute inset-0 grid-lines opacity-10 z-10" />
                       <div className="absolute inset-0 flex flex-col justify-between p-8 z-20">
-                        <span className="text-xs uppercase font-extrabold text-[#00AEEF] tracking-wide">{prod.category}</span>
-                        <h3 className="text-4xl font-extrabold text-white font-display transition-colors">{prod.name}</h3>
+                        <span className="text-xs uppercase font-semibold text-[#00AEEF] tracking-wide">{prod.category}</span>
+                        <h3 className="text-4xl font-semibold text-white font-display transition-colors">{prod.name}</h3>
                       </div>
                     </div>
                   </div>
 
                   {/* Details Column */}
                   <div className={`lg:col-span-6 ${isLeft ? "lg:order-2" : "lg:order-1"} space-y-6`}>
-                    <span className="text-xs uppercase text-[#0A4ABF] font-bold tracking-wide">{prod.category}</span>
-                    <h3 className="text-3xl font-bold text-[#071A35] font-display">{prod.name}</h3>
+                    <span className="text-xs uppercase text-[#0A4ABF] font-medium tracking-wide">{prod.category}</span>
+                    <h3 className="text-3xl font-medium text-[#071A35] font-display">{prod.name}</h3>
                     <p className="text-slate-600 font-light leading-relaxed">{prod.desc}</p>
 
                     <ul className="space-y-2 text-sm text-slate-500 font-medium">
@@ -484,7 +483,7 @@ export default function Home() {
                     <div className="pt-4">
                       <Link
                         href={prod.link}
-                        className="inline-flex items-center gap-2 bg-[#071A35] hover:bg-[#0A4ABF] text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-sm transition-colors"
+                        className="inline-flex items-center gap-2 bg-[#071A35] hover:bg-[#0A4ABF] text-white font-medium text-xs uppercase tracking-wider px-6 py-3.5 rounded-xl transition-colors"
                       >
                         View Specifications <ArrowRight className="h-4 w-4" />
                       </Link>
@@ -504,7 +503,7 @@ export default function Home() {
         <div className="max-w-[1400px] mx-auto px-6 relative z-10 space-y-16">
 
           <Reveal className="text-center max-w-3xl mx-auto">
-            <span className="text-[#00AEEF] text-xs uppercase tracking-widest font-extrabold block mb-2">Our Capabilities</span>
+            <span className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold block mb-2">Our Capabilities</span>
             <h2 className="section-heading text-4xl md:text-5xl font-display">
               Preserved Technical Services
             </h2>
@@ -515,12 +514,12 @@ export default function Home() {
               const Icon = srv.icon;
               return (
                 <Reveal key={srv.slug} delay={idx * 0.05}>
-                  <div className="border border-white/10 bg-white/5 p-8 rounded-sm hover:bg-white/10 transition-all hover-lift flex flex-col justify-between h-full group">
+                  <div className="border border-white/10 bg-white/5 p-8 rounded-xl hover:bg-white/10 transition-all hover-lift flex flex-col justify-between h-full group">
                     <div>
-                      <div className="h-12 w-12 bg-[#00AEEF]/10 rounded-sm grid place-items-center text-[#00AEEF] mb-6">
+                      <div className="h-12 w-12 bg-[#00AEEF]/10 rounded-xl grid place-items-center text-[#00AEEF] mb-6">
                         <Icon className="h-6 w-6" />
                       </div>
-                      <h3 className="text-xl font-bold text-white mb-4 font-display group-hover:text-[#00AEEF] transition-colors">{srv.name}</h3>
+                      <h3 className="text-xl font-medium text-white mb-4 font-display group-hover:text-[#00AEEF] transition-colors">{srv.name}</h3>
                       <p className="text-white/70 text-sm font-light leading-relaxed mb-6">{srv.desc}</p>
 
                       <ul className="space-y-2 text-xs text-white/50 border-t border-white/5 pt-4 mb-6">
@@ -532,7 +531,7 @@ export default function Home() {
                         ))}
                       </ul>
                     </div>
-                    <Link href={`/services/${srv.slug}`} className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#00AEEF] font-bold hover:underline">
+                    <Link href={`/services/${srv.slug}`} className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#00AEEF] font-medium hover:underline">
                       Learn Details <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
@@ -550,24 +549,24 @@ export default function Home() {
           {/* Certificate Lightbox */}
           <div className="lg:col-span-5 space-y-6">
             <Reveal>
-              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block">Standards Compliance</span>
+              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">Standards Compliance</span>
               <h2 className="section-heading text-3xl md:text-4xl text-[#071A35] font-display">Certifications</h2>
               <p className="text-slate-600 text-sm leading-relaxed font-light">
                 SMSM Engineers operates under rigid quality checking codes aligned with international directives to guarantee mechanical structural performance.
               </p>
 
               <div className="space-y-4 pt-4">
-                <div className="p-5 border border-slate-200 bg-brand-bg rounded-sm flex gap-4">
+                <div className="p-5 border border-slate-200 bg-brand-bg rounded-xl flex gap-4">
                   <Award className="h-8 w-8 text-[#00AEEF] shrink-0" />
                   <div>
-                    <h4 className="font-bold text-[#071A35] text-sm">ISO 9001:2015 Standards</h4>
+                    <h4 className="font-medium text-[#071A35] text-sm">ISO 9001:2015 Standards</h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">Certified quality management frameworks implemented across our manufacturing plants.</p>
                   </div>
                 </div>
-                <div className="p-5 border border-slate-200 bg-brand-bg rounded-sm flex gap-4">
+                <div className="p-5 border border-slate-200 bg-brand-bg rounded-xl flex gap-4">
                   <ShieldCheck className="h-8 w-8 text-[#00AEEF] shrink-0" />
                   <div>
-                    <h4 className="font-bold text-[#071A35] text-sm">CE Mechanical Clearances</h4>
+                    <h4 className="font-medium text-[#071A35] text-sm">CE Mechanical Clearances</h4>
                     <p className="text-xs text-slate-500 mt-1 leading-relaxed">Compliance with global machinery safety parameters, electrical insulation, and step-motor calibration.</p>
                   </div>
                 </div>
@@ -586,9 +585,9 @@ export default function Home() {
                   { year: "2022", title: "Excellence in Make In India Dosing Systems", org: "SME Engineering Summit" },
                 ].map((item, idx) => (
                   <div key={idx} className="flex gap-4 p-5 border-l-2 border-[#00AEEF] bg-brand-bg ml-4">
-                    <span className="text-xl font-extrabold text-[#071A35] font-display shrink-0 w-12">{item.year}</span>
+                    <span className="text-xl font-semibold text-[#071A35] font-display shrink-0 w-12">{item.year}</span>
                     <div>
-                      <h4 className="font-bold text-[#071A35] text-sm font-display">{item.title}</h4>
+                      <h4 className="font-medium text-[#071A35] text-sm font-display">{item.title}</h4>
                       <p className="text-xs text-slate-500 mt-0.5">{item.org}</p>
                     </div>
                   </div>
@@ -603,53 +602,48 @@ export default function Home() {
       <section className="py-14 md:py-16 bg-brand-bg border-t border-b border-slate-100">
         <div className="max-w-[1400px] mx-auto px-6 space-y-16">
           <Reveal className="text-center max-w-2xl mx-auto">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block mb-2">Executive Desk</span>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Executive Desk</span>
             <h2 className="section-heading text-3xl md:text-5xl text-[#071A35] font-display">Board of Directors Message</h2>
           </Reveal>
 
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Founder Message */}
+            {/* Chairman Message */}
             <Reveal>
-              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-sm space-y-6 hover:shadow-lg transition-shadow">
+              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow">
                 <div className="flex gap-4 items-center">
                   <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#00AEEF]">
                     <Image
-                      src="/images/founder_sharma.png"
-                      alt="Mr. S. M. Sharma"
+                      src="/images/umesh_bhardwaj_face.jpg"
+                      alt="Acharya Umesh Bhardwaj"
                       fill
                       className="object-cover"
                     />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#071A35] font-display">Mr. S. M. Sharma</h3>
-                    <p className="text-xs text-slate-400 font-semibold uppercase">Founder & Chief Consultant</p>
+                    <h3 className="text-xl font-medium text-[#071A35] font-display">Acharya Umesh Bhardwaj</h3>
+                    <p className="text-xs text-slate-400 font-semibold uppercase">Chairman & Executive Director</p>
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#00AEEF] pl-4">
-                  "Having started as maintenance consultants, we realized that industrial coating plants need robust integration. By designing custom PCBs in-house, we eliminate motor calibration mismatches and dispenser failures. We continue to engineer precision directly into chemical and physical dosing systems."
+                  &ldquo;SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India&apos;s fast paced and competitive environment.&rdquo;
                 </p>
               </div>
             </Reveal>
 
             {/* MD Message */}
             <Reveal>
-              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-sm space-y-6 hover:shadow-lg transition-shadow">
+              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow">
                 <div className="flex gap-4 items-center">
-                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF]">
-                    <Image
-                      src="/images/md_sharma.png"
-                      alt="Mrs. Minakshi Sharma"
-                      fill
-                      className="object-cover"
-                    />
+                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF] grid place-items-center bg-gradient-to-br from-[#0A4ABF] to-[#071A35] text-white font-medium font-display">
+                    PB
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-[#071A35] font-display">Mrs. Minakshi Sharma</h3>
+                    <h3 className="text-xl font-medium text-[#071A35] font-display">Mrs. Priyanka Bhardwaj</h3>
                     <p className="text-xs text-slate-400 font-semibold uppercase">Managing Director</p>
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#0A4ABF] pl-4">
-                  "Operational precision and human resources are the twin pillars of SMSM. We have structured our support channels to coordinate field technician dispatches in under 24 hours. We welcome chemical dealers, engineering graduates, and distributors to connect with our alliance desk."
+                  &ldquo;SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.&rdquo;
                 </p>
               </div>
             </Reveal>
@@ -661,7 +655,7 @@ export default function Home() {
       <section className="py-14 md:py-16 bg-white">
         <div className="max-w-[1400px] mx-auto px-6 space-y-16">
           <Reveal className="text-center max-w-2xl mx-auto">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block mb-2">SMSM Holdings</span>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">SMSM Holdings</span>
             <h2 className="section-heading text-3xl md:text-5xl text-[#071A35] font-display">Our Group Companies</h2>
           </Reveal>
 
@@ -670,13 +664,13 @@ export default function Home() {
               const Icon = gc.icon;
               return (
                 <Reveal key={gc.name}>
-                  <div className="p-8 border border-slate-200 bg-brand-bg rounded-sm flex flex-col justify-between h-full group hover:border-[#00AEEF] transition-all">
+                  <div className="p-8 border border-slate-200 bg-brand-bg rounded-xl flex flex-col justify-between h-full group hover:border-[#00AEEF] transition-all">
                     <div>
-                      <div className="h-12 w-12 bg-[#071A35] rounded-sm grid place-items-center text-white mb-6">
+                      <div className="h-12 w-12 bg-[#071A35] rounded-xl grid place-items-center text-white mb-6">
                         <Icon className="h-6 w-6 text-[#00AEEF]" />
                       </div>
-                      <span className="text-[10px] uppercase font-bold text-[#00AEEF] tracking-wider">{gc.industry}</span>
-                      <h3 className="text-2xl font-bold text-[#071A35] font-display mt-1 mb-3">{gc.name}</h3>
+                      <span className="text-[10px] uppercase font-medium text-[#00AEEF] tracking-wider">{gc.industry}</span>
+                      <h3 className="text-2xl font-medium text-[#071A35] font-display mt-1 mb-3">{gc.name}</h3>
                       <p className="text-slate-600 text-sm leading-relaxed font-light mb-6">{gc.desc}</p>
 
                       <div className="space-y-2 border-t border-slate-200 pt-4 mb-6">
@@ -688,7 +682,7 @@ export default function Home() {
                         ))}
                       </div>
                     </div>
-                    <Link href="/group-companies" className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#071A35] font-bold group-hover:text-[#0A4ABF]">
+                    <Link href="/group-companies" className="inline-flex items-center gap-1.5 text-xs uppercase tracking-wider text-[#071A35] font-medium group-hover:text-[#0A4ABF]">
                       Explore Holding <ArrowUpRight className="h-3.5 w-3.5" />
                     </Link>
                   </div>
@@ -708,10 +702,10 @@ export default function Home() {
 
         <div className="max-w-[1400px] mx-auto px-6 relative z-10">
           <Reveal className="text-center max-w-3xl mx-auto mb-20">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-[0.25em] font-extrabold block mb-3">
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-[0.25em] font-semibold block mb-3">
               Our Advantage
             </span>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight font-display text-[#071A35]">
+            <h2 className="text-4xl md:text-5xl font-semibold tracking-tight font-display text-[#071A35]">
               Engineered for Dependability
             </h2>
             <div className="h-1.5 w-16 bg-[#00AEEF] mx-auto mt-6 rounded-full" />
@@ -722,23 +716,23 @@ export default function Home() {
               const Icon = st.icon;
               return (
                 <Reveal key={st.title} delay={idx * 0.05}>
-                  <div className="group relative p-8 md:p-10 bg-white border border-slate-100 rounded-sm hover:border-slate-200/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(7,26,53,0.08)] flex flex-col justify-between h-full overflow-hidden">
+                  <div className="group relative p-8 md:p-10 bg-white border border-slate-100 rounded-xl hover:border-slate-200/80 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_50px_-12px_rgba(7,26,53,0.08)] flex flex-col justify-between h-full overflow-hidden">
                     {/* Top colored accent line that expands on hover */}
                     <div className="absolute top-0 left-0 h-[4px] w-16 bg-gradient-to-r from-[#00AEEF] to-[#0A4ABF] group-hover:w-full transition-all duration-500 ease-out" />
 
                     <div className="relative">
                       {/* Large background number */}
-                      <span className="absolute right-0 top-0 text-7xl font-extrabold font-display text-slate-100 select-none group-hover:text-slate-200/50 transition-colors duration-300">
+                      <span className="absolute right-0 top-0 text-7xl font-semibold font-display text-slate-100 select-none group-hover:text-slate-200/50 transition-colors duration-300">
                         0{idx + 1}
                       </span>
 
                       {/* Icon container */}
-                      <div className="h-16 w-16 bg-gradient-to-br from-[#00AEEF]/5 to-[#0A4ABF]/5 rounded-sm flex items-center justify-center text-[#0A4ABF] group-hover:from-[#00AEEF] group-hover:to-[#0A4ABF] group-hover:text-white transition-all duration-500 ease-out mb-8 shadow-sm">
+                      <div className="h-16 w-16 bg-gradient-to-br from-[#00AEEF]/5 to-[#0A4ABF]/5 rounded-xl flex items-center justify-center text-[#0A4ABF] group-hover:from-[#00AEEF] group-hover:to-[#0A4ABF] group-hover:text-white transition-all duration-500 ease-out mb-8 shadow-sm">
                         <Icon className="h-7 w-7 transition-transform duration-500 group-hover:scale-110" />
                       </div>
 
                       {/* Content */}
-                      <h3 className="text-xl font-extrabold text-[#071A35] mb-4 font-display tracking-tight group-hover:text-[#0A4ABF] transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-[#071A35] mb-4 font-display tracking-tight group-hover:text-[#0A4ABF] transition-colors duration-300">
                         {st.title}
                       </h3>
                       <p className="text-slate-500 text-sm leading-relaxed font-light group-hover:text-slate-600 transition-colors duration-300">
@@ -747,7 +741,7 @@ export default function Home() {
                     </div>
 
                     {/* Minimal interactive footer indicator */}
-                    <div className="pt-6 border-t border-slate-50 mt-6 flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#0A4ABF] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="pt-6 border-t border-slate-50 mt-6 flex items-center gap-2 text-xs font-medium uppercase tracking-wider text-[#0A4ABF] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
                       <span>Reliability Verified</span>
                       <div className="h-1 w-8 bg-[#00AEEF] rounded-full" />
                     </div>
@@ -767,17 +761,17 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-[#071A35] to-[#0A4ABF]/50" />
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10 space-y-8">
           <Reveal>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight font-display">
-              Let's Build Better Engineering Solutions Together
+            <h2 className="text-4xl md:text-6xl font-semibold tracking-tight leading-tight font-display">
+              Let&apos;s Build Better Engineering Solutions Together
             </h2>
             <p className="text-white/70 max-w-2xl mx-auto text-lg mt-4 font-light">
               Connect with our systems architects today for a personalized quotation, hardware demo, or to request custom AMC support.
             </p>
             <div className="pt-8 flex flex-wrap gap-4 justify-center">
-              <Link href="/contact" className="bg-[#00AEEF] text-[#071A35] font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-sm hover:bg-white hover:text-[#071A35] transition-colors">
+              <Link href="/contact" className="bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl hover:bg-white hover:text-[#071A35] transition-colors">
                 Contact Us
               </Link>
-              <Link href="/query-form" className="border border-white/20 hover:bg-white/5 font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-sm transition-colors">
+              <Link href="/query-form" className="border border-white/20 hover:bg-white/5 font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl transition-colors">
                 Request Quote
               </Link>
             </div>

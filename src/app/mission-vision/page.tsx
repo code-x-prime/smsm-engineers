@@ -17,7 +17,7 @@ export default function MissionVision() {
       <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-extrabold block mb-4">Values & Direction</span>
+          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold block mb-4">Values & Direction</span>
           <h1 className="hero-heading text-4xl md:text-6xl tracking-tight max-w-4xl">
             Our Mission & Vision
           </h1>
@@ -39,14 +39,14 @@ export default function MissionVision() {
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
           {/* Vision card */}
           <Reveal>
-            <div className="bg-brand-bg border border-slate-200 p-10 rounded-sm h-full flex flex-col justify-between hover-lift">
+            <div className="bg-brand-bg border border-slate-200 p-10 rounded-xl h-full flex flex-col justify-between hover-lift">
               <div>
-                <div className="h-14 w-14 rounded-sm bg-[#0A4ABF]/10 grid place-items-center mb-6">
+                <div className="h-14 w-14 rounded-xl bg-[#0A4ABF]/10 grid place-items-center mb-6">
                   <Compass className="h-8 w-8 text-[#0A4ABF]" />
                 </div>
-                <h2 className="text-3xl font-bold text-[#071A35] mb-4 font-display">Our Vision</h2>
+                <h2 className="text-3xl font-medium text-[#071A35] mb-4 font-display">Our Vision</h2>
                 <p className="text-slate-600 leading-relaxed font-light">
-                  To become the world's most trusted engineering alliance for paint-tinting technology and control board integrations, facilitating uncompromised precision, environmental safety, and zero-defect efficiency in global coatings industries.
+                  We work hard every day to make SMSM Engineers the world&apos;s most respected service brand — trusted for uncompromised precision, environmental safety, and zero-defect efficiency across global coatings industries.
                 </p>
               </div>
             </div>
@@ -54,13 +54,13 @@ export default function MissionVision() {
 
           {/* Mission card */}
           <Reveal>
-            <div className="bg-[#071A35] text-white p-10 rounded-sm h-full flex flex-col justify-between hover-lift relative overflow-hidden">
+            <div className="bg-[#071A35] text-white p-10 rounded-xl h-full flex flex-col justify-between hover-lift relative overflow-hidden">
               <div className="absolute inset-0 grid-lines opacity-10" />
               <div className="relative z-10">
-                <div className="h-14 w-14 rounded-sm bg-[#00AEEF]/20 grid place-items-center mb-6">
+                <div className="h-14 w-14 rounded-xl bg-[#00AEEF]/20 grid place-items-center mb-6">
                   <Target className="h-8 w-8 text-[#00AEEF]" />
                 </div>
-                <h2 className="text-3xl font-bold mb-4 font-display">Our Mission</h2>
+                <h2 className="text-3xl font-medium mb-4 font-display">Our Mission</h2>
                 <p className="text-white/70 leading-relaxed font-light">
                   We are committed to delivering highly robust, automated paint machinery, custom PCB systems, and green chemical colorants. We provide dependable, 24/7 technical AMC support, enabling local and multinational coating manufacturers to scale production seamlessly.
                 </p>
@@ -74,7 +74,7 @@ export default function MissionVision() {
       <section className="py-20 bg-brand-bg">
         <div className="max-w-7xl mx-auto px-6">
           <Reveal className="text-center max-w-2xl mx-auto mb-16">
-            <span className="text-[#0A4ABF] text-sm uppercase tracking-widest font-extrabold block mb-2">Quality Standards</span>
+            <span className="text-[#0A4ABF] text-sm uppercase tracking-widest font-semibold block mb-2">Quality Standards</span>
             <h2 className="section-heading text-3xl md:text-5xl text-[#071A35]">
               Our Quality Commitments
             </h2>
@@ -83,11 +83,11 @@ export default function MissionVision() {
           <div className="grid md:grid-cols-3 gap-8">
             {policies.map((p, idx) => (
               <Reveal key={p.title} delay={idx * 0.1}>
-                <div className="bg-white border border-slate-200 p-8 rounded-sm hover:shadow-md transition-shadow">
-                  <div className="h-10 w-10 bg-[#00AEEF]/10 rounded-sm grid place-items-center mb-6">
+                <div className="bg-white border border-slate-200 p-8 rounded-xl hover:shadow-md transition-shadow">
+                  <div className="h-10 w-10 bg-[#00AEEF]/10 rounded-xl grid place-items-center mb-6">
                     <CheckCircle className="h-5 w-5 text-[#00AEEF]" />
                   </div>
-                  <h3 className="text-xl font-bold text-[#071A35] mb-3 font-display">{p.title}</h3>
+                  <h3 className="text-xl font-medium text-[#071A35] mb-3 font-display">{p.title}</h3>
                   <p className="text-slate-600 text-sm leading-relaxed font-light">{p.desc}</p>
                 </div>
               </Reveal>

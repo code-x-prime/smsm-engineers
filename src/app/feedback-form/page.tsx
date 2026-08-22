@@ -49,7 +49,7 @@ export default function FeedbackFormPage() {
       <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-extrabold block mb-4">Quality Desk</span>
+          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold block mb-4">Quality Desk</span>
           <h1 className="hero-heading text-4xl md:text-6xl tracking-tight max-w-4xl">
             Customer Feedback
           </h1>
@@ -69,18 +69,18 @@ export default function FeedbackFormPage() {
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <Reveal>
-            <div className="bg-brand-bg border border-slate-200 p-8 md:p-12 rounded-sm shadow-sm">
-              <h2 className="text-2xl font-bold text-[#071A35] mb-6 font-display">Quality Assessment Form</h2>
+            <div className="bg-brand-bg border border-slate-200 p-8 md:p-12 rounded-xl shadow-sm">
+              <h2 className="text-2xl font-medium text-[#071A35] mb-6 font-display">Quality Assessment Form</h2>
 
               {status === "success" && (
-                <div className="bg-[#16A34A]/10 border border-[#16A34A] text-[#16A34A] p-4 rounded-sm mb-6 flex gap-3">
+                <div className="bg-[#16A34A]/10 border border-[#16A34A] text-[#16A34A] p-4 rounded-xl mb-6 flex gap-3">
                   <CheckCircle2 className="h-5 w-5 shrink-0" />
                   <span className="text-sm">Feedback submitted successfully! Thank you for helping us maintain peak standards.</span>
                 </div>
               )}
 
               {status === "error" && (
-                <div className="bg-red-550/10 border border-red-500 text-red-600 p-4 rounded-sm mb-6 flex gap-3">
+                <div className="bg-red-50 border border-red-500 text-red-600 p-4 rounded-xl mb-6 flex gap-3">
                   <ShieldAlert className="h-5 w-5 shrink-0" />
                   <span className="text-sm">Submission failed. Please check input parameters.</span>
                 </div>
@@ -89,22 +89,22 @@ export default function FeedbackFormPage() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Your Name</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Your Name</label>
                     <input
                       type="text"
                       {...register("name")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="John Doe"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Email Address</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Email Address</label>
                     <input
                       type="email"
                       {...register("email")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="john@example.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -113,10 +113,10 @@ export default function FeedbackFormPage() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Performance Rating</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Performance Rating</label>
                     <select
                       {...register("rating")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     >
                       <option value="">Choose rating...</option>
                       <option value="5 - Exceptional">5 — Exceptional Service</option>
@@ -129,10 +129,10 @@ export default function FeedbackFormPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Service or Machine Evaluated</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Service or Machine Evaluated</label>
                     <select
                       {...register("serviceType")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     >
                       <option value="">Select category...</option>
                       <option value="AMC Support Service">AMC Field Troubleshooting</option>
@@ -146,11 +146,11 @@ export default function FeedbackFormPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Details & Comments</label>
+                  <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Details & Comments</label>
                   <textarea
                     rows={5}
                     {...register("comments")}
-                    className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                    className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     placeholder="Tell us about the speed of dispenser nozzle cleaning, quality of universal stainers, or responsiveness of local service crew..."
                   />
                   {errors.comments && <p className="text-red-500 text-xs mt-1">{errors.comments.message}</p>}
@@ -159,7 +159,7 @@ export default function FeedbackFormPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-[#071A35] hover:bg-[#0A4ABF] text-white font-bold p-3 rounded-sm text-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#071A35] hover:bg-[#0A4ABF] text-white font-medium p-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
                 >
                   {status === "loading" ? "Submitting..." : "Send Feedback"}
                   <Send className="h-4 w-4" />

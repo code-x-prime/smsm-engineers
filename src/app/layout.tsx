@@ -1,8 +1,16 @@
 import type { Metadata } from "next";
+import { Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
+
+const robotoSlab = Roboto_Slab({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-roboto-slab",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "SMSM Engineers - Dedicated to Innovation & Engineering Excellence",
@@ -24,7 +32,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={robotoSlab.variable}>
       <body className="antialiased bg-brand-bg text-brand-primary min-h-screen flex flex-col font-sans">
         <Header />
         <div className="flex-grow">
@@ -36,7 +44,7 @@ export default function RootLayout({
           href="https://wa.me/918130720777"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-4 right-4 md:bottom-6 md:right-6 z-50 h-12 w-12 md:h-16 md:w-16 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full grid place-items-center shadow-2xl hover:scale-105 transition-all"
+          className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-50 h-12 w-12 md:h-16 md:w-16 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full grid place-items-center shadow-[0_10px_35px_-8px_rgba(37,211,102,0.6)] ring-4 ring-white/40 hover:scale-105 transition-all"
           title="Chat on WhatsApp"
         >
           <IconBrandWhatsapp className="h-6 w-6 md:h-8 md:w-8" />

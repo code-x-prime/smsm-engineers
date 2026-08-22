@@ -6,8 +6,8 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { 
-  Phone, Mail, MapPin, Clock, MessageSquare, 
+import {
+  Phone, Mail, MapPin, Clock, MessageSquare,
   Send, Users, HelpCircle, Briefcase, FileText, CheckCircle2, AlertCircle
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
@@ -62,24 +62,34 @@ export default function Contact() {
     { src: "/images/hero3.png", alt: "Chemistry Synthesis Plant" },
   ];
 
+  const infoBlocks = [
+    { icon: Phone, label: "Phone", value: "+91 813-0720-777", mono: true, bold: true },
+    { icon: Mail, label: "Email", value: "support@smsmengineers.in", mono: true, bold: false },
+    { icon: MapPin, label: "Corporate Office", value: "Agra, Uttar Pradesh, India", mono: false, bold: false },
+    { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 6:00 PM", mono: false, bold: false },
+  ];
+
   return (
     <main className="bg-slate-50 min-h-screen pt-28">
       {/* SECTION 1: Hero Banner */}
-      <section className="relative h-[50vh] flex items-center bg-slate-950 text-white overflow-hidden">
+      <section className="relative min-h-[440px] md:min-h-[54vh] flex items-end bg-slate-950 text-white overflow-hidden pb-14 md:pb-0">
         <Image
           src="/images/hero_group.png"
           alt="Contact Hero Background"
           fill
-          className="object-cover opacity-40"
+          className="object-cover"
           priority
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/80 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/55 to-transparent z-10" />
+        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/55 to-slate-950/10 z-10" />
         <div className="absolute inset-0 grid-lines opacity-10 z-10" />
-        
-        <div className="relative max-w-[1400px] w-full mx-auto px-6 z-20">
+
+        <div className="relative max-w-[1400px] w-full mx-auto px-6 z-20 md:pb-16">
           <div className="max-w-3xl space-y-6">
-            <span className="text-[#00AEEF] text-xs uppercase tracking-[0.3em] font-extrabold block">Get In Touch</span>
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight font-display" style={{ fontFamily: "Georgia, serif" }}>
+            <span className="inline-flex items-center gap-2 px-3 py-1.5 bg-white/10 backdrop-blur-md rounded-full border border-white/10 text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold">
+              Get In Touch
+            </span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight font-display leading-[1.08]">
               Get In Touch With SMSM Engineers
             </h1>
           </div>
@@ -96,76 +106,61 @@ export default function Contact() {
       </div>
 
       {/* SECTION 2 & 5: Contact Info & Form */}
-      <section className="py-[120px] bg-white">
-        <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-12 gap-16">
-          
+      <section className="py-14 md:py-20 lg:py-[120px] bg-white">
+        <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16">
+
           {/* Left Column: Contact info */}
           <div className="lg:col-span-5 space-y-8">
             <Reveal>
-              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block">Contact Channels</span>
-              <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-bold mb-4" style={{ fontFamily: "Georgia, serif" }}>Our Office Address</h2>
+              <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block">Contact Channels</span>
+              <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-medium mb-4 mt-2">Our Office Address</h2>
               <p className="text-slate-500 text-sm leading-relaxed font-light mb-8">
                 Connect with our systems architects today for a personalized quotation, hardware demo, or to request custom AMC support.
               </p>
 
-              <div className="space-y-6">
-                <div className="flex gap-4 p-5 bg-slate-50 border border-slate-200 rounded-sm">
-                  <Phone className="h-6 w-6 text-[#00AEEF] shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-[#071A35] text-xs uppercase tracking-wider">Phone</h4>
-                    <p className="text-sm text-slate-600 mt-1 font-mono font-medium">+91 813-0720-777</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 p-5 bg-slate-50 border border-slate-200 rounded-sm">
-                  <Mail className="h-6 w-6 text-[#00AEEF] shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-[#071A35] text-xs uppercase tracking-wider">Email</h4>
-                    <p className="text-sm text-slate-600 mt-1 font-mono">support@smsmengineers.in</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 p-5 bg-slate-50 border border-slate-200 rounded-sm">
-                  <MapPin className="h-6 w-6 text-[#00AEEF] shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-[#071A35] text-xs uppercase tracking-wider">Corporate Office</h4>
-                    <p className="text-sm text-slate-600 mt-1 leading-relaxed">Agra, Uttar Pradesh, India</p>
-                  </div>
-                </div>
-
-                <div className="flex gap-4 p-5 bg-slate-50 border border-slate-200 rounded-sm">
-                  <Clock className="h-6 w-6 text-[#00AEEF] shrink-0" />
-                  <div>
-                    <h4 className="font-extrabold text-[#071A35] text-xs uppercase tracking-wider">Working Hours</h4>
-                    <p className="text-sm text-slate-600 mt-1">Mon - Sat: 9:00 AM - 6:00 PM</p>
-                  </div>
-                </div>
+              <div className="space-y-5">
+                {infoBlocks.map((block) => {
+                  const Icon = block.icon;
+                  return (
+                    <div key={block.label} className="brand-card flex gap-4 p-5">
+                      <div className="h-11 w-11 icon-chip shrink-0">
+                        <Icon className="h-5 w-5" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-[#071A35] text-xs uppercase tracking-wider">{block.label}</h4>
+                        <p className={`text-sm text-slate-600 mt-1 ${block.mono ? "font-mono" : ""} ${block.bold ? "font-medium" : ""} leading-relaxed`}>
+                          {block.value}
+                        </p>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
             </Reveal>
           </div>
 
           {/* Right Column: Contact form */}
-          <div className="lg:col-span-7 bg-slate-50 border border-slate-200 p-8 md:p-12 rounded-sm shadow-sm">
+          <div className="lg:col-span-7 brand-card bg-slate-50 p-8 md:p-12">
             <Reveal>
-              <h3 className="text-2xl font-bold font-display text-[#071A35] mb-6">Send A Message</h3>
-              
+              <h3 className="text-2xl font-medium font-display text-[#071A35] mb-6">Send A Message</h3>
+
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Full Name *</label>
+                    <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Full Name *</label>
                     <input
                       type="text"
                       {...register("name")}
-                      className={`w-full bg-white border ${errors.name ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                      className={`w-full bg-white border ${errors.name ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Email Address *</label>
+                    <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Email Address *</label>
                     <input
                       type="email"
                       {...register("email")}
-                      className={`w-full bg-white border ${errors.email ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                      className={`w-full bg-white border ${errors.email ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                   </div>
@@ -173,59 +168,59 @@ export default function Contact() {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Phone Number *</label>
+                    <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Phone Number *</label>
                     <input
                       type="text"
                       {...register("phone")}
-                      className={`w-full bg-white border ${errors.phone ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                      className={`w-full bg-white border ${errors.phone ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                     />
                     {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
                   </div>
                   <div>
-                    <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Company Name</label>
+                    <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Company Name</label>
                     <input
                       type="text"
                       {...register("company")}
-                      className="w-full bg-white border border-slate-300 p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]"
+                      className="w-full bg-white border border-slate-300 p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Subject *</label>
+                  <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Subject *</label>
                   <input
                     type="text"
                     {...register("subject")}
-                    className={`w-full bg-white border ${errors.subject ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                    className={`w-full bg-white border ${errors.subject ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                   />
                   {errors.subject && <p className="text-red-500 text-xs mt-1">{errors.subject.message}</p>}
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase font-extrabold text-[#071A35] tracking-wider mb-2">Message *</label>
+                  <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Message *</label>
                   <textarea
                     rows={5}
                     {...register("message")}
-                    className={`w-full bg-white border ${errors.message ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-sm focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                    className={`w-full bg-white border ${errors.message ? "border-red-500" : "border-slate-300"} p-3.5 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                   />
                   {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
                 </div>
 
                 {status === "success" && (
-                  <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-sm flex gap-3 text-emerald-800 text-sm">
+                  <div className="p-4 bg-emerald-50 border border-emerald-200 rounded-xl flex gap-3 text-emerald-800 text-sm">
                     <CheckCircle2 className="h-5 w-5 shrink-0 text-emerald-600" />
                     <div>
-                      <h5 className="font-bold">Inquiry Sent Successfully!</h5>
+                      <h5 className="font-medium">Inquiry Sent Successfully!</h5>
                       <p className="text-xs mt-0.5 text-emerald-700">Thank you. An email confirmation has been dispatched. Our team will contact you shortly.</p>
                     </div>
                   </div>
                 )}
 
                 {status === "error" && (
-                  <div className="p-4 bg-rose-50 border border-rose-200 rounded-sm flex gap-3 text-rose-800 text-sm">
+                  <div className="p-4 bg-rose-50 border border-rose-200 rounded-xl flex gap-3 text-rose-800 text-sm">
                     <AlertCircle className="h-5 w-5 shrink-0 text-rose-600" />
                     <div>
-                      <h5 className="font-bold">Submission Failed</h5>
+                      <h5 className="font-medium">Submission Failed</h5>
                       <p className="text-xs mt-0.5 text-rose-700">Please try again later or contact us directly.</p>
                     </div>
                   </div>
@@ -234,7 +229,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === "submitting"}
-                  className="w-full bg-[#071A35] hover:bg-[#00AEEF] text-white font-extrabold text-xs uppercase tracking-wider py-4 rounded-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#071A35] hover:bg-[#0A4ABF] text-white font-semibold text-xs uppercase tracking-wider py-4 rounded-full transition-all flex items-center justify-center gap-2 shadow-lg hover:-translate-y-0.5"
                 >
                   {status === "submitting" ? "Sending..." : "Send Message"} <Send className="h-4 w-4" />
                 </button>
@@ -246,25 +241,29 @@ export default function Contact() {
       </section>
 
       {/* SECTION 3: Interactive Contact Cards */}
-      <section className="py-[120px] bg-slate-50 border-t border-slate-200">
-        <div className="max-w-[1400px] mx-auto px-6 space-y-12">
+      <section className="py-14 md:py-20 lg:py-[120px] bg-slate-900 text-white relative overflow-hidden">
+        <div className="absolute inset-0 grid-lines opacity-5" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-[#00AEEF]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#0A4ABF]/10 rounded-full blur-[120px] pointer-events-none" />
+        <div className="max-w-[1400px] mx-auto px-6 space-y-12 relative z-10">
           <Reveal className="text-center max-w-2xl mx-auto">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block mb-2">Direct Directory</span>
-            <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-bold" style={{ fontFamily: "Georgia, serif" }}>Connect With Specific Departments</h2>
+            <span className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold block mb-2">Direct Directory</span>
+            <h2 className="text-3xl md:text-4xl font-display font-medium">Connect With Specific Departments</h2>
+            <div className="h-1 w-16 bg-[#00AEEF] mx-auto mt-6 rounded-full" />
           </Reveal>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             {departments.map((dept, idx) => {
               const Icon = dept.icon;
               return (
                 <Reveal key={dept.title} delay={idx * 0.05}>
-                  <div className="bg-white border border-slate-200 p-6 rounded-sm space-y-4 hover:shadow-md transition-shadow">
-                    <div className="h-10 w-10 bg-[#00AEEF]/10 rounded-sm grid place-items-center text-[#00AEEF]">
+                  <div className="p-6 border border-white/10 bg-white/[0.04] rounded-2xl space-y-4 hover:bg-white/[0.08] hover:border-[#00AEEF]/40 transition-all hover:-translate-y-1.5 h-full">
+                    <div className="h-11 w-11 bg-[#00AEEF]/10 rounded-xl grid place-items-center text-[#00AEEF]">
                       <Icon className="h-5 w-5" />
                     </div>
-                    <h4 className="font-bold text-[#071A35] font-display text-sm">{dept.title}</h4>
-                    <p className="text-xs text-slate-500 font-light leading-relaxed">{dept.desc}</p>
-                    <a href={`mailto:${dept.email}`} className="text-xs font-mono text-[#0A4ABF] font-bold block hover:underline">
+                    <h4 className="font-medium text-white font-display text-sm">{dept.title}</h4>
+                    <p className="text-xs text-white/60 font-light leading-relaxed">{dept.desc}</p>
+                    <a href={`mailto:${dept.email}`} className="text-xs font-mono text-[#00AEEF] font-medium block hover:underline">
                       {dept.email}
                     </a>
                   </div>
@@ -276,35 +275,41 @@ export default function Contact() {
       </section>
 
       {/* SECTION 4: Google Maps Placeholder */}
-      <section className="relative h-[450px] bg-slate-200 overflow-hidden border-y border-slate-300">
-        <div className="absolute inset-0 bg-[#071A35]/10 flex flex-col items-center justify-center p-8 z-10 text-center">
-          <div className="max-w-md bg-white border border-slate-200 p-8 rounded-sm shadow-xl space-y-4">
-            <MapPin className="h-10 w-10 text-[#00AEEF] mx-auto" />
-            <h3 className="text-xl font-bold font-display text-[#071A35]">Agra R&D Campus Map</h3>
-            <p className="text-xs text-slate-500 font-light">SMSM Engineers complex, industrial calibration hub and circuit designing facility, Agra, India.</p>
-            <a 
-              href="https://maps.google.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#071A35] text-white font-extrabold text-xs uppercase tracking-wider px-6 py-3 rounded-sm hover:bg-[#0A4ABF] transition-colors"
-            >
-              Open in Google Maps
-            </a>
+      <section className="py-14 md:py-20 lg:py-[100px] bg-white">
+        <div className="max-w-[1400px] mx-auto px-6">
+          <div className="relative h-[280px] sm:h-[350px] md:h-[420px] bg-slate-200 rounded-2xl overflow-hidden border border-slate-200 shadow-xl">
+            <div className="absolute inset-0 bg-[#071A35]/10 flex flex-col items-center justify-center p-8 z-10 text-center">
+              <div className="max-w-md brand-card p-8 space-y-4">
+                <div className="h-14 w-14 icon-chip mx-auto">
+                  <MapPin className="h-6 w-6" />
+                </div>
+                <h3 className="text-xl font-medium font-display text-[#071A35]">Agra R&D Campus Map</h3>
+                <p className="text-xs text-slate-500 font-light">SMSM Engineers complex, industrial calibration hub and circuit designing facility, Agra, India.</p>
+                <a
+                  href="https://maps.google.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-[#071A35] text-white font-semibold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#0A4ABF] transition-all shadow-lg hover:-translate-y-0.5"
+                >
+                  Open in Google Maps
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* SECTION 6: Office Gallery */}
-      <section className="py-[120px] bg-white">
+      <section className="py-14 md:py-20 lg:py-[120px] bg-slate-50 border-t border-slate-200">
         <div className="max-w-[1400px] mx-auto px-6 space-y-12">
           <Reveal className="text-center max-w-2xl mx-auto">
-            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-extrabold block mb-2">Our Campus</span>
-            <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-bold" style={{ fontFamily: "Georgia, serif" }}>Office Gallery</h2>
+            <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Our Campus</span>
+            <h2 className="text-3xl md:text-4xl text-[#071A35] font-display font-medium">Office Gallery</h2>
           </Reveal>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {galleryImages.map((img, idx) => (
-              <Reveal key={idx} delay={idx * 0.05} className="aspect-[4/3] relative rounded-sm overflow-hidden group shadow-md border border-slate-200">
+              <Reveal key={idx} delay={idx * 0.05} className="aspect-[4/3] relative rounded-2xl overflow-hidden group shadow-lg border border-slate-200">
                 <Image
                   src={img.src}
                   alt={img.alt}
@@ -312,8 +317,8 @@ export default function Contact() {
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
                   sizes="(max-w-768px) 50vw, 25vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4" />
-                <span className="absolute bottom-4 left-4 z-20 text-white font-display font-bold text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-slate-950/10 to-transparent z-10 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4" />
+                <span className="absolute bottom-4 left-4 z-20 text-white font-display font-medium text-xs uppercase tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">
                   {img.alt}
                 </span>
               </Reveal>
@@ -323,19 +328,19 @@ export default function Contact() {
       </section>
 
       {/* SECTION 7: CTA Banner */}
-      <section className="py-[120px] bg-[#071A35] text-white relative overflow-hidden">
+      <section className="py-14 md:py-20 lg:py-[120px] bg-[#071A35] text-white relative overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="absolute inset-0 bg-gradient-to-r from-[#071A35] to-[#0A4ABF]/50" />
         <div className="relative max-w-4xl mx-auto px-6 text-center z-10 space-y-8">
           <Reveal>
-            <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight font-display" style={{ fontFamily: "Georgia, serif" }}>
-              Let's Discuss Your Next Project
+            <h2 className="text-3xl sm:text-4xl md:text-6xl font-medium tracking-tight leading-tight font-display">
+              Let&apos;s Discuss Your Next Project
             </h2>
-            <p className="text-white/70 max-w-2xl mx-auto text-lg mt-4 font-light">
+            <p className="text-white/70 max-w-2xl mx-auto text-base md:text-lg mt-4 font-light">
               Connect with our corporate strategy desk to explore business integrations, system upgrades, or technical SLAs.
             </p>
             <div className="pt-8">
-              <a href="https://wa.me/918130720777" className="bg-[#25D366] text-white font-extrabold text-xs uppercase tracking-wider px-8 py-4 rounded-sm hover:bg-emerald-600 transition-colors inline-flex items-center gap-2">
+              <a href="https://wa.me/918130720777" className="bg-[#25D366] text-white font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-full hover:bg-emerald-600 transition-all hover:-translate-y-0.5 shadow-lg inline-flex items-center gap-2">
                 Chat On WhatsApp <MessageSquare className="h-4 w-4" />
               </a>
             </div>

@@ -21,8 +21,8 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "sans-serif"],
-        display: ["var(--font-poppins)", "sans-serif"],
+        sans: ["var(--font-roboto-slab)", "Georgia", "serif"],
+        display: ["var(--font-roboto-slab)", "Georgia", "serif"],
       },
       backgroundImage: {
         "grid-pattern": "linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)",

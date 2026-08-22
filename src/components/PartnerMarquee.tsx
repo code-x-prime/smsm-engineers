@@ -28,7 +28,7 @@ export function PartnerMarquee({ title = "Trusted by Paint Operators & Corporate
   return (
     <section className="bg-white py-16 overflow-hidden border-t border-b border-slate-100">
       <div className="max-w-[1400px] mx-auto px-6 mb-8">
-        <div className="text-center text-xs uppercase tracking-[0.2em] text-slate-400 font-bold">
+        <div className="text-center text-xs uppercase tracking-[0.2em] text-slate-400 font-medium">
           {title}
         </div>
       </div>
@@ -50,16 +50,6 @@ export function PartnerMarquee({ title = "Trusted by Paint Operators & Corporate
           ))}
         </div>
       </div>
-      
-      <style jsx global>{`
-        @keyframes marquee {
-          0% { transform: translateX(0%); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-marquee {
-          animation: marquee 30s linear infinite;
-        }
-      `}</style>
     </section>
   );
 }

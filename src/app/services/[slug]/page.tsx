@@ -16,94 +16,104 @@ type ServiceDetails = {
 
 const servicesData: Record<string, ServiceDetails> = {
   amc: {
-    name: "AMC — Any Make Tinting Equipment",
+    name: "Annual Maintenance Contract (AMC)",
     category: "Engineering Support",
-    desc: "Comprehensive Annual Maintenance Contracts (AMC) and emergency breakdown troubleshooting services. Our experienced technicians are trained to repair, calibrate, and service paint tinting equipment of any manufacturer.",
-    overview: "We take the complexity out of machine maintenance. With standardized response protocols, monthly diagnostic checks, and direct components tracking, we keep paint-dosing channels fully operational.",
+    desc: "At SMSM Engineers, we provide both comprehensive and non-comprehensive Tinting System support for Auto Color Dispensers, Manual Color Dispensers (including OS), and Gyro systems.",
+    overview: "We take the complexity out of machine maintenance. Services are aligned with stringent SLAs and delivered cost-effectively, ensuring maximum uptime through rapid breakdown resolution and preventive maintenance. Our IT Helpdesk Services, built on ITIL methodology, act as a Single Point of Contact (SPOC) for customers — managing every support request end-to-end, from call logging to call closure.",
     benefits: [
-      "Minimize retail dispensing downtime by 90%",
-      "Guaranteed calibration alignment (Delta E < 0.5)",
-      "Genuine step-motors and valves spare parts inventory",
-      "24/7 hotline with remote diagnostic capability",
+      "Services aligned with stringent SLAs, delivered cost-effectively",
+      "Maximum uptime ensured through rapid breakdown resolution and preventive maintenance",
+      "Strong capabilities in spare parts availability, technical expertise, and coordinated support across a wide product range",
+      "State-of-the-art facilities in 35 locations across India for faster, seamless service support nationwide",
+      "Integrated quality systems ensure IT infrastructure availability and business continuity",
+      "Proven expertise across tinting services has made us a preferred AMC service provider in India",
     ],
     timeline: [
-      { step: "Phase 1", label: "Initial Calibration Audit", desc: "Our technicians run a color deviation analysis on all canisters." },
-      { step: "Phase 2", label: "Purging & Nozzle Tune-up", desc: "Clearing fluid lines and replacing worn valve gaskets." },
-      { step: "Phase 3", label: "Database Calibration Link", desc: "Calibrating software variables with manual dosing checks." },
+      { step: "Coverage", label: "Comprehensive & Non-Comprehensive", desc: "Full support for Auto Color Dispensers, Manual Color Dispensers (including OS), and Gyro systems." },
+      { step: "Helpdesk", label: "Single Point of Contact (SPOC)", desc: "End-to-end management of support requests, from call logging to call closure, on an ITIL-based framework." },
+      { step: "Activities", label: "Break-fix, PM & Upgrades", desc: "Break-fix support, preventive maintenance, installation & implementation, plus software upgrades and updates." },
     ],
     expertise: {
-      "Supported Brands": "Fast & Fluid, Corob, Hero, Dromont, and others",
-      "Response SLA": "Within 24 hours for metro cities",
-      "Testing standard": "Spectrophotometric delta checks",
+      "Coverage Type": "Comprehensive & Non-Comprehensive AMC",
+      "Service Locations": "35 locations across India",
+      "Helpdesk Standard": "ITIL methodology, Single Point of Contact (SPOC)",
     },
     image: "/images/about_laboratory.png",
   },
   "color-consultancy": {
     name: "Color Consultancy",
     category: "Consulting",
-    desc: "Our consulting team assists paint manufacturing companies in defining chemical color recipes, universal stainer formulations, and optimizing base-coat reflection indexes.",
-    overview: "We help factories design the chemistry of color. By calculating optimal pigment loading and conducting weatherometer weathering tests, we ensure consistent coatings formulations.",
+    desc: "At SMSM Engineers, we provide a complete end-to-end solution for tinting systems, ensuring accuracy, consistency, and customer satisfaction.",
+    overview: "Our consulting team assists paint manufacturing companies in defining chemical color recipes, universal stainer formulations, and optimizing base-coat reflection indexes — from 16 colourants and colour fandecks to full technical sales and secondary sales enablement support.",
     benefits: [
-      "Optimized Pigment Volume Concentration (PVC) costs",
-      "High weather and lightfastness ratings",
-      "Custom shade recipe development databases",
-      "SOP implementation for Point of Sale tinting networks",
+      "16 Colourants",
+      "Colour Fandecks & Databank",
+      "Formulations on all popular shade cards",
+      "Auto Color Dispensers, Manual Color Dispensers & Gyroshakers",
+      "Base Development & Ready-made Bases",
+      "Technical Sales & Service Support",
+      "Product Promotions",
+      "Secondary Sales Enablement",
     ],
     timeline: [
       { step: "Phase 1", label: "Spectral Mapping", desc: "Scanning master color targets using spectrophotometers." },
-      { step: "Phase 2", label: "Recipe Formulation", desc: "Calculating cost-optimized raw pigment loads." },
-      { step: "Phase 3", label: "Weather Durability Testing", desc: "Conducting accelerated weathering check cycles." },
+      { step: "Phase 2", label: "Recipe Formulation", desc: "Calculating cost-optimized raw pigment loads across 16 colourants." },
+      { step: "Phase 3", label: "Sales & Field Enablement", desc: "Technical sales support, product promotions, and secondary sales enablement at dealer level." },
     ],
     expertise: {
-      "Calculation engine": "Kubelka-Munk color matching math",
-      "Standard compliance": "ASTM, ISO weathering parameters",
-      "Substrates tested": "Gypsum board, concrete panels, sheet metal",
+      "Colourant System": "16 Colourants with full fandeck & databank",
+      "Shade Compatibility": "Formulations on all popular shade cards",
+      "Machinery Support": "Auto, Manual Dispensers & Gyroshakers",
     },
     image: "/images/product_shade_card.png",
   },
   "pcb-design": {
     name: "PCB Designing",
     category: "Electronics",
-    desc: "Industrial-grade electronic control board design, schematic layout, and firmware design for machinery step-motor controls.",
-    overview: "We design robust, noise-tolerant hardware controllers capable of operating in high-temperature manufacturing environments. From prototype design to high-volume PCB printing, we handle the entire vertical stack.",
+    desc: "At SMSM Engineers, we specialize in 2-layer and multilayer, high-density, compact PCB designs that form the backbone of modern electronic hardware.",
+    overview: "A Printed Circuit Board (PCB) — also known as a Printed Wiring Board (PWB) — is the essential platform that supports and interconnects all electronic components. Our capabilities span PCB layout design, prototyping, and assembly integrated into every custom electronics hardware project, as well as standalone PCB design and prototyping services that convert existing schematic diagrams into fully assembled prototypes.",
     benefits: [
-      "Highly noise-immune industrial control traces",
-      "Custom firmware programmed in optimized C/C++",
-      "RoHS compliant, lead-free board specifications",
-      "Onboard diagnostic LEDs and remote logging ports",
+      "Medical Diagnostic Instruments & Analyzers — ECG, Blood Pressure, Blood Sugar, Electrolyte, Hb/HbA1c, Blood Gas Analyzers, Temperature & Heart Rate Monitors, PT/INR Analyzer",
+      "Internet of Things (IoT) — Home Automation, Industrial Automation, Wi-Fi, Bluetooth, GSM/2G/3G/LTE devices",
+      "Test & Measurement Equipment — Instrumentation systems, Data Acquisition Systems, Data Loggers",
+      "Human Machine Interface (HMI) — Color LCD & Touchscreen systems for industrial and consumer applications",
+      "Telemetry & Remote Monitoring — LTE/3G/GSM/GPRS based solutions, GPS-enabled location tracking",
+      "Wireless Systems — wireless control, data acquisition, wireless mouse, wireless water level indicators",
+      "Control & Monitoring Systems — Temperature/humidity controllers with PID control, remote alarm monitoring",
+      "Power & Energy Solutions — Low power SMPS, battery chargers (NiCd, NiMH, Li-Ion, Li-Polymer), PID process control",
     ],
     timeline: [
-      { step: "Phase 1", label: "Schematic Mapping", desc: "Creating hardware logic flow diagrams." },
-      { step: "Phase 2", label: "Layout Routing", desc: "Optimizing electromagnetic interference (EMI) paths." },
-      { step: "Phase 3", label: "Reflow & Assembly", desc: "Solder reflow, parts assembly, and thermal load testing." },
+      { step: "Phase 1", label: "Schematic Mapping", desc: "Creating hardware logic flow diagrams from existing or new schematics." },
+      { step: "Phase 2", label: "Layout Routing", desc: "2-layer to multilayer, high-density, compact PCB layout and routing." },
+      { step: "Phase 3", label: "Prototyping & Assembly", desc: "Converting schematics into fully assembled, tested prototypes." },
     ],
     expertise: {
-      "Board layers": "1 to 8 Layers (FR4, Aluminum base)",
-      "Controllers": "STM32, ARM Cortex, PIC series",
-      "EDA Software": "Altium Designer, KiCad",
+      "Board Types": "2-layer & multilayer, high-density, compact PCBs",
+      "Applications": "Medical, IoT, HMI, Telemetry, Wireless, Power Electronics",
+      "Services": "Layout design, prototyping, and full assembly integration",
     },
     image: "/images/hero2.png",
   },
   software: {
     name: "Software Development",
     category: "Software Solutions",
-    desc: "Custom formulation database managers, paint visualizer apps, and POS software modules tailored for retail and factory setups.",
-    overview: "We build modern software modules that link paint machinery to enterprise ERPs. With secure APIs and simple touch interfaces, we make paint mixing intuitive and reliable.",
+    desc: "At SMSM Engineers, we position ourselves as an effective and reliable Software Development Company, delivering professional and contemporary solutions that modernize business operations and help maximize organizational goals.",
+    overview: "From startups to corporate enterprises, SMSM Engineers serves as a strategic software partner, committed to providing the best results in software development and turnkey solutions. By leveraging proven methodologies and modern technologies, we create solutions that transform the way businesses operate. We believe in building value-driven business relationships — through sophisticated project management techniques and advanced software engineering practices, we ensure successful outcomes that align with shared business objectives.",
     benefits: [
-      "Direct USB/Serial interfaces with automatic dispensers",
-      "Cloud formulation database sync and offline fallback modes",
-      "Intuitive client-facing color matching visualizers",
-      "Responsive interfaces tailored for retail shops",
+      "Strategic software partnership for startups and corporate enterprises alike",
+      "Turnkey software solutions built on proven methodologies and modern technologies",
+      "Sophisticated project management techniques and advanced engineering practices",
+      "Value-driven business relationships focused on shared objectives",
     ],
     timeline: [
-      { step: "Phase 1", label: "Database Indexing", desc: "Importing paint manufacturer formulation tables." },
-      { step: "Phase 2", label: "Driver Customization", desc: "Writing canister step-motor rotation instructions." },
-      { step: "Phase 3", label: "POS Integration", desc: "Deploying user interface at retail paint outlets." },
+      { step: "Phase 1", label: "Discovery & Planning", desc: "Understanding business objectives and mapping the software solution scope." },
+      { step: "Phase 2", label: "Engineering & Development", desc: "Building the solution using modern technologies and proven engineering practices." },
+      { step: "Phase 3", label: "Deployment & Partnership", desc: "Turnkey delivery followed by an ongoing, value-driven business relationship." },
     ],
     expertise: {
-      "Tech stack": "React, Next.js, Electron, PostgreSQL, SQLite",
-      "Communication": "USB COM ports, Bluetooth BLE, RS-232",
-      "Operating Systems": "Windows 10/11, Android, iOS, Linux",
+      "Engagement Model": "Strategic software partner — startups to enterprises",
+      "Delivery Style": "Turnkey solutions with sophisticated project management",
+      "Focus": "Business process modernization and organizational goal alignment",
     },
     image: "/images/hero3.png",
   },
@@ -240,8 +250,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <ArrowLeft className="h-4 w-4" /> Back to Services
               </Link>
               <div>
-                <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-bold block mb-2">{service.category}</span>
-                <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl tracking-tight font-display font-bold leading-tight">
+                <span className="text-xs uppercase tracking-wider text-[#00AEEF] font-medium block mb-2">{service.category}</span>
+                <h1 className="hero-heading text-4xl md:text-5xl lg:text-6xl tracking-tight font-display font-medium leading-tight">
                   {service.name}
                 </h1>
               </div>
@@ -251,7 +261,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div className="pt-2 flex flex-wrap gap-4">
                 <Link
                   href="/query-form"
-                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-bold px-6 py-3 rounded-sm transition-colors text-sm"
+                  className="inline-flex items-center gap-2 bg-[#00AEEF] hover:bg-white text-[#071A35] font-medium px-6 py-3 rounded-xl transition-colors text-sm"
                 >
                   Request Service Assessment <ArrowUpRight className="h-4 w-4" />
                 </Link>
@@ -260,7 +270,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
             {/* Right Column */}
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden border border-white/10 shadow-2xl group bg-slate-950">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-slate-950">
                 <Image
                   src={service.image}
                   alt={service.name}
@@ -272,8 +282,8 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
               {/* Decorative design elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-[#00AEEF]/40 pointer-events-none" />
-              <div className="absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-[#00AEEF]/40 pointer-events-none" />
+              <div className="hidden sm:block absolute -top-4 -right-4 w-24 h-24 border-t-2 border-r-2 border-[#00AEEF]/40 rounded-tr-2xl pointer-events-none" />
+              <div className="hidden sm:block absolute -bottom-4 -left-4 w-24 h-24 border-b-2 border-l-2 border-[#00AEEF]/40 rounded-bl-2xl pointer-events-none" />
             </div>
           </div>
         </div>
@@ -292,12 +302,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-12 gap-12">
           <div className="md:col-span-8 space-y-6">
-            <h2 className="text-2xl font-bold text-[#071A35] font-display">Service Overview</h2>
+            <h2 className="text-2xl font-medium text-[#071A35] font-display">Service Overview</h2>
             <p className="text-slate-600 text-lg leading-relaxed font-light">{service.overview}</p>
 
             {/* Benefits */}
             <div className="pt-6 space-y-4">
-              <h3 className="text-xl font-bold text-[#071A35] font-display">Key Service Benefits</h3>
+              <h3 className="text-xl font-medium text-[#071A35] font-display">Key Service Benefits</h3>
               <ul className="grid sm:grid-cols-2 gap-4">
                 {service.benefits.map((b, idx) => (
                   <li key={idx} className="flex gap-2 text-slate-600 text-sm">
@@ -309,12 +319,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             </div>
           </div>
 
-          <div className="md:col-span-4 bg-brand-bg border border-slate-200 p-6 rounded-sm h-fit space-y-4">
-            <h3 className="font-bold text-[#071A35] font-display text-lg">Inquire About This Service</h3>
+          <div className="md:col-span-4 bg-brand-bg border border-slate-200 p-6 rounded-xl h-fit space-y-4">
+            <h3 className="font-medium text-[#071A35] font-display text-lg">Inquire About This Service</h3>
             <p className="text-xs text-slate-500">Need specific customized pricing or a technician site visit?</p>
             <Link
               href="/query-form"
-              className="w-full text-center block bg-[#0A4ABF] hover:bg-[#071A35] text-white font-bold p-3 rounded-sm text-sm transition-colors"
+              className="w-full text-center block bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium p-3 rounded-xl text-sm transition-colors"
             >
               Get Custom Quote
             </Link>
@@ -326,13 +336,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {slug === "downloads" && (
         <section className="py-16 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-6">
-            <h2 className="text-3xl font-bold text-[#071A35] font-display mb-8 text-center">Corporate Credentials & Technical Catalog</h2>
+            <h2 className="text-3xl font-medium text-[#071A35] font-display mb-8 text-center">Corporate Credentials & Technical Catalog</h2>
             <div className="grid md:grid-cols-3 gap-8">
               {/* DIPP */}
-              <div className="border border-slate-200 p-6 rounded-sm bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#00AEEF] text-xs font-bold uppercase">Government Registry</span>
-                  <h3 className="text-lg font-bold text-[#071A35] mt-1 mb-3">Startup India DPIIT Recognition</h3>
+                  <span className="text-[#00AEEF] text-xs font-medium uppercase">Government Registry</span>
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Startup India DPIIT Recognition</h3>
                   <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
                     Verify our official certificate of recognition issued by the Department for Promotion of Industry and Internal Trade (DIPP8079).
                   </p>
@@ -341,17 +351,17 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="/downloads/dipp_recognition.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-bold text-sm py-2.5 rounded-sm transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
                 >
                   Download Certificate (PDF)
                 </a>
               </div>
 
               {/* Kamdhenu */}
-              <div className="border border-slate-200 p-6 rounded-sm bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#00AEEF] text-xs font-bold uppercase">Client Verification</span>
-                  <h3 className="text-lg font-bold text-[#071A35] mt-1 mb-3">Kamdhenu Paints Recommendation</h3>
+                  <span className="text-[#00AEEF] text-xs font-medium uppercase">Client Verification</span>
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Kamdhenu Paints Recommendation</h3>
                   <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
                     Official evaluation letter detailing engineering service parameters, calibration audits, and operational maintenance SLA compliance.
                   </p>
@@ -360,26 +370,26 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                   href="/downloads/kamdhenu_recommendation.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-bold text-sm py-2.5 rounded-sm transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
                 >
                   Download Letter (PDF)
                 </a>
               </div>
 
               {/* Popular */}
-              <div className="border border-slate-200 p-6 rounded-sm bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
+              <div className="border border-slate-200 p-6 rounded-xl bg-brand-bg hover:shadow-lg transition-all flex flex-col justify-between">
                 <div>
-                  <span className="text-[#00AEEF] text-xs font-bold uppercase">Client Verification</span>
-                  <h3 className="text-lg font-bold text-[#071A35] mt-1 mb-3">Popular Paints Recommendation</h3>
+                  <span className="text-[#00AEEF] text-xs font-medium uppercase">Client Verification</span>
+                  <h3 className="text-lg font-medium text-[#071A35] mt-1 mb-3">Popular Paints Recommendation</h3>
                   <p className="text-slate-600 text-sm font-light leading-relaxed mb-4">
-                    Corporate quality endorsement certifying SMSM Engineers' equipment maintenance logs and spectrophotometric calibration audits.
+                    Corporate quality endorsement certifying SMSM Engineers&apos; equipment maintenance logs and spectrophotometric calibration audits.
                   </p>
                 </div>
                 <a
                   href="/downloads/popular_recommendation.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-bold text-sm py-2.5 rounded-sm transition-colors w-full"
+                  className="inline-flex items-center justify-center gap-2 bg-[#0A4ABF] hover:bg-[#071A35] text-white font-medium text-sm py-2.5 rounded-xl transition-colors w-full"
                 >
                   Download Letter (PDF)
                 </a>
@@ -392,12 +402,12 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* Process Timeline */}
       <section className="py-16 bg-brand-bg border-t border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#071A35] font-display mb-10 text-center">Service Implementation Timeline</h2>
+          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-10 text-center">Service Implementation Timeline</h2>
           <div className="grid md:grid-cols-3 gap-8">
             {service.timeline.map((item) => (
-              <div key={item.step} className="bg-white border border-slate-200 p-6 rounded-sm">
-                <span className="text-[#00AEEF] text-xs font-bold uppercase tracking-wider">{item.step}</span>
-                <h3 className="text-lg font-bold text-[#071A35] font-display mt-1 mb-2">{item.label}</h3>
+              <div key={item.step} className="bg-white border border-slate-200 p-6 rounded-xl">
+                <span className="text-[#00AEEF] text-xs font-medium uppercase tracking-wider">{item.step}</span>
+                <h3 className="text-lg font-medium text-[#071A35] font-display mt-1 mb-2">{item.label}</h3>
                 <p className="text-slate-600 text-sm font-light leading-relaxed">{item.desc}</p>
               </div>
             ))}
@@ -408,13 +418,13 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* Technical Expertise Parameters */}
       <section className="py-16 bg-white">
         <div className="max-w-3xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#071A35] font-display mb-6 text-center">Technical Parameters & Standards</h2>
-          <div className="border border-slate-200 rounded-sm overflow-hidden">
-            <table className="w-full text-sm text-left">
+          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-6 text-center">Technical Parameters & Standards</h2>
+          <div className="border border-slate-200 rounded-xl overflow-x-auto">
+            <table className="w-full text-sm text-left min-w-[420px]">
               <tbody>
                 {Object.entries(service.expertise).map(([key, val]) => (
                   <tr key={key} className="border-b border-slate-200 last:border-b-0">
-                    <td className="bg-brand-bg px-6 py-4 font-bold text-[#071A35] w-2/5">{key}</td>
+                    <td className="bg-brand-bg px-6 py-4 font-medium text-[#071A35] w-2/5 whitespace-nowrap">{key}</td>
                     <td className="px-6 py-4 text-slate-600">{val}</td>
                   </tr>
                 ))}
@@ -427,14 +437,14 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       {/* Related Services */}
       <section className="py-16 bg-brand-bg border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-6">
-          <h2 className="text-2xl font-bold text-[#071A35] font-display mb-8">Related Support Programs</h2>
+          <h2 className="text-2xl font-medium text-[#071A35] font-display mb-8">Related Support Programs</h2>
           <div className="grid sm:grid-cols-3 gap-6">
             {relatedServices.map(([key, item]) => (
-              <Link key={key} href={`/services/${key}`} className="bg-white border border-slate-200 p-6 rounded-sm hover:shadow-lg transition-all group">
-                <span className="text-xs uppercase text-slate-400 font-bold">{item.category}</span>
-                <h3 className="text-lg font-bold text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display">{item.name}</h3>
+              <Link key={key} href={`/services/${key}`} className="bg-white border border-slate-200 p-6 rounded-xl hover:shadow-lg transition-all group">
+                <span className="text-xs uppercase text-slate-400 font-medium">{item.category}</span>
+                <h3 className="text-lg font-medium text-[#071A35] group-hover:text-[#0A4ABF] mt-1 mb-2 font-display">{item.name}</h3>
                 <p className="text-slate-500 text-xs line-clamp-2 leading-relaxed">{item.desc}</p>
-                <div className="text-[#00AEEF] text-xs font-bold mt-4 inline-flex items-center gap-1">
+                <div className="text-[#00AEEF] text-xs font-medium mt-4 inline-flex items-center gap-1">
                   Learn Details <ChevronRight className="h-3.5 w-3.5" />
                 </div>
               </Link>
@@ -447,10 +457,10 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <section className="py-16 bg-[#071A35] text-white text-center relative overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="relative z-10 max-w-2xl mx-auto px-6 space-y-6">
-          <h2 className="text-3xl font-bold font-display">Need Custom Engineering Solutions?</h2>
+          <h2 className="text-3xl font-medium font-display">Need Custom Engineering Solutions?</h2>
           <p className="text-white/70 text-sm font-light">Contact our engineering group today to schedule a detailed factory overview or system configuration analysis.</p>
           <div className="pt-2">
-            <Link href="/contact" className="bg-[#00AEEF] hover:bg-white text-[#071A35] font-bold px-8 py-3 rounded-sm transition-colors text-sm inline-block">
+            <Link href="/contact" className="bg-[#00AEEF] hover:bg-white text-[#071A35] font-medium px-8 py-3 rounded-xl transition-colors text-sm inline-block">
               Contact Systems Engineer
             </Link>
           </div>

@@ -52,7 +52,7 @@ export default function QueryFormPage() {
       <section className="relative py-20 bg-[#071A35] text-white overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-10" />
         <div className="relative max-w-7xl mx-auto px-6 z-10">
-          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-extrabold block mb-4">Request Proposal</span>
+          <span className="text-[#00AEEF] text-xs uppercase tracking-[0.25em] font-semibold block mb-4">Request Proposal</span>
           <h1 className="hero-heading text-4xl md:text-6xl tracking-tight max-w-4xl">
             Equipment Inquiry
           </h1>
@@ -72,18 +72,18 @@ export default function QueryFormPage() {
       <section className="py-20 bg-white">
         <div className="max-w-3xl mx-auto px-6">
           <Reveal>
-            <div className="bg-brand-bg border border-slate-200 p-8 md:p-12 rounded-sm shadow-sm">
-              <h2 className="text-2xl font-bold text-[#071A35] mb-6 font-display">Enterprise Quotation Request</h2>
+            <div className="bg-brand-bg border border-slate-200 p-8 md:p-12 rounded-xl shadow-sm">
+              <h2 className="text-2xl font-medium text-[#071A35] mb-6 font-display">Enterprise Quotation Request</h2>
 
               {status === "success" && (
-                <div className="bg-[#16A34A]/10 border border-[#16A34A] text-[#16A34A] p-4 rounded-sm mb-6 flex gap-3">
+                <div className="bg-[#16A34A]/10 border border-[#16A34A] text-[#16A34A] p-4 rounded-xl mb-6 flex gap-3">
                   <CheckCircle2 className="h-5 w-5 shrink-0" />
                   <span className="text-sm">Inquiry sent successfully! Our sales team will mail customized layouts.</span>
                 </div>
               )}
 
               {status === "error" && (
-                <div className="bg-red-550/10 border border-red-500 text-red-600 p-4 rounded-sm mb-6 flex gap-3">
+                <div className="bg-red-50 border border-red-500 text-red-600 p-4 rounded-xl mb-6 flex gap-3">
                   <ShieldAlert className="h-5 w-5 shrink-0" />
                   <span className="text-sm">Failed to submit. Please check parameters.</span>
                 </div>
@@ -92,22 +92,22 @@ export default function QueryFormPage() {
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Your Name</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Your Name</label>
                     <input
                       type="text"
                       {...register("name")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="John Doe"
                     />
                     {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Company Name</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Company Name</label>
                     <input
                       type="text"
                       {...register("company")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="e.g. Berger Alliance UP"
                     />
                     {errors.company && <p className="text-red-500 text-xs mt-1">{errors.company.message}</p>}
@@ -116,22 +116,22 @@ export default function QueryFormPage() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Email Address</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Email Address</label>
                     <input
                       type="email"
                       {...register("email")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="procurement@berger.com"
                     />
                     {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Phone Number</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Phone Number</label>
                     <input
                       type="text"
                       {...register("phone")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                       placeholder="+91 9876543210"
                     />
                     {errors.phone && <p className="text-red-500 text-xs mt-1">{errors.phone.message}</p>}
@@ -140,10 +140,10 @@ export default function QueryFormPage() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Product of Interest</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Product of Interest</label>
                     <select
                       {...register("productInterest")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     >
                       <option value="">Select machinery / solution...</option>
                       <option value="Automatic Dispenser">Automatic Color Dispenser</option>
@@ -156,10 +156,10 @@ export default function QueryFormPage() {
                   </div>
 
                   <div>
-                    <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Monthly Production Volume</label>
+                    <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Monthly Production Volume</label>
                     <select
                       {...register("estimatedVolume")}
-                      className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                      className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     >
                       <option value="">Select volume...</option>
                       <option value="Under 5,000 Liters">Under 5,000 Liters</option>
@@ -172,11 +172,11 @@ export default function QueryFormPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs uppercase font-bold text-slate-500 mb-1">Additional Requirements (Optional)</label>
+                  <label className="block text-xs uppercase font-medium text-slate-500 mb-1">Additional Requirements (Optional)</label>
                   <textarea
                     rows={4}
                     {...register("message")}
-                    className="w-full bg-white border border-slate-200 p-3 rounded-sm text-sm focus:outline-none focus:border-[#00AEEF]"
+                    className="w-full bg-white border border-slate-200 p-3 rounded-xl text-sm focus:outline-none focus:border-[#00AEEF]"
                     placeholder="Specify number of canisters (e.g. 16 vs 24), customized decals, or specialized step-motor configurations..."
                   />
                 </div>
@@ -184,7 +184,7 @@ export default function QueryFormPage() {
                 <button
                   type="submit"
                   disabled={status === "loading"}
-                  className="w-full bg-[#071A35] hover:bg-[#0A4ABF] text-white font-bold p-3 rounded-sm text-sm transition-colors flex items-center justify-center gap-2"
+                  className="w-full bg-[#071A35] hover:bg-[#0A4ABF] text-white font-medium p-3 rounded-xl text-sm transition-colors flex items-center justify-center gap-2"
                 >
                   {status === "loading" ? "Submitting..." : "Send Proposal Request"}
                   <Send className="h-4 w-4" />
