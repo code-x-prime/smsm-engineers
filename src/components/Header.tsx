@@ -177,7 +177,7 @@ export function Header() {
           </Link>
 
           {/* Navigation Menu */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-0.5 xl:gap-1 shrink-0">
             {navList.map((item) => {
               if ("to" in item) {
                 const isActive = pathname === item.to || (item.to !== "/" && pathname.startsWith(item.to));
@@ -186,7 +186,7 @@ export function Header() {
                     key={item.label}
                     href={item.to}
                     className={cn(
-                      "px-3.5 py-2 text-sm font-medium transition-all relative group/link rounded-full",
+                      "px-2.5 xl:px-3.5 py-2 text-sm font-medium transition-all relative group/link rounded-full whitespace-nowrap",
                       isActive ? "text-[#0A4ABF] bg-[#00AEEF]/10" : "text-[#071A35]/80 hover:text-[#0A4ABF] hover:bg-slate-50"
                     )}
                   >
@@ -208,7 +208,7 @@ export function Header() {
                 <div key={item.label} onMouseEnter={() => setOpen(item.label)}>
                   <button
                     className={cn(
-                      "px-3.5 py-2 text-sm font-medium flex items-center gap-1 transition-all rounded-full",
+                      "px-2.5 xl:px-3.5 py-2 text-sm font-medium flex items-center gap-1 transition-all rounded-full whitespace-nowrap",
                       isOpen || hasActiveChild ? "text-[#0A4ABF] bg-[#00AEEF]/10" : "text-[#071A35]/80 hover:text-[#0A4ABF] hover:bg-slate-50"
                     )}
                   >
@@ -297,7 +297,7 @@ export function Header() {
             </a>
             <Link
               href="/query-form"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-5 py-3 rounded-full hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-4px_rgba(0,174,239,0.5)] transition-all"
+              className="hidden sm:inline-flex items-center gap-2 bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-5 py-3 rounded-full hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-4px_rgba(0,174,239,0.5)] transition-all whitespace-nowrap shrink-0"
             >
               Request Quote <IconArrowUpRight className="h-4 w-4" />
             </Link>
