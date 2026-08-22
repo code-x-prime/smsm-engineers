@@ -18,7 +18,7 @@ const partnerSchema = z.object({
   contactPerson: z.string().min(2, "Contact person name is required"),
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
-  type: z.string().min(1, "Please select partnership type"),
+  partnershipType: z.string().min(1, "Please select partnership type"),
   region: z.string().min(2, "Please specify your target operational territory"),
   message: z.string().optional(),
 });
@@ -282,8 +282,8 @@ export default function BecomePartner() {
                 <div>
                   <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider mb-2">Partnership Category *</label>
                   <select
-                    {...register("type")}
-                    className={`w-full bg-white border ${errors.type ? "border-red-500" : "border-slate-300"} p-3 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
+                    {...register("partnershipType")}
+                    className={`w-full bg-white border ${errors.partnershipType ? "border-red-500" : "border-slate-300"} p-3 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]`}
                   >
                     <option value="">Select a category...</option>
                     <option value="Dealer">Dealer Partner</option>
@@ -291,7 +291,7 @@ export default function BecomePartner() {
                     <option value="Contractor">Project Contractor</option>
                     <option value="Vendor">Component Vendor</option>
                   </select>
-                  {errors.type && <p className="text-red-500 text-xs mt-1">{errors.type.message}</p>}
+                  {errors.partnershipType && <p className="text-red-500 text-xs mt-1">{errors.partnershipType.message}</p>}
                 </div>
 
                 <div>
