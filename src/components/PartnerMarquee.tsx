@@ -16,7 +16,7 @@ const clientLogos = [
   { name: "Kamdhenu Paints", src: "/images/logos/kamdhenu.jpg" },
   { name: "JK Protomax", src: "/images/logos/jk-protomax.png" },
   { name: "Valcoat Paints", src: "/images/logos/valcoat.png" },
-  { name: "AkzoNobel", src: "/images/logos/akzonobel.jpg" },
+  { name: "AkzoNobel", src: "/images/logos/akzonobel.png" },
   { name: "JSW Dulux", src: "/images/logos/jsw-dulux.webp" },
   { name: "Toyo Ink", src: "/images/logos/toyo-ink.png" }
 ];
