@@ -287,13 +287,15 @@ export default function About() {
                     </div>
                     <div className="border-t border-white/5 pt-4 mt-6 flex items-center justify-between">
                       {leader.signature ? (
-                        <Image
-                          src={leader.signature}
-                          alt={`${leader.name} signature`}
-                          width={110}
-                          height={40}
-                          className="h-8 w-auto object-contain brightness-0 invert opacity-70"
-                        />
+                        <div className="bg-white rounded-lg px-3 py-1.5">
+                          <Image
+                            src={leader.signature}
+                            alt={`${leader.name} signature`}
+                            width={110}
+                            height={40}
+                            className="h-6 w-auto object-contain"
+                          />
+                        </div>
                       ) : (
                         <span className="text-[10px] text-white/40 uppercase tracking-widest font-medium font-mono">
                           {leader.name}
