@@ -5,17 +5,17 @@ import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { 
-  IconChevronDown, 
-  IconMenu2, 
-  IconX, 
-  IconArrowUpRight, 
-  IconPhone, 
-  IconMail, 
-  IconMapPin, 
-  IconClock, 
-  IconBrandWhatsapp, 
-  IconBrandLinkedin, 
+import {
+  IconChevronDown,
+  IconMenu2,
+  IconX,
+  IconArrowUpRight,
+  IconPhone,
+  IconMail,
+  IconMapPin,
+  IconClock,
+  IconBrandWhatsapp,
+  IconBrandLinkedin,
   IconBrandFacebook,
   IconDownload,
   IconHelpCircle,

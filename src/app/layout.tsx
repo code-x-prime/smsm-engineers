@@ -59,13 +59,14 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
-        {/* GLOBAL FLOATING WHATSAPP BUTTON */}
+        {/* GLOBAL FLOATING WHATSAPP BUTTON (BOTTOM LEFT) */}
         <a
           href="https://wa.me/918130720777"
           target="_blank"
           rel="noopener noreferrer"
-          className="fixed bottom-5 right-5 md:bottom-7 md:right-7 z-50 h-12 w-12 md:h-16 md:w-16 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full grid place-items-center shadow-[0_10px_35px_-8px_rgba(37,211,102,0.6)] ring-4 ring-white/40 hover:scale-105 transition-all"
+          className="fixed bottom-5 left-5 md:bottom-7 md:left-7 z-50 h-12 w-12 md:h-16 md:w-16 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full grid place-items-center shadow-[0_10px_35px_-8px_rgba(37,211,102,0.6)] ring-4 ring-white/40 hover:scale-105 transition-all"
           title="Chat on WhatsApp"
+          aria-label="Chat on WhatsApp"
         >
           <IconBrandWhatsapp className="h-6 w-6 md:h-8 md:w-8" />
         </a>
