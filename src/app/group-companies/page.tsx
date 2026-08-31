@@ -32,7 +32,7 @@ export default function GroupCompanies() {
       desc: "SMSM Pumps manufactures heavy-duty submersibles, hydraulic boosters, and agricultural fluid dynamic impellers. Built in-house to withstand heavy-viscosity fluids and chemicals.",
       vision: "Engineering zero-friction fluid circulation loops for extreme factory environments.",
       logo: Droplet,
-      image: "/images/hero1.png",
+      image: "/images/company_pumps.jpg",
       achievements: [
         "50,000+ units deployed across agricultural and industrial states",
         "Complete compliance with IS 8472 engineering standards",
@@ -62,7 +62,7 @@ export default function GroupCompanies() {
       desc: "UB Foundation is our dedicated non-profit social organization. We fund primary school computer lab setups, construct clean-water boreholes, and sponsor skill development programs.",
       vision: "Empowering rural communities through clean water, education, and vocational skills.",
       logo: HeartHandshake,
-      image: "/images/about_laboratory.png",
+      image: "/images/company_ub_foundation.jpg",
       achievements: [
         "Sponsoring vocational technical training for 200+ students annually",
         "12 clean-water borehole installations completed in remote regions",
