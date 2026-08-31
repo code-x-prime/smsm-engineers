@@ -208,6 +208,11 @@ export default function QueryFormPage() {
                   {status === "loading" ? "Submitting..." : "Send Proposal Request"}
                   <Send className="h-4 w-4" />
                 </button>
+                <p className="text-[11px] text-slate-400 text-center leading-relaxed">
+                  This site is protected by reCAPTCHA and the Google{" "}
+                  <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#0A4ABF]">Privacy Policy</a> and{" "}
+                  <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#0A4ABF]">Terms of Service</a> apply.
+                </p>
               </form>
             </div>
           </Reveal>

@@ -133,3 +133,12 @@ html {
   );
   color: #0a4abf;
 }
+
+/* Google reCAPTCHA v3's auto-injected floating badge collides with our fixed
+   WhatsApp button and behaves inconsistently across pages. Hiding it is
+   explicitly permitted by Google as long as the required attribution text
+   is shown near any form it protects — see the .recaptcha-note class used
+   on each form's submit area. */
+.grecaptcha-badge {
+  visibility: hidden !important;
+}
