@@ -209,19 +209,19 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://smsmengineers.in",
+        "item": "https://www.smsmengineers.com",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://smsmengineers.in/services",
+        "item": "https://www.smsmengineers.com/services",
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": service.name,
-        "item": `https://smsmengineers.in/services/${slug}`,
+        "item": `https://www.smsmengineers.com/services/${slug}`,
       },
     ],
   };

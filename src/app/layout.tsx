@@ -4,6 +4,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { PageLoader } from "@/components/PageLoader";
 import { IconBrandWhatsapp } from "@tabler/icons-react";
 
 const robotoSlab = Roboto_Slab({
@@ -14,13 +15,14 @@ const robotoSlab = Roboto_Slab({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.smsmengineers.com"),
   title: "SMSM Engineers - Dedicated to Innovation & Engineering Excellence",
   description: "SMSM Engineers Private Limited - Premier provider of industrial paint tinting systems, auto & manual color dispensers, gyroshakers, universal stainers, custom PCB design, and color consultancy services.",
   keywords: "SMSM Engineers, Colorant, Color Card, Color Dispenser, Gyroshaker, Universal Stainers, AMC, PCB Designing, Software Development, Color Consultancy",
   openGraph: {
     title: "SMSM Engineers - Industrial Solutions & Engineering Excellence",
     description: "Enterprise paint tinting systems, color machinery, PCB design, and engineering services.",
-    url: "https://smsmengineers.in",
+    url: "https://www.smsmengineers.com",
     siteName: "SMSM Engineers",
     locale: "en_US",
     type: "website",
@@ -51,6 +53,7 @@ export default function RootLayout({
         )}
       </head>
       <body className="antialiased bg-brand-bg text-brand-primary min-h-screen flex flex-col font-sans">
+        <PageLoader />
         <Header />
         <div className="flex-grow">
           {children}

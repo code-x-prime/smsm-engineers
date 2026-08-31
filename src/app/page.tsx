@@ -13,6 +13,7 @@ import {
 import { Counter } from "@/components/Counter";
 import { Reveal } from "@/components/Reveal";
 import { PartnerMarquee } from "@/components/PartnerMarquee";
+import { ImageColorMask } from "@/components/ImageColorMask";
 
 const slides = [
   {
@@ -442,21 +443,16 @@ export default function Home() {
                 <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center">
                   {/* Image Column */}
                   <div className={`lg:col-span-6 ${isLeft ? "lg:order-1" : "lg:order-2"}`}>
-                    <div className="aspect-[16/10] border border-slate-200 rounded-2xl shadow-lg relative overflow-hidden group">
-                      <Image
-                        src={prod.image}
-                        alt={prod.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-w-768px) 100vw, 50vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#071A35] via-[#071A35]/40 to-transparent z-10" />
-                      <div className="absolute inset-0 grid-lines opacity-10 z-10" />
-                      <div className="hidden lg:flex absolute inset-0 flex-col justify-between p-8 z-20">
-                        <span className="text-xs uppercase font-semibold text-[#00AEEF] tracking-wide">{prod.category}</span>
-                        <h3 className="text-4xl font-semibold text-white font-display transition-colors">{prod.name}</h3>
-                      </div>
-                    </div>
+                    <ImageColorMask
+                      src={prod.image}
+                      alt={prod.name}
+                      badge={prod.category}
+                      title={prod.name}
+                      subtitle={`Product 0${idx + 1}`}
+                      specs={prod.specs}
+                      href={prod.link}
+                      aspectRatio="aspect-[16/10]"
+                    />
                   </div>
 
                   {/* Details Column */}

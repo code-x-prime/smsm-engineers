@@ -9,6 +9,7 @@ import {
   IconMapPin,
   IconBrandWhatsapp,
   IconBrandLinkedin,
+  IconBrandFacebook,
   IconAward
 } from "@tabler/icons-react";
 
@@ -61,10 +62,31 @@ export function Footer() {
                 Engineering precision into the global paint and coatings industry — tinting systems, dispensers, color science, and the custom hardware running them.
               </p>
               <div className="flex items-center gap-3 pt-2">
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#0A4ABF] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(10,74,191,0.5)] transition-all text-slate-600">
+                <a
+                  href="https://www.facebook.com/share/1JDuTRUisj/?mibextid=wwXIfr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Facebook"
+                  className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#0A4ABF] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(10,74,191,0.5)] transition-all text-slate-600"
+                >
+                  <IconBrandFacebook className="h-4 w-4" />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/smsm-engineers/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="LinkedIn"
+                  className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#0A4ABF] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(10,74,191,0.5)] transition-all text-slate-600"
+                >
                   <IconBrandLinkedin className="h-4 w-4" />
                 </a>
-                <a href="https://wa.me/918130720777" target="_blank" rel="noopener noreferrer" className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#0A4ABF] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(10,74,191,0.5)] transition-all text-slate-600">
+                <a
+                  href="https://wa.me/918130720777"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="WhatsApp"
+                  className="h-10 w-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-[#0A4ABF] hover:text-white hover:border-transparent hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-6px_rgba(10,74,191,0.5)] transition-all text-slate-600"
+                >
                   <IconBrandWhatsapp className="h-4 w-4" />
                 </a>
               </div>

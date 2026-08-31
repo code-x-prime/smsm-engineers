@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const BASE_URL = "https://smsmengineers.in";
+const BASE_URL = "https://www.smsmengineers.com";
 
 const productSlugs = [
   "colorant",

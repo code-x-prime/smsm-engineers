@@ -123,13 +123,20 @@ const productsData: Record<string, ProductDetails> = {
   },
 };
 
+const slugAliases: Record<string, string> = {
+  "universal-stainers": "universal-stainer",
+  "color-card-deck": "shade-card",
+  "color-dispenser": "automatic-color-dispenser",
+};
+
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export default async function ProductDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const product = productsData[slug];
+  const resolvedSlug = slugAliases[slug] || slug;
+  const product = productsData[resolvedSlug];
 
   if (!product) {
     notFound();
@@ -158,19 +165,19 @@ export default async function ProductDetailPage({ params }: PageProps) {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://smsmengineers.in",
+        "item": "https://www.smsmengineers.com",
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Products",
-        "item": "https://smsmengineers.in/products",
+        "item": "https://www.smsmengineers.com/products",
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": product.name,
-        "item": `https://smsmengineers.in/products/${slug}`,
+        "item": `https://www.smsmengineers.com/products/${slug}`,
       },
     ],
   };

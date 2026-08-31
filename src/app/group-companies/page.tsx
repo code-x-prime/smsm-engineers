@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { PartnerMarquee } from "@/components/PartnerMarquee";
+import { ImageColorMask } from "@/components/ImageColorMask";
 
 export default function GroupCompanies() {
   const companies = [
@@ -138,18 +139,15 @@ export default function GroupCompanies() {
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
                   {/* Image Column */}
                   <div className={`lg:col-span-6 ${isLeft ? "lg:order-1" : "lg:order-2"} relative`}>
-                    <div className="relative aspect-[16/11] rounded-2xl overflow-hidden group shadow-2xl">
-                      <Image
-                        src={c.image}
-                        alt={c.name}
-                        fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        sizes="(max-w-1024px) 100vw, 50vw"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10" />
-                      <div className="absolute inset-0 grid-lines opacity-10 z-10" />
-                      <div className={`absolute inset-0 bg-gradient-to-br ${c.color} opacity-15 mix-blend-overlay z-10`} />
-                    </div>
+                    <ImageColorMask
+                      src={c.image}
+                      alt={c.name}
+                      badge={c.industry}
+                      title={c.name}
+                      subtitle="Group Division"
+                      specs={c.achievements}
+                      aspectRatio="aspect-[16/11]"
+                    />
                     <div className={`hidden sm:flex absolute -bottom-7 ${isLeft ? "-right-6 lg:-right-8" : "-left-6 lg:-left-8"} bg-white shadow-2xl rounded-2xl p-5 items-center gap-4 border border-slate-100 max-w-[240px] z-20`}>
                       <div className="h-12 w-12 icon-chip shrink-0">
                         <Icon className="h-6 w-6" />

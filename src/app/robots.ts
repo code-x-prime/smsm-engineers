@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://smsmengineers.in/sitemap.xml",
+    sitemap: "https://www.smsmengineers.com/sitemap.xml",
+    host: "https://www.smsmengineers.com",
   };
 }

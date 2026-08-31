@@ -86,7 +86,7 @@ export default function About() {
       imagePosition: "50% 50%",
       signature: "/images/signature_priyanka.jpg",
       quote: "SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.",
-      accent: "#0A4ABF",
+      accent: "#38BDF8",
       initials: "PB",
     },
     {
@@ -96,7 +96,7 @@ export default function About() {
       imagePosition: "50% 8%",
       signature: "/images/signature_nipunesh.jpg",
       quote: "SMSM Engineers is proud to be recognized as one of India's leading service providers. Our vision is to set industry benchmarks through specialized, high quality, and value added services. We remain committed to safeguarding the interests of both domestic and international clients while strengthening the reputation of SMSM in today's fast paced and competitive environment.",
-      accent: "#071A35",
+      accent: "#00AEEF",
       initials: "NB",
     },
   ];

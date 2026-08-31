@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { getRecaptchaToken } from "@/lib/recaptcha";
+import { IconBrandFacebook, IconBrandLinkedin, IconBrandWhatsapp } from "@tabler/icons-react";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -137,6 +138,60 @@ export default function Contact() {
                     </div>
                   );
                 })}
+              </div>
+
+              {/* Follow Us / Social Channels Card */}
+              <div className="brand-card p-6 mt-6 border border-slate-200/90 bg-gradient-to-br from-white to-slate-50">
+                <div className="flex items-center justify-between mb-4">
+                  <div>
+                    <span className="text-[11px] uppercase tracking-wider text-[#0A4ABF] font-semibold block">Social Presence</span>
+                    <h3 className="text-lg font-semibold text-[#071A35] font-display">Follow Us</h3>
+                  </div>
+                  <span className="text-xs text-slate-400 font-light">Official Handles</span>
+                </div>
+                <div className="grid grid-cols-3 gap-3">
+                  <a
+                    href="https://www.facebook.com/share/1JDuTRUisj/?mibextid=wwXIfr"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Facebook"
+                    className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-slate-200 bg-white hover:border-[#1877F2] hover:bg-[#1877F2]/5 transition-all group text-center shadow-sm hover:shadow"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-[#1877F2]/10 text-[#1877F2] grid place-items-center group-hover:scale-110 transition-transform mb-2">
+                      <IconBrandFacebook className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-semibold text-[#071A35] group-hover:text-[#1877F2] transition-colors">Facebook</span>
+                    <span className="text-[10px] text-slate-400 mt-0.5">@smsm</span>
+                  </a>
+
+                  <a
+                    href="https://www.linkedin.com/company/smsm-engineers/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn"
+                    className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-slate-200 bg-white hover:border-[#0A66C2] hover:bg-[#0A66C2]/5 transition-all group text-center shadow-sm hover:shadow"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-[#0A66C2]/10 text-[#0A66C2] grid place-items-center group-hover:scale-110 transition-transform mb-2">
+                      <IconBrandLinkedin className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-semibold text-[#071A35] group-hover:text-[#0A66C2] transition-colors">LinkedIn</span>
+                    <span className="text-[10px] text-slate-400 mt-0.5">@smsm-engineers</span>
+                  </a>
+
+                  <a
+                    href="https://wa.me/918130720777"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="WhatsApp"
+                    className="flex flex-col items-center justify-center p-3.5 rounded-xl border border-slate-200 bg-white hover:border-[#25D366] hover:bg-[#25D366]/5 transition-all group text-center shadow-sm hover:shadow"
+                  >
+                    <div className="h-10 w-10 rounded-full bg-[#25D366]/10 text-[#25D366] grid place-items-center group-hover:scale-110 transition-transform mb-2">
+                      <IconBrandWhatsapp className="h-5 w-5" />
+                    </div>
+                    <span className="text-xs font-semibold text-[#071A35] group-hover:text-[#25D366] transition-colors">WhatsApp</span>
+                    <span className="text-[10px] text-slate-400 mt-0.5">Direct Chat</span>
+                  </a>
+                </div>
               </div>
             </Reveal>
           </div>

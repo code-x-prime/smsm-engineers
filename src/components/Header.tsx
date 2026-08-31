@@ -16,6 +16,7 @@ import {
   IconClock, 
   IconBrandWhatsapp, 
   IconBrandLinkedin, 
+  IconBrandFacebook,
   IconDownload,
   IconHelpCircle,
   IconShieldCheck,
@@ -142,10 +143,13 @@ export function Header() {
               <IconMapPin className="h-3.5 w-3.5 text-[#00AEEF]" /> Agra, India
             </span>
             <span className="h-3.5 w-px bg-white/15" />
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#00AEEF] hover:-translate-y-0.5 transition-all inline-block">
+            <a href="https://www.facebook.com/share/1JDuTRUisj/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="hover:text-[#00AEEF] hover:-translate-y-0.5 transition-all inline-block">
+              <IconBrandFacebook className="h-4 w-4" />
+            </a>
+            <a href="https://www.linkedin.com/company/smsm-engineers/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="hover:text-[#00AEEF] hover:-translate-y-0.5 transition-all inline-block">
               <IconBrandLinkedin className="h-4 w-4" />
             </a>
-            <a href="https://wa.me/918130720777" target="_blank" rel="noopener noreferrer" className="hover:text-[#00AEEF] hover:-translate-y-0.5 transition-all inline-block">
+            <a href="https://wa.me/918130720777" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" className="hover:text-[#00AEEF] hover:-translate-y-0.5 transition-all inline-block">
               <IconBrandWhatsapp className="h-4 w-4" />
             </a>
           </div>
