@@ -110,16 +110,17 @@ function LoaderContent() {
 
       {/* Center Logo & Loading Bar */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        {/* Glowing SMSM Logo from user upload */}
+        {/* Glowing SMSM Round Emblem */}
         <div className="relative mb-8 transform transition-transform duration-300">
-          <Image
-            src="/images/smsm_loader_logo.png"
-            alt="SMSM Engineers"
-            width={260}
-            height={80}
-            priority
-            className="h-14 sm:h-16 w-auto object-contain drop-shadow-[0_0_25px_rgba(0,174,239,0.5)]"
-          />
+          <div className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-full overflow-hidden shadow-[0_0_50px_rgba(0,174,239,0.75),0_0_25px_rgba(56,189,248,0.4)] border border-[#00AEEF]/40">
+            <Image
+              src="/images/smsm_round_cropped.png"
+              alt="SMSM Engineers"
+              fill
+              priority
+              className="object-contain rounded-full"
+            />
+          </div>
         </div>
 
         {/* Futuristic Glowing Progress Bar */}
