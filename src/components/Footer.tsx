@@ -58,6 +58,9 @@ export function Footer() {
                   style={{ height: "44px", width: "auto" }}
                 />
               </Link>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A4ABF]/10 border border-[#0A4ABF]/20 text-[#0A4ABF] text-xs font-semibold tracking-wide">
+                One Stop Solution For All Tinting Needs
+              </div>
               <p className="text-slate-600 text-sm leading-relaxed font-light max-w-sm">
                 Engineering precision into the global paint and coatings industry — tinting systems, dispensers, color science, and the custom hardware running them.
               </p>

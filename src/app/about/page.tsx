@@ -72,8 +72,8 @@ export default function About() {
     {
       name: "Acharya Umesh Bhardwaj",
       role: "Chairman & Executive Director",
-      image: "/images/umesh_bhardwaj.png",
-      imagePosition: "50% 20%",
+      image: "/images/umesh_bhardwaj.jpg",
+      imagePosition: "50% 16%",
       signature: "/images/signature_umesh.png",
       quote: "SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India's fast paced and competitive environment.",
       accent: "#00AEEF",
@@ -82,8 +82,8 @@ export default function About() {
     {
       name: "Mrs. Priyanka Bhardwaj",
       role: "Managing Director",
-      image: null,
-      imagePosition: "50% 50%",
+      image: "/images/priyanka_bhardwaj.png",
+      imagePosition: "50% 20%",
       signature: "/images/signature_priyanka.jpg",
       quote: "SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.",
       accent: "#38BDF8",
