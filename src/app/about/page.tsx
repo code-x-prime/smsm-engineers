@@ -74,7 +74,7 @@ export default function About() {
       role: "Chairman & Executive Director",
       image: "/images/umesh_bhardwaj.jpg",
       imagePosition: "50% 10%",
-      signature: null,
+      signature: "/images/signature_umesh.png",
       quote: "SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India's fast paced and competitive environment.",
       accent: "#00AEEF",
       initials: "UB",
