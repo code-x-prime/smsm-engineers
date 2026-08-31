@@ -22,7 +22,28 @@ const contactBodySchema = zod.object({
   message: zod.string().optional(),
   region: zod.string().optional(),
   partnershipType: zod.string().optional(),
+  recaptchaToken: zod.string().optional(),
 });
+
+async function verifyRecaptcha(token: string | undefined): Promise<boolean> {
+  const secret = process.env.RECAPTCHA_SECRET_KEY;
+  // If reCAPTCHA isn't configured on the server, don't block submissions.
+  if (!secret) return true;
+  if (!token) return false;
+
+  try {
+    const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams({ secret, response: token }),
+    });
+    const data = await res.json();
+    // v3 returns a score 0.0–1.0; 0.5 is Google's suggested default threshold.
+    return Boolean(data.success) && (typeof data.score !== "number" || data.score >= 0.5);
+  } catch {
+    return false;
+  }
+}
 
 type ContactBody = zod.infer<typeof contactBodySchema>;
 
@@ -113,6 +134,14 @@ export async function POST(req: Request) {
     const rawBody = await req.json();
     const body = contactBodySchema.parse(rawBody);
     const meta = formMeta[body.type];
+
+    const isHuman = await verifyRecaptcha(body.recaptchaToken);
+    if (!isHuman) {
+      return NextResponse.json(
+        { success: false, error: "Verification failed. Please try again." },
+        { status: 400 }
+      );
+    }
 
     console.log(`[Form Submission - ${body.type}]`, body);
 

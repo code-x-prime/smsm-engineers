@@ -11,6 +11,7 @@ import {
   Award, Briefcase, GraduationCap, Users, Heart, FileText, Settings, Cpu
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const applySchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -117,10 +118,11 @@ export default function Careers() {
   const onSubmit = async (data: ApplyFormData) => {
     setStatus("submitting");
     try {
+      const recaptchaToken = await getRecaptchaToken("career_form");
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type: "career" }),
+        body: JSON.stringify({ ...data, type: "career", recaptchaToken }),
       });
       if (response.ok) {
         setStatus("success");

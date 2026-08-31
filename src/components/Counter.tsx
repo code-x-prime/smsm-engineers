@@ -4,7 +4,9 @@ import { useEffect, useRef } from "react";
 
 export function Counter({ to, suffix = "", duration = 2 }: { to: number; suffix?: string; duration?: number }) {
     const ref = useRef<HTMLSpanElement>(null);
-    const inView = useInView(ref, { once: true, margin: "-80px" });
+    // "some" catches elements already visible on initial paint (e.g. above-the-fold
+    // hero stats), not just ones scrolled into view later.
+    const inView = useInView(ref, { once: true, amount: "some" });
     const count = useMotionValue(0);
     const rounded = useTransform(count, (v) => Math.round(v).toLocaleString());
 

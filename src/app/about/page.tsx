@@ -73,6 +73,8 @@ export default function About() {
       name: "Acharya Umesh Bhardwaj",
       role: "Chairman & Executive Director",
       image: "/images/umesh_bhardwaj.jpg",
+      imagePosition: "50% 18%",
+      signature: null,
       quote: "SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India's fast paced and competitive environment.",
       accent: "#00AEEF",
       initials: "UB",
@@ -81,6 +83,8 @@ export default function About() {
       name: "Mrs. Priyanka Bhardwaj",
       role: "Managing Director",
       image: null,
+      imagePosition: "50% 50%",
+      signature: "/images/signature_priyanka.jpg",
       quote: "SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.",
       accent: "#0A4ABF",
       initials: "PB",
@@ -88,7 +92,9 @@ export default function About() {
     {
       name: "Mr. Nipunesh Bhardwaj",
       role: "Director",
-      image: null,
+      image: "/images/nipunesh_bhardwaj.png",
+      imagePosition: "50% 12%",
+      signature: "/images/signature_nipunesh.jpg",
       quote: "SMSM Engineers is proud to be recognized as one of India's leading service providers. Our vision is to set industry benchmarks through specialized, high quality, and value added services. We remain committed to safeguarding the interests of both domestic and international clients while strengthening the reputation of SMSM in today's fast paced and competitive environment.",
       accent: "#071A35",
       initials: "NB",
@@ -256,7 +262,7 @@ export default function About() {
                         alt={leader.name}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
-                        style={{ objectPosition: "50% 18%" }}
+                        style={{ objectPosition: leader.imagePosition }}
                         sizes="400px"
                       />
                     ) : (
@@ -279,8 +285,21 @@ export default function About() {
                         &ldquo;{leader.quote}&rdquo;
                       </p>
                     </div>
-                    <div className="border-t border-white/5 pt-4 mt-6 text-[10px] text-white/40 uppercase tracking-widest font-medium font-mono">
-                      {leader.name} &mdash; Signature
+                    <div className="border-t border-white/5 pt-4 mt-6 flex items-center justify-between">
+                      {leader.signature ? (
+                        <Image
+                          src={leader.signature}
+                          alt={`${leader.name} signature`}
+                          width={110}
+                          height={40}
+                          className="h-8 w-auto object-contain brightness-0 invert opacity-70"
+                        />
+                      ) : (
+                        <span className="text-[10px] text-white/40 uppercase tracking-widest font-medium font-mono">
+                          {leader.name}
+                        </span>
+                      )}
+                      <span className="text-[9px] text-white/30 uppercase tracking-widest font-medium">Signed</span>
                     </div>
                   </div>
                 </div>

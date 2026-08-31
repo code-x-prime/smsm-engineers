@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto_Slab } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -33,6 +34,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={robotoSlab.variable}>
+      <head>
+        <Script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid="545f69cb-7006-494d-bd26-001a9d3666d3"
+          data-blockingmode="auto"
+          strategy="beforeInteractive"
+        />
+        {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
+          <Script
+            id="recaptcha-v3"
+            src={`https://www.google.com/recaptcha/api.js?render=${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+            strategy="afterInteractive"
+          />
+        )}
+      </head>
       <body className="antialiased bg-brand-bg text-brand-primary min-h-screen flex flex-col font-sans">
         <Header />
         <div className="flex-grow">

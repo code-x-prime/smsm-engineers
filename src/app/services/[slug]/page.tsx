@@ -38,7 +38,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Service Locations": "35 locations across India",
       "Helpdesk Standard": "ITIL methodology, Single Point of Contact (SPOC)",
     },
-    image: "/images/about_laboratory.png",
+    image: "/images/service_amc.png",
   },
   "color-consultancy": {
     name: "Color Consultancy",
@@ -65,7 +65,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Shade Compatibility": "Formulations on all popular shade cards",
       "Machinery Support": "Auto, Manual Dispensers & Gyroshakers",
     },
-    image: "/images/product_shade_card.png",
+    image: "/images/service_color_consultancy.jpg",
   },
   "pcb-design": {
     name: "PCB Designing",
@@ -115,7 +115,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Delivery Style": "Turnkey solutions with sophisticated project management",
       "Focus": "Business process modernization and organizational goal alignment",
     },
-    image: "/images/hero3.png",
+    image: "/images/service_software_development.jpg",
   },
   "technical-support": {
     name: "Technical Support Desk",
@@ -161,7 +161,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Compliance rules": "National Fire Safety, ISO factory mandates",
       "Target Capacity": "Up to 500,000 Liters / Month designs",
     },
-    image: "/images/hero_about.png",
+    image: "/images/service_engineering_consultancy.jpg",
   },
   downloads: {
     name: "Downloads & Manuals",

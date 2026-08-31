@@ -5,16 +5,24 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  ArrowRight, ChevronLeft, ChevronRight, Play, Shield, Settings, Zap,
-  Globe, Layers, Sliders, RefreshCw, Cpu, Database,
-  Award, ShieldCheck, CheckCircle2, Phone, Mail, MapPin,
-  Clock, HeartHandshake, Eye, ArrowUpRight, Volume2
+  ArrowRight, ChevronLeft, ChevronRight, Shield, Settings,
+  Layers, Sliders, RefreshCw, Cpu, Database,
+  Award, ShieldCheck, CheckCircle2,
+  HeartHandshake, ArrowUpRight,
 } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { Reveal } from "@/components/Reveal";
 import { PartnerMarquee } from "@/components/PartnerMarquee";
 
 const slides = [
+  {
+    img: "/images/hero.png",
+    tagline: "Trusted Tinting Solutions Partner — Serving Since 2013",
+    title1: "One",
+    titleHighlight: "Solution",
+    title2: "For All Your Tinting Needs",
+    desc: "Delivering complete color tinting excellence from innovation to application — colorants, dispensers, shade cards, and the engineering behind them."
+  },
   {
     img: "/images/hero1.png",
     tagline: "Trusted B2B Engineering Alliance",

@@ -7,6 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as zod from "zod";
 import { CheckCircle2, ShieldAlert, Send, MessageSquareHeart } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const feedbackSchema = zod.object({
   name: zod.string().min(2, "Name must be at least 2 characters"),
@@ -27,10 +28,11 @@ export default function FeedbackFormPage() {
   const onSubmit = async (data: FeedbackForm) => {
     setStatus("loading");
     try {
+      const recaptchaToken = await getRecaptchaToken("feedback_form");
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type: "feedback" }),
+        body: JSON.stringify({ ...data, type: "feedback", recaptchaToken }),
       });
       if (res.ok) {
         setStatus("success");

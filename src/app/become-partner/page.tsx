@@ -12,6 +12,7 @@ import {
   FileText, Eye, Network, Handshake
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const partnerSchema = z.object({
   companyName: z.string().min(2, "Company name must be at least 2 characters"),
@@ -36,10 +37,11 @@ export default function BecomePartner() {
   const onSubmit = async (data: PartnerFormData) => {
     setStatus("submitting");
     try {
+      const recaptchaToken = await getRecaptchaToken("partner_form");
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type: "partner" }),
+        body: JSON.stringify({ ...data, type: "partner", recaptchaToken }),
       });
       if (response.ok) {
         setStatus("success");

@@ -11,6 +11,7 @@ import {
   Send, Users, HelpCircle, Briefcase, FileText, CheckCircle2, AlertCircle
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
+import { getRecaptchaToken } from "@/lib/recaptcha";
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -32,10 +33,11 @@ export default function Contact() {
   const onSubmit = async (data: ContactFormData) => {
     setStatus("submitting");
     try {
+      const recaptchaToken = await getRecaptchaToken("contact_form");
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type: "contact" }),
+        body: JSON.stringify({ ...data, type: "contact", recaptchaToken }),
       });
       if (response.ok) {
         setStatus("success");
@@ -74,7 +76,7 @@ export default function Contact() {
       {/* SECTION 1: Hero Banner */}
       <section className="relative min-h-[440px] md:min-h-[54vh] flex items-end bg-slate-950 text-white overflow-hidden pb-14 md:pb-0">
         <Image
-          src="/images/hero_group.png"
+          src="/images/office_about.png"
           alt="Contact Hero Background"
           fill
           className="object-cover"

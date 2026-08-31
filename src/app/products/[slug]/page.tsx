@@ -83,7 +83,7 @@ const productsData: Record<string, ProductDetails> = {
       "Minimum Dosing": "1/48 fl. oz. or 0.1 ml",
       "Base unit dimensions": "820mm x 820mm x 1100mm",
     },
-    image: "/images/product_colorant.png",
+    image: "/images/product_manual_dispenser.png",
   },
   gyroshaker: {
     name: "Gyroshaker Mixer Machine",
