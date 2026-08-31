@@ -93,7 +93,7 @@ export default function About() {
       name: "Mr. Nipunesh Bhardwaj",
       role: "Director",
       image: "/images/nipunesh_bhardwaj.png",
-      imagePosition: "50% 12%",
+      imagePosition: "50% 22%",
       signature: "/images/signature_nipunesh.jpg",
       quote: "SMSM Engineers is proud to be recognized as one of India's leading service providers. Our vision is to set industry benchmarks through specialized, high quality, and value added services. We remain committed to safeguarding the interests of both domestic and international clients while strengthening the reputation of SMSM in today's fast paced and competitive environment.",
       accent: "#071A35",
