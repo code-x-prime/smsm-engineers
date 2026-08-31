@@ -144,7 +144,7 @@ export default function Careers() {
       {/* SECTION 1: Hero Banner */}
       <section className="relative min-h-[500px] md:min-h-[70vh] flex items-end bg-slate-950 text-white overflow-hidden pb-16 md:pb-0">
         <Image
-          src="/images/hero1.png"
+          src="/images/careers_hero.jpg"
           alt="Careers Hero Background"
           fill
           className="object-cover"
@@ -189,7 +189,7 @@ export default function Careers() {
           <div className="lg:col-span-6 relative">
             <div className="relative aspect-[16/11] rounded-2xl overflow-hidden group shadow-2xl">
               <Image
-                src="/images/about_laboratory.png"
+                src="/images/office_about.png"
                 alt="SMSM Laboratory Team"
                 fill
                 className="object-cover transition-transform duration-500 group-hover:scale-105"

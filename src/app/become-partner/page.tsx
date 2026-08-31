@@ -88,7 +88,7 @@ export default function BecomePartner() {
       {/* SECTION 1: Hero Banner */}
       <section className="relative min-h-[500px] md:min-h-[70vh] flex items-end bg-slate-950 text-white overflow-hidden pb-16 md:pb-0">
         <Image
-          src="/images/hero2.png"
+          src="/images/partner_hero.jpg"
           alt="Partnership Hero Background"
           fill
           className="object-cover"

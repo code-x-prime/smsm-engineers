@@ -38,7 +38,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Service Locations": "35 locations across India",
       "Helpdesk Standard": "ITIL methodology, Single Point of Contact (SPOC)",
     },
-    image: "/images/service_amc.png",
+    image: "/images/service_amc_new.jpg",
   },
   "color-consultancy": {
     name: "Color Consultancy",
@@ -184,7 +184,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "File types": "PDF, ZIP, MSI installation files",
       "Access": "Public access repository",
     },
-    image: "/images/office_about.png",
+    image: "/images/service_downloads.jpg",
   },
 };
 

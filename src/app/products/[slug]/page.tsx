@@ -226,16 +226,15 @@ export default async function ProductDetailPage({ params }: PageProps) {
 
             {/* Right Image */}
             <div className="lg:col-span-5 relative">
-              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-slate-950">
+              <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden border border-white/10 shadow-2xl group bg-gradient-to-br from-white via-slate-50 to-slate-100">
                 <Image
                   src={product.image}
                   alt={product.name}
                   fill
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="object-contain p-8 transition-transform duration-700 group-hover:scale-105"
                   sizes="(max-w-1024px) 100vw, 50vw"
                   priority
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
               </div>
               {/* Floating badge */}
               <div className="hidden sm:flex absolute -bottom-6 -left-6 bg-white shadow-2xl rounded-2xl p-5 items-center gap-3 border border-slate-100 max-w-[220px] z-20">
