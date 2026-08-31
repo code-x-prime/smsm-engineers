@@ -27,21 +27,6 @@ export default function GroupCompanies() {
       color: "from-[#0A4ABF] to-[#071A35]",
     },
     {
-      name: "SMSM Construction",
-      industry: "Civic Infrastructures & Corporate Buildings",
-      desc: "SMSM Construction delivers civil engineering projects including industrial warehouses, high-strength factory foundations, and modern residential apartments. We specialize in vibration-dampening foundations for heavy machinery.",
-      vision: "Building structures that combine architectural beauty with mechanical safety compliance.",
-      logo: Building2,
-      image: "/images/company_construction.png",
-      achievements: [
-        "40+ industrial projects completed across Northern India",
-        "Zero accident reports over a decade of high-rise builds",
-        "Specialized in precast vibration-dampening heavy foundations",
-      ],
-      ctaText: "Contact Construction Desk",
-      color: "from-[#071A35] to-[#0A4ABF]",
-    },
-    {
       name: "SMSM Pumps",
       industry: "Fluid Dynamics & Industrial Pumps",
       desc: "SMSM Pumps manufactures heavy-duty submersibles, hydraulic boosters, and agricultural fluid dynamic impellers. Built in-house to withstand heavy-viscosity fluids and chemicals.",
@@ -89,7 +74,7 @@ export default function GroupCompanies() {
   ];
 
   const stats = [
-    { value: "5", label: "Group Companies" },
+    { value: "4", label: "Group Companies" },
     { value: "12+", label: "Years Combined" },
     { value: "22", label: "States Served" },
   ];
@@ -99,7 +84,7 @@ export default function GroupCompanies() {
       {/* SECTION 1: Hero Banner */}
       <section className="relative min-h-[500px] md:min-h-[70vh] flex items-end bg-slate-950 text-white overflow-hidden pb-16 md:pb-0">
         <Image
-          src="/images/hero_group.png"
+          src="/images/hero3.png"
           alt="Our Group Companies Hero Background"
           fill
           className="object-cover"
@@ -261,8 +246,8 @@ export default function GroupCompanies() {
               <div className="h-12 w-12 bg-[#00AEEF]/10 rounded-xl grid place-items-center text-[#00AEEF] mx-auto mb-4">
                 <ShieldCheck className="h-6 w-6" />
               </div>
-              <h4 className="font-medium text-lg mb-2 font-display">SMSM Pumps & Construction</h4>
-              <p className="text-white/60 text-xs font-light leading-relaxed">Constructs heavy foundations, pipelines, and booster pumps to support large-scale factories.</p>
+              <h4 className="font-medium text-lg mb-2 font-display">SMSM Pumps</h4>
+              <p className="text-white/60 text-xs font-light leading-relaxed">Manufactures heavy-duty submersibles, booster pumps, and pipelines to support large-scale factories.</p>
             </Reveal>
           </div>
         </div>

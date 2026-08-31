@@ -190,14 +190,6 @@ export default function Home() {
       color: "from-[#0A4ABF] to-[#071A35]",
     },
     {
-      name: "SMSM Construction",
-      industry: "Civic Infrastructures & Corporate Buildings",
-      desc: "Civil engineering group building commercial warehouses, heavy vibration-dampening machine foundations, and residential apartment blocks.",
-      achievements: ["40+ industrial projects completed", "Zero accidents recorded over a decade"],
-      icon: Building2Icon,
-      color: "from-[#071A35] to-[#0A4ABF]",
-    },
-    {
       name: "SMSM Pumps",
       industry: "Fluid Dynamics & Industrial Pumps",
       desc: "Manufacturing high-durability submersibles, booster pumps, and agricultural fluid dynamic impellers built for heavy-viscosity fluids.",
@@ -223,12 +215,6 @@ export default function Home() {
     { title: "End-to-End Solutions", desc: "We provide colorants, stainers, dispensers, shakers, color cards, and software suite.", icon: Layers },
     { title: "Make in India", desc: "Advanced engineering proudly engineered and manufactured locally, built to serve global clients.", icon: HeartHandshake },
   ];
-
-  function Building2Icon(props: any) {
-    return (
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}><rect width="16" height="20" x="4" y="2" rx="2" ry="2" /><path d="M9 22v-4h6v4" /><path d="M8 6h.01" /><path d="M16 6h.01" /><path d="M8 10h.01" /><path d="M16 10h.01" /><path d="M8 14h.01" /><path d="M16 14h.01" /></svg>
-    );
-  }
 
   function DropletIcon(props: any) {
     return (

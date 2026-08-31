@@ -106,7 +106,7 @@ export default function About() {
       {/* SECTION 1: Premium Hero Banner */}
       <section className="relative min-h-[560px] md:min-h-[70vh] flex items-end bg-slate-950 text-white overflow-hidden pb-16 md:pb-0">
         <Image
-          src="/images/hero_about.png"
+          src="/images/service_engineering_consultancy.jpg"
           alt="About SMSM Engineers Hero Background"
           fill
           className="object-cover"

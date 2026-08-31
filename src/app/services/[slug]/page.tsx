@@ -65,7 +65,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "Shade Compatibility": "Formulations on all popular shade cards",
       "Machinery Support": "Auto, Manual Dispensers & Gyroshakers",
     },
-    image: "/images/service_color_consultancy.jpg",
+    image: "/images/fandeck_smsm.png",
   },
   "pcb-design": {
     name: "PCB Designing",
@@ -184,7 +184,7 @@ const servicesData: Record<string, ServiceDetails> = {
       "File types": "PDF, ZIP, MSI installation files",
       "Access": "Public access repository",
     },
-    image: "/images/hero_group.png",
+    image: "/images/office_about.png",
   },
 };
 
