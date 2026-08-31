@@ -255,7 +255,7 @@ export default function About() {
               <Reveal key={leader.name} delay={idx * 0.05}>
                 <div className="bg-white/[0.04] border border-white/10 rounded-2xl hover:bg-white/[0.07] hover:border-white/20 transition-all flex flex-col h-full group overflow-hidden">
                   {/* Portrait band */}
-                  <div className="relative h-48 w-full overflow-hidden bg-gradient-to-br from-white/5 to-transparent">
+                  <div className="relative aspect-square w-full overflow-hidden bg-gradient-to-br from-white/5 to-transparent">
                     {leader.image ? (
                       <Image
                         src={leader.image}
