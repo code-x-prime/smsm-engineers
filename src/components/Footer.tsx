@@ -47,19 +47,23 @@ export function Footer() {
           <div className="grid lg:grid-cols-12 gap-12">
 
             {/* Column 1: Logo & Info */}
-            <div className="lg:col-span-4 space-y-6">
-              <Link href="/" className="inline-block">
-                <Image
-                  src="/images/smsm_logo.png"
-                  alt="SMSM Engineers Logo"
-                  width={200}
-                  height={60}
-                  className="object-contain"
-                  style={{ height: "44px", width: "auto" }}
-                />
-              </Link>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0A4ABF]/10 border border-[#0A4ABF]/20 text-[#0A4ABF] text-xs font-semibold tracking-wide">
-                One Stop Solution For All Tinting Needs
+            <div className="lg:col-span-4 space-y-4">
+              <div>
+                <Link href="/" className="inline-block">
+                  <Image
+                    src="/images/smsm_logo.png"
+                    alt="SMSM Engineers Logo"
+                    width={200}
+                    height={60}
+                    className="object-contain"
+                    style={{ height: "44px", width: "auto" }}
+                  />
+                </Link>
+              </div>
+              <div>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#0A4ABF]/10 border border-[#0A4ABF]/20 text-[#0A4ABF] text-xs font-semibold tracking-wide shadow-sm">
+                  One Stop Solution For All Tinting Needs
+                </span>
               </div>
               <p className="text-slate-600 text-sm leading-relaxed font-light max-w-sm">
                 Engineering precision into the global paint and coatings industry — tinting systems, dispensers, color science, and the custom hardware running them.
