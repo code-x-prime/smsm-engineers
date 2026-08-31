@@ -110,15 +110,15 @@ function LoaderContent() {
 
       {/* Center Logo & Loading Bar */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        {/* Illuminated High-Contrast Badge for Official SMSM Logo */}
-        <div className="relative mb-8 px-7 py-4 sm:px-9 sm:py-5 rounded-2xl bg-white shadow-[0_0_50px_rgba(0,174,239,0.45),0_15px_35px_rgba(0,0,0,0.5)] border border-[#00AEEF]/40 flex items-center justify-center">
+        {/* Glowing SMSM Logo from user upload */}
+        <div className="relative mb-8 transform transition-transform duration-300">
           <Image
-            src="/images/smsm_logo.png"
+            src="/images/smsm_loader_logo.png"
             alt="SMSM Engineers"
-            width={240}
-            height={70}
+            width={260}
+            height={80}
             priority
-            className="h-11 sm:h-13 w-auto object-contain"
+            className="h-14 sm:h-16 w-auto object-contain drop-shadow-[0_0_25px_rgba(0,174,239,0.5)]"
           />
         </div>
 
