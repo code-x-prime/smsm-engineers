@@ -57,8 +57,8 @@ export default function About() {
 
   const stats = [
     { value: 12, label: "Years Experience", suffix: "+", icon: Shield },
-    { value: 1800, label: "Projects Completed", suffix: "+", icon: Briefcase },
-    { value: 500, label: "Happy Clients", suffix: "+", icon: Users },
+    { value: 500, label: "Projects Completed", suffix: "+", icon: Briefcase },
+    { value: 450, label: "Happy Clients", suffix: "+", icon: Users },
     { value: 22, label: "States Served", suffix: "", icon: Globe },
   ];
 
@@ -91,7 +91,7 @@ export default function About() {
     },
     {
       name: "Mr. Nipunesh Bhardwaj",
-      role: "Director",
+      role: "Associate Director",
       image: "/images/nipunesh_bhardwaj.png",
       imagePosition: "50% 8%",
       signature: "/images/signature_nipunesh.jpg",

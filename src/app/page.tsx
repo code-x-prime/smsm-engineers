@@ -69,8 +69,8 @@ export default function Home() {
 
   const trustStats = [
     { value: 12, label: "Years Experience", suffix: "+" },
-    { value: 1800, label: "Projects Completed", suffix: "+" },
-    { value: 500, label: "Happy Clients", suffix: "+" },
+    { value: 500, label: "Projects Completed", suffix: "+" },
+    { value: 450, label: "Happy Clients", suffix: "+" },
     { value: 15, label: "Industry Partners", suffix: "" },
     { value: 22, label: "States Served", suffix: "+" },
   ];
