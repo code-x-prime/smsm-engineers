@@ -135,7 +135,7 @@ export function Header() {
               <IconMail className="h-3.5 w-3.5 text-[#00AEEF]" /> support@smsmengineers.in
             </span>
             <span className="flex items-center gap-1.5 text-white/60">
-              <IconClock className="h-3.5 w-3.5 text-[#00AEEF]" /> Mon - Sat: 9:00 AM - 6:00 PM
+              <IconClock className="h-3.5 w-3.5 text-[#00AEEF]" /> Mon - Fri: 10:00 AM - 5:00 PM
             </span>
           </div>
           <div className="flex items-center gap-5">
