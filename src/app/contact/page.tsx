@@ -345,10 +345,10 @@ export default function Contact() {
                 <div className="h-14 w-14 icon-chip mx-auto">
                   <MapPin className="h-6 w-6" />
                 </div>
-                <h3 className="text-xl font-medium font-display text-[#071A35]">Agra R&D Campus Map</h3>
-                <p className="text-xs text-slate-500 font-light">SMSM Engineers complex, industrial calibration hub and circuit designing facility, Agra, India.</p>
+                <h3 className="text-xl font-medium font-display text-[#071A35]">Our Agra Facility</h3>
+                <p className="text-xs text-slate-500 font-light">89 A, Jawahar Puram, Alwatia Road, Agra — 282010, Uttar Pradesh, India.</p>
                 <a
-                  href="https://maps.google.com"
+                  href="https://maps.google.com/?q=89+A+Jawahar+Puram+Alwatia+Road+Agra+282010"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-[#071A35] text-white font-semibold text-xs uppercase tracking-wider px-6 py-3 rounded-full hover:bg-[#0A4ABF] transition-all shadow-lg hover:-translate-y-0.5"
