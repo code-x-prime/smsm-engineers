@@ -141,7 +141,7 @@ export function Footer() {
                 <ul className="space-y-4 text-xs text-slate-600 font-light">
                   <li className="flex gap-2 min-w-0">
                     <IconMapPin className="h-4 w-4 text-[#0A4ABF] shrink-0" />
-                    <span className="min-w-0 break-words">112, Pushpanjali Vedanta, Vayu Vihar Road, Agra — 282010, U.P, India</span>
+                    <span className="min-w-0 break-words">89 A, Jawahar Puram, Alwatia Road, Agra — 282010, U.P., India</span>
                   </li>
                   <li className="flex gap-2 min-w-0 hover:text-[#0A4ABF] transition-colors">
                     <IconPhone className="h-4 w-4 text-[#0A4ABF] shrink-0" />

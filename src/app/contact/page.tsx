@@ -68,7 +68,7 @@ export default function Contact() {
   const infoBlocks = [
     { icon: Phone, label: "Phone", value: "+91 813-0720-777", mono: true, bold: true },
     { icon: Mail, label: "Email", value: "support@smsmengineers.in", mono: true, bold: false },
-    { icon: MapPin, label: "Corporate Office", value: "Agra, Uttar Pradesh, India", mono: false, bold: false },
+    { icon: MapPin, label: "Corporate Office", value: "89 A, Jawahar Puram, Alwatia Road, Agra — 282010, U.P., India", mono: false, bold: false },
     { icon: Clock, label: "Working Hours", value: "Mon - Sat: 9:00 AM - 6:00 PM", mono: false, bold: false },
   ];
 
