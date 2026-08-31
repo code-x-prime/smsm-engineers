@@ -139,7 +139,7 @@ function LoaderContent() {
 
       {/* Bottom Technical Tagline */}
       <div className="absolute bottom-8 sm:bottom-10 text-[10px] sm:text-xs tracking-[0.35em] uppercase text-white/40 font-light text-center px-4">
-        ONE SOLUTION FOR ALL NEEDS &bull; DEDICATED TO INNOVATION
+        ONE STOP SOLUTION FOR ALL TINTING NEEDS &bull; DEDICATED TO INNOVATION
       </div>
     </div>
   );
