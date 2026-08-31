@@ -72,8 +72,8 @@ export default function About() {
     {
       name: "Acharya Umesh Bhardwaj",
       role: "Chairman & Executive Director",
-      image: "/images/umesh_bhardwaj.jpg",
-      imagePosition: "50% 10%",
+      image: "/images/umesh_bhardwaj.png",
+      imagePosition: "50% 20%",
       signature: "/images/signature_umesh.png",
       quote: "SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India's fast paced and competitive environment.",
       accent: "#00AEEF",
@@ -181,14 +181,14 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/40 via-transparent to-transparent z-10" />
               <div className="absolute inset-0 grid-lines opacity-10 z-10" />
             </div>
-            {/* Floating badge card */}
-            <div className="hidden sm:flex absolute -bottom-8 -right-6 lg:-right-10 bg-white shadow-2xl rounded-2xl p-6 items-center gap-4 border border-slate-100 max-w-[260px]">
-              <div className="h-12 w-12 icon-chip shrink-0">
+            {/* Floating badge card with rich brand contrast */}
+            <div className="hidden sm:flex absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 lg:-right-8 bg-[#071A35] text-white shadow-[0_20px_50px_rgba(7,26,53,0.45)] rounded-2xl p-5 sm:p-6 items-center gap-4 border border-white/15 max-w-[260px] z-20">
+              <div className="h-12 w-12 rounded-xl bg-[#00AEEF]/20 text-[#00AEEF] grid place-items-center shrink-0 border border-[#00AEEF]/30 shadow-inner">
                 <Award className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl font-semibold text-[#071A35] font-display leading-none">Since 2013</div>
-                <div className="text-xs text-slate-400 font-medium mt-1">Agra, Uttar Pradesh</div>
+                <div className="text-xl font-semibold text-white font-display leading-none">Since 2013</div>
+                <div className="text-xs text-[#00AEEF] font-medium mt-1.5 tracking-wide">Agra, Uttar Pradesh</div>
               </div>
             </div>
           </div>

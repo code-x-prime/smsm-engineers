@@ -148,13 +148,13 @@ export default function GroupCompanies() {
                       specs={c.achievements}
                       aspectRatio="aspect-[16/11]"
                     />
-                    <div className={`hidden sm:flex absolute -bottom-7 ${isLeft ? "-right-6 lg:-right-8" : "-left-6 lg:-left-8"} bg-white shadow-2xl rounded-2xl p-5 items-center gap-4 border border-slate-100 max-w-[240px] z-20`}>
-                      <div className="h-12 w-12 icon-chip shrink-0">
+                    <div className={`hidden sm:flex absolute -bottom-7 ${isLeft ? "-right-6 lg:-right-8" : "-left-6 lg:-left-8"} bg-[#071A35] text-white shadow-[0_20px_50px_rgba(7,26,53,0.4)] rounded-2xl p-5 items-center gap-4 border border-white/15 max-w-[240px] z-20`}>
+                      <div className="h-12 w-12 rounded-xl bg-[#00AEEF]/20 text-[#00AEEF] grid place-items-center shrink-0 border border-[#00AEEF]/30 shadow-inner">
                         <Icon className="h-6 w-6" />
                       </div>
                       <div>
-                        <div className="text-base font-medium text-[#071A35] font-display leading-snug">{c.name}</div>
-                        <div className="text-[11px] text-slate-400 font-medium mt-1 uppercase tracking-wide">Group Division</div>
+                        <div className="text-base font-medium text-white font-display leading-snug">{c.name}</div>
+                        <div className="text-[11px] text-[#00AEEF] font-medium mt-1 uppercase tracking-wide">Group Division</div>
                       </div>
                     </div>
                   </div>
