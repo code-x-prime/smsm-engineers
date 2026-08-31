@@ -110,20 +110,20 @@ function LoaderContent() {
 
       {/* Center Logo & Loading Bar */}
       <div className="relative z-10 flex flex-col items-center px-6">
-        {/* Glowing SMSM Logo */}
-        <div className="relative mb-6 transform transition-transform duration-300">
+        {/* Illuminated High-Contrast Badge for Official SMSM Logo */}
+        <div className="relative mb-8 px-7 py-4 sm:px-9 sm:py-5 rounded-2xl bg-white shadow-[0_0_50px_rgba(0,174,239,0.45),0_15px_35px_rgba(0,0,0,0.5)] border border-[#00AEEF]/40 flex items-center justify-center">
           <Image
             src="/images/smsm_logo.png"
             alt="SMSM Engineers"
             width={240}
-            height={75}
+            height={70}
             priority
-            className="h-14 sm:h-16 w-auto object-contain brightness-0 invert drop-shadow-[0_0_25px_rgba(0,174,239,0.5)]"
+            className="h-11 sm:h-13 w-auto object-contain"
           />
         </div>
 
         {/* Futuristic Glowing Progress Bar */}
-        <div className="relative w-64 sm:w-80 h-[3px] bg-white/10 rounded-full overflow-hidden">
+        <div className="relative w-64 sm:w-80 h-[4px] bg-white/10 rounded-full overflow-hidden">
           <div
             className="h-full bg-gradient-to-r from-rose-500 via-[#00AEEF] to-[#38BDF8] rounded-full transition-all duration-75 ease-out shadow-[0_0_12px_rgba(0,174,239,0.9)]"
             style={{ width: `${progress}%` }}
@@ -131,7 +131,7 @@ function LoaderContent() {
         </div>
 
         {/* Numeric Percentage */}
-        <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-white/70">
+        <div className="mt-3 text-xs sm:text-sm font-mono tracking-widest text-[#00AEEF] font-semibold">
           {progress}%
         </div>
       </div>
