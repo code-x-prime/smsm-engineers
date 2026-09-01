@@ -20,7 +20,7 @@ export default function GroupCompanies() {
       logo: Layers,
       image: "/images/product_colorant.png",
       achievements: [
-        "10,000+ metric tons annual output capacity",
+        "2,000+ metric tons annual output capacity",
         "Formulation supplier to 3 of India's top 5 paint brands",
         "Weather weather fastness validated under ISO standard frameworks",
       ],

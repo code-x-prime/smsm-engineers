@@ -195,7 +195,7 @@ export default function Home() {
       name: "ACT India",
       industry: "Coatings Chemistry & Pigment Synthesis",
       desc: "ACT India is our chemical manufacturing arm. Equipped with automated grinding mills, it produces universal colorants and pigment stainers supplied directly to top national paint brands.",
-      achievements: ["10,000+ Metric Tons annual output", "Supplying 3 of India's top 5 paint brands"],
+      achievements: ["2,000+ Metric Tons annual output", "Supplying 3 of India's top 5 paint brands"],
       icon: Layers,
       color: "from-[#0A4ABF] to-[#071A35]",
     },
