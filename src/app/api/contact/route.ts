@@ -97,13 +97,14 @@ const formMeta: Record<
     sourcePage: "Request a Quote",
     sourceUrl: "/query-form",
     fields: [
+      { key: "subject", label: "Request Subject / Type" },
       { key: "name", label: "Full Name" },
       { key: "company", label: "Company" },
       { key: "email", label: "Email Address" },
       { key: "phone", label: "Phone Number" },
-      { key: "productInterest", label: "Product of Interest" },
+      { key: "productInterest", label: "Product / Software of Interest" },
       { key: "estimatedVolume", label: "Estimated Volume" },
-      { key: "message", label: "Message" },
+      { key: "message", label: "Message / Requirements" },
     ],
   },
   feedback: {
@@ -178,7 +179,7 @@ export async function POST(req: Request) {
       from: process.env.MAIL_FROM || "SMSM Web Portal <portal@smsmengineers.in>",
       to: process.env.NOTIFICATION_EMAIL || "support@smsmengineers.in",
       replyTo: body.email,
-      subject: `[${meta.sourcePage}] New ${meta.title} — ${displayName}`,
+      subject: `[${meta.sourcePage}] ${body.subject ? body.subject + " — " : ""}New ${meta.title} — ${displayName}`,
       text: [
         `New submission from: ${meta.sourcePage} (${meta.sourceUrl})`,
         `Submitted: ${submittedAt} IST`,
