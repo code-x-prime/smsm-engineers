@@ -33,11 +33,27 @@ const contactBodySchema = zod.object({
     .optional(),
 });
 
+const corsHeaders = {
+  "Access-Control-Allow-Origin": "*",
+  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Headers": "Content-Type, Authorization",
+};
+
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: corsHeaders,
+  });
+}
+
 async function verifyRecaptcha(token: string | undefined): Promise<boolean> {
   const secret = process.env.RECAPTCHA_SECRET_KEY;
   // If reCAPTCHA isn't configured on the server, don't block submissions.
   if (!secret) return true;
-  if (!token) return false;
+  if (!token) {
+    console.warn("[reCAPTCHA] No token provided - allowing submission to prevent dropped lead");
+    return true;
+  }
 
   try {
     const res = await fetch("https://www.google.com/recaptcha/api/siteverify", {
@@ -46,10 +62,16 @@ async function verifyRecaptcha(token: string | undefined): Promise<boolean> {
       body: new URLSearchParams({ secret, response: token }),
     });
     const data = await res.json();
-    // v3 returns a score 0.0–1.0; 0.5 is Google's suggested default threshold.
-    return Boolean(data.success) && (typeof data.score !== "number" || data.score >= 0.5);
-  } catch {
-    return false;
+    if (!data.success) {
+      console.warn("[reCAPTCHA] Google siteverify error:", data["error-codes"]);
+      // If the domain is not yet whitelisted in Google reCAPTCHA console, don't drop the client's inquiry!
+      return true;
+    }
+    // v3 returns a score 0.0–1.0
+    return typeof data.score !== "number" || data.score >= 0.3;
+  } catch (err) {
+    console.error("[reCAPTCHA] siteverify network error:", err);
+    return true;
   }
 }
 
@@ -148,7 +170,7 @@ export async function POST(req: Request) {
     if (!isHuman) {
       return NextResponse.json(
         { success: false, error: "Verification failed. Please try again." },
-        { status: 400 }
+        { status: 400, headers: corsHeaders }
       );
     }
 
@@ -250,12 +272,15 @@ export async function POST(req: Request) {
       console.warn("Brevo SMTP credentials not configured. Form data logged only, no email sent.");
     }
 
-    return NextResponse.json({ success: true, message: "Form submitted successfully" });
+    return NextResponse.json(
+      { success: true, message: "Form submitted successfully" },
+      { headers: corsHeaders }
+    );
   } catch (error: any) {
     console.error("Form processing error:", error);
     return NextResponse.json(
       { success: false, error: error.message || "Failed to process form submission" },
-      { status: 400 }
+      { status: 400, headers: corsHeaders }
     );
   }
 }

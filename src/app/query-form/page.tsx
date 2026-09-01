@@ -29,6 +29,7 @@ function QueryFormContent() {
   const subjectParam = searchParams.get("subject") || searchParams.get("product") || "";
 
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState<string>("");
   const { register, handleSubmit, formState: { errors }, reset, setValue } = useForm<QueryForm>({
     resolver: zodResolver(querySchema),
     defaultValues: {
@@ -50,6 +51,7 @@ function QueryFormContent() {
 
   const onSubmit = async (data: QueryForm) => {
     setStatus("loading");
+    setErrorMessage("");
     try {
       const recaptchaToken = await getRecaptchaToken("query_form");
       const res = await fetch("/api/contact", {
@@ -66,9 +68,12 @@ function QueryFormContent() {
         setStatus("success");
         reset();
       } else {
+        const errJson = await res.json().catch(() => ({}));
+        setErrorMessage(errJson.error || "Failed to submit inquiry. Please try again.");
         setStatus("error");
       }
-    } catch {
+    } catch (err: any) {
+      setErrorMessage(err?.message || "Network error. Please verify connection and try again.");
       setStatus("error");
     }
   };
@@ -118,7 +123,9 @@ function QueryFormContent() {
       {status === "error" && (
         <div className="bg-red-50 border border-red-200 text-red-700 p-4 rounded-2xl mb-6 flex gap-3 animate-fadeIn">
           <ShieldAlert className="h-5 w-5 shrink-0 text-red-600" />
-          <span className="text-sm">Failed to submit. Please check parameters or verify network connection.</span>
+          <span className="text-sm">
+            {errorMessage || "Failed to submit. Please check parameters or verify network connection."}
+          </span>
         </div>
       )}
 

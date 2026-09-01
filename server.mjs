@@ -1,4 +1,5 @@
 import { createServer } from 'http';
+import { parse } from 'url';
 import next from 'next';
 import dotenv from 'dotenv';
 
@@ -13,10 +14,25 @@ const handle = app.getRequestHandler();
 app.prepare()
     .then(() => {
         createServer(async (req, res) => {
-            if (req.url.startsWith("/api/auth/")) {
-                return handle(req, res);
+            try {
+                // Global CORS headers to allow cross-origin and reverse-proxy requests
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+                res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With, content-type, Authorization');
+
+                if (req.method === 'OPTIONS') {
+                    res.writeHead(200);
+                    res.end();
+                    return;
+                }
+
+                const parsedUrl = parse(req.url, true);
+                await handle(req, res, parsedUrl);
+            } catch (err) {
+                console.error('Error handling request:', req.url, err);
+                res.statusCode = 500;
+                res.end('Internal Server Error');
             }
-            handle(req, res);
         }).listen(port, (err) => {
             if (err) throw err;
             console.log(`> Ready on http://localhost:${port}`);
