@@ -83,7 +83,7 @@ export default function About() {
       name: "Mrs. Priyanka Bhardwaj",
       role: "Managing Director",
       image: "/images/priyanka_bhardwaj.jpg",
-      imagePosition: "50% 20%",
+      imagePosition: "50% 50%",
       signature: "/images/signature_priyanka.jpg",
       quote: "SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.",
       accent: "#38BDF8",
