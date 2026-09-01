@@ -16,11 +16,11 @@ const robotoSlab = Roboto_Slab({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.smsmengineers.com"),
-  title: "SMSM Engineers - Industrial Solutions & Engineering Excellence",
+  title: "SMSM Engineers - From Innovation to Application — One Tinting Solution",
   description: "Enterprise paint tinting systems, color machinery, PCB design, and engineering services.",
   keywords: "SMSM Engineers, Paint Mixing Machine, Paint Tinting Machine, Automatic Paint Dispenser, Gyroshaker Mixer, Universal Stainers, Colorant, Color Card, AMC, PCB Designing, Software Development, Color Consultancy",
   openGraph: {
-    title: "SMSM Engineers - Industrial Solutions & Engineering Excellence",
+    title: "SMSM Engineers - From Innovation to Application — One Tinting Solution",
     description: "Enterprise paint tinting systems, color machinery, PCB design, and engineering services.",
     url: "https://www.smsmengineers.com",
     siteName: "SMSM Engineers",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SMSM Engineers - Industrial Solutions & Engineering Excellence",
+    title: "SMSM Engineers - From Innovation to Application — One Tinting Solution",
     description: "Enterprise paint tinting systems, color machinery, PCB design, and engineering services.",
   },
   robots: {
