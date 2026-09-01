@@ -98,11 +98,8 @@ const brochureDownloads: DownloadItem[] = [
 ];
 
 export function DownloadSection() {
-  const [openSection, setOpenSection] = useState<"software" | "brochure" | null>("software");
-
-  const toggleSection = (section: "software" | "brochure") => {
-    setOpenSection(prev => prev === section ? null : section);
-  };
+  const [softwareOpen, setSoftwareOpen] = useState(true);
+  const [brochureOpen, setBrochureOpen] = useState(true);
 
   return (
     <section id="downloads" className="py-16 md:py-24 bg-slate-50 border-t border-slate-200">
@@ -121,13 +118,13 @@ export function DownloadSection() {
         </div>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <div className="space-y-6">
           {/* ACCORDION 1: SOFTWARE DOWNLOAD */}
           <div className="border border-slate-300/80 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
             <button
-              onClick={() => toggleSection("software")}
+              onClick={() => setSoftwareOpen(prev => !prev)}
               className={`w-full py-4 px-6 md:px-8 flex items-center justify-between text-left transition-colors duration-200 ${
-                openSection === "software"
+                softwareOpen
                   ? "bg-[#071A35] text-white"
                   : "bg-[#1E293B] hover:bg-[#071A35] text-white"
               }`}
@@ -139,11 +136,11 @@ export function DownloadSection() {
                 </span>
               </div>
               <span className="text-xl font-light font-mono text-[#00AEEF]">
-                {openSection === "software" ? "−" : "+"}
+                {softwareOpen ? "−" : "+"}
               </span>
             </button>
 
-            {openSection === "software" && (
+            {softwareOpen && (
               <div className="bg-white p-6 sm:p-8 divide-y divide-slate-100 animate-fadeIn">
                 <div className="grid md:grid-cols-3 gap-6">
                   {softwareDownloads.map((item, idx) => (
@@ -197,9 +194,9 @@ export function DownloadSection() {
           {/* ACCORDION 2: BROCHURE DOWNLOAD */}
           <div className="border border-slate-300/80 rounded-lg overflow-hidden shadow-sm transition-all duration-300">
             <button
-              onClick={() => toggleSection("brochure")}
+              onClick={() => setBrochureOpen(prev => !prev)}
               className={`w-full py-4 px-6 md:px-8 flex items-center justify-between text-left transition-colors duration-200 ${
-                openSection === "brochure"
+                brochureOpen
                   ? "bg-[#071A35] text-white"
                   : "bg-[#1E293B] hover:bg-[#071A35] text-white"
               }`}
@@ -211,11 +208,11 @@ export function DownloadSection() {
                 </span>
               </div>
               <span className="text-xl font-light font-mono text-[#00AEEF]">
-                {openSection === "brochure" ? "−" : "+"}
+                {brochureOpen ? "−" : "+"}
               </span>
             </button>
 
-            {openSection === "brochure" && (
+            {brochureOpen && (
               <div className="bg-white p-6 sm:p-8 animate-fadeIn">
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
                   {brochureDownloads.map((item, idx) => (
