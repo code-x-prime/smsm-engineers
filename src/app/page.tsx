@@ -20,10 +20,10 @@ const slides = [
   {
     img: "/images/hero.png",
     tagline: "Trusted Tinting Solutions Partner — Serving Since 2013",
-    title1: "One",
-    titleHighlight: "Solution",
-    title2: "For All Your Tinting Needs",
-    desc: "Delivering complete color tinting excellence from innovation to application — colorants, dispensers, shade cards, and the engineering behind them."
+    title1: "Paint Mixing &",
+    titleHighlight: "Tinting Machine",
+    title2: "Manufacturer in India",
+    desc: "SMSM Engineers manufactures automatic paint dispensers, paint mixing machines, universal stainers, gyroshaker mixers and complete paint tinting solutions in India."
   },
   {
     img: "/images/hero1.png",
@@ -274,16 +274,28 @@ export default function Home() {
                 <Shield className="h-4 w-4" /> {slides[currentSlide].tagline}
               </div>
 
-              {/* Clean modern sans typography, tight tracking, fully responsive */}
-              <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-[1.08] font-semibold tracking-tight">
-                {slides[currentSlide].title1}{" "}
-                <span className="text-[#00AEEF] block sm:inline">
-                  {slides[currentSlide].titleHighlight}
-                </span>
-                <span className="text-white/85 block mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-normal normal-case">
-                  {slides[currentSlide].title2}
-                </span>
-              </h1>
+              {/* Single authoritative H1 for SEO matching user specification */}
+              {currentSlide === 0 ? (
+                <h1 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-[1.08] font-semibold tracking-tight">
+                  {slides[currentSlide].title1}{" "}
+                  <span className="text-[#00AEEF] block sm:inline">
+                    {slides[currentSlide].titleHighlight}
+                  </span>
+                  <span className="text-white/85 block mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-normal normal-case">
+                    {slides[currentSlide].title2}
+                  </span>
+                </h1>
+              ) : (
+                <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-[64px] leading-[1.08] font-semibold tracking-tight">
+                  {slides[currentSlide].title1}{" "}
+                  <span className="text-[#00AEEF] block sm:inline">
+                    {slides[currentSlide].titleHighlight}
+                  </span>
+                  <span className="text-white/85 block mt-2 text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium tracking-normal normal-case">
+                    {slides[currentSlide].title2}
+                  </span>
+                </h2>
+              )}
 
               <p className="text-white/80 text-base md:text-lg max-w-2xl font-light leading-relaxed">
                 {slides[currentSlide].desc}

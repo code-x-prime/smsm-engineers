@@ -16,16 +16,21 @@ const robotoSlab = Roboto_Slab({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.smsmengineers.com"),
-  title: "SMSM Engineers - Dedicated to Innovation & Engineering Excellence",
-  description: "SMSM Engineers Private Limited - Premier provider of industrial paint tinting systems, auto & manual color dispensers, gyroshakers, universal stainers, custom PCB design, and color consultancy services.",
-  keywords: "SMSM Engineers, Colorant, Color Card, Color Dispenser, Gyroshaker, Universal Stainers, AMC, PCB Designing, Software Development, Color Consultancy",
+  title: "Paint Mixing & Tinting Machine Manufacturer in India | SMSM Engineers",
+  description: "SMSM Engineers manufactures automatic paint dispensers, paint mixing machines, universal stainers, gyroshaker mixers and complete paint tinting solutions in India.",
+  keywords: "Paint Mixing Machine, Paint Tinting Machine, Automatic Paint Dispenser, Gyroshaker Mixer, Universal Stainers, Paint Tinting Solutions India, SMSM Engineers, Colorant, Color Card, Color Dispenser, AMC, PCB Designing, Software Development, Color Consultancy",
   openGraph: {
-    title: "SMSM Engineers - Industrial Solutions & Engineering Excellence",
-    description: "Enterprise paint tinting systems, color machinery, PCB design, and engineering services.",
+    title: "Paint Mixing & Tinting Machine Manufacturer in India | SMSM Engineers",
+    description: "SMSM Engineers manufactures automatic paint dispensers, paint mixing machines, universal stainers, gyroshaker mixers and complete paint tinting solutions in India.",
     url: "https://www.smsmengineers.com",
     siteName: "SMSM Engineers",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Paint Mixing & Tinting Machine Manufacturer in India | SMSM Engineers",
+    description: "SMSM Engineers manufactures automatic paint dispensers, paint mixing machines, universal stainers, gyroshaker mixers and complete paint tinting solutions in India.",
   },
 };
 
