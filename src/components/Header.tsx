@@ -124,9 +124,9 @@ export function Header() {
   return (
     <div className="fixed inset-x-0 top-0 z-50 flex flex-col">
       {/* TOP INFORMATION BAR */}
-      <div className="relative bg-[#071A35]/95 border-b border-white/5 text-white/80 text-xs py-2 px-6 backdrop-blur-md hidden md:block overflow-hidden">
+      <div className="relative bg-[#071A35]/95 border-b border-white/5 text-white/80 text-xs py-1.5 px-4 sm:px-6 xl:px-8 backdrop-blur-md hidden md:block overflow-hidden">
         <div className="absolute inset-0 grid-lines opacity-[0.06] pointer-events-none" />
-        <div className="relative max-w-[1400px] mx-auto flex justify-between items-center">
+        <div className="relative max-w-[1400px] w-full mx-auto flex justify-between items-center">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-1.5 hover:text-[#00AEEF] transition-colors">
               <IconPhone className="h-3.5 w-3.5 text-[#00AEEF]" /> +91 813-0720-777
@@ -161,21 +161,21 @@ export function Header() {
         className={cn(
           "w-full transition-all duration-300 border-b",
           scrolled
-            ? "py-3 bg-white/90 backdrop-blur-xl border-slate-200 shadow-[0_8px_30px_-15px_rgba(7,26,53,0.15)]"
-            : "py-4 bg-white border-slate-100"
+            ? "py-2.5 bg-white/95 backdrop-blur-xl border-slate-200 shadow-[0_8px_30px_-15px_rgba(7,26,53,0.15)]"
+            : "py-3 bg-white border-slate-100"
         )}
         onMouseLeave={() => setOpen(null)}
       >
-        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 flex items-center justify-between gap-4 sm:gap-8 relative">
+        <div className="max-w-[1400px] w-full mx-auto px-4 sm:px-6 xl:px-8 flex items-center justify-between gap-2 lg:gap-4 relative">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0 group">
             <Image
               src="/images/smsm_logo.png"
               alt="SMSM Engineers Logo"
-              width={200}
-              height={60}
+              width={180}
+              height={50}
               className="object-contain transition-all duration-300"
-              style={{ height: scrolled ? "36px" : "44px", width: "auto" }}
+              style={{ height: scrolled ? "32px" : "38px", width: "auto" }}
               priority
             />
           </Link>
@@ -190,13 +190,13 @@ export function Header() {
                     key={item.label}
                     href={item.to}
                     className={cn(
-                      "px-2.5 xl:px-3.5 py-2 text-sm font-medium transition-all relative group/link rounded-full whitespace-nowrap",
+                      "px-2 xl:px-2.5 2xl:px-3.5 py-1.5 text-xs xl:text-[13px] 2xl:text-sm font-medium transition-all relative group/link rounded-full whitespace-nowrap",
                       isActive ? "text-[#0A4ABF] bg-[#00AEEF]/10" : "text-[#071A35]/80 hover:text-[#0A4ABF] hover:bg-slate-50"
                     )}
                   >
                     {item.label}
                     <span className={cn(
-                      "absolute bottom-0 left-3 right-3 h-[2px] bg-[#0A4ABF] transform scale-x-0 transition-transform group-hover/link:scale-x-100 origin-left",
+                      "absolute bottom-0 left-2.5 right-2.5 h-[2px] bg-[#0A4ABF] transform scale-x-0 transition-transform group-hover/link:scale-x-100 origin-left",
                       isActive && "scale-x-100"
                     )} />
                   </Link>
@@ -212,7 +212,7 @@ export function Header() {
                 <div key={item.label} onMouseEnter={() => setOpen(item.label)}>
                   <button
                     className={cn(
-                      "px-2.5 xl:px-3.5 py-2 text-sm font-medium flex items-center gap-1 transition-all rounded-full whitespace-nowrap",
+                      "px-2 xl:px-2.5 2xl:px-3.5 py-1.5 text-xs xl:text-[13px] 2xl:text-sm font-medium flex items-center gap-1 transition-all rounded-full whitespace-nowrap",
                       isOpen || hasActiveChild ? "text-[#0A4ABF] bg-[#00AEEF]/10" : "text-[#071A35]/80 hover:text-[#0A4ABF] hover:bg-slate-50"
                     )}
                   >
