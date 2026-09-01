@@ -37,13 +37,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={robotoSlab.variable}>
       <head>
-        <Script
+        <script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
           data-cbid="545f69cb-7006-494d-bd26-001a9d3666d3"
           data-blockingmode="auto"
-          strategy="beforeInteractive"
-        />
+          type="text/javascript"
+        ></script>
         {process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY && (
           <Script
             id="recaptcha-v3"

@@ -134,16 +134,17 @@ export default function BecomePartner() {
       <section className="py-16 md:py-24 lg:py-[130px] bg-white">
         <div className="max-w-[1400px] mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           <div className="lg:col-span-6 relative">
-            <div className="relative aspect-[16/11] rounded-2xl overflow-hidden group shadow-2xl">
-              <Image
-                src="/images/product_automatic_dispenser.png"
-                alt="SMSM Engineers Partnership"
-                fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-                sizes="(max-w-1024px) 100vw, 50vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/30 via-transparent to-transparent z-10" />
-              <div className="absolute inset-0 grid-lines opacity-10 z-10" />
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden group shadow-xl bg-gradient-to-b from-slate-100 via-white to-slate-50 border border-slate-200/80 p-6 sm:p-8 flex items-center justify-center">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/product_automatic_dispenser.png"
+                  alt="SMSM Engineers Automatic Color Dispenser"
+                  fill
+                  className="object-contain drop-shadow-2xl transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-w-1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
             </div>
             <div className="hidden sm:flex absolute -bottom-6 -right-4 sm:-bottom-8 sm:-right-6 lg:-right-8 bg-[#071A35] text-white shadow-[0_20px_50px_rgba(7,26,53,0.45)] rounded-2xl p-5 sm:p-6 items-center gap-4 border border-white/15 max-w-[270px] z-20">
               <div className="h-12 w-12 rounded-xl bg-[#00AEEF]/20 text-[#00AEEF] grid place-items-center shrink-0 border border-[#00AEEF]/30 shadow-inner">
