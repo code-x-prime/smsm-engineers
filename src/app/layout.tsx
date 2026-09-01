@@ -48,6 +48,12 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.smsmengineers.com",
   },
+  verification: {
+    google: [
+      "7iSQOOOQP3odcSJk8Xjp2KoPkVPgpSMwSR_BJiHGkq8",
+      "google-site-verification=7iSQOOOQP3odcSJk8Xjp2KoPkVPgpSMwSR_BJiHGkq8",
+    ],
+  },
 };
 
 export default function RootLayout({
@@ -58,17 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={robotoSlab.variable}>
       <head>
-        {/* Google Tag Manager */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NCVQDD8X');`,
-          }}
-        />
-        {/* End Google Tag Manager */}
+        {/* Google Search Console Verification */}
+        <meta name="google-site-verification" content="7iSQOOOQP3odcSJk8Xjp2KoPkVPgpSMwSR_BJiHGkq8" />
+        <meta name="google-site-verification" content="google-site-verification=7iSQOOOQP3odcSJk8Xjp2KoPkVPgpSMwSR_BJiHGkq8" />
         <script
           id="Cookiebot"
           src="https://consent.cookiebot.com/uc.js"
@@ -85,16 +83,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         )}
       </head>
       <body className="antialiased bg-brand-bg text-brand-primary min-h-screen flex flex-col font-sans">
-        {/* Google Tag Manager (noscript) */}
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-NCVQDD8X"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
-        {/* End Google Tag Manager (noscript) */}
         <PageLoader />
         <Header />
         <div className="flex-grow">
