@@ -88,6 +88,7 @@ export default function ProductsPage() {
                     specs={[p.spec]}
                     href={`/products/${p.slug}`}
                     aspectRatio="aspect-[16/11]"
+                    objectFit={p.slug === "color-dispenser" ? "contain" : "cover"}
                   />
                   <div className="p-6 sm:p-7 flex flex-col justify-between flex-1">
                     <div>

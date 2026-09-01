@@ -16,6 +16,7 @@ interface ImageColorMaskProps {
   aspectRatio?: string;
   className?: string;
   sizes?: string;
+  objectFit?: "cover" | "contain";
 }
 
 export function ImageColorMask({
@@ -29,12 +30,19 @@ export function ImageColorMask({
   aspectRatio = "aspect-[16/10]",
   className = "",
   sizes = "(max-w-768px) 100vw, 50vw",
+  objectFit = "cover",
 }: ImageColorMaskProps) {
   const [active, setActive] = useState(false);
 
+  const isContain = objectFit === "contain";
+
   const content = (
     <div
-      className={`relative ${aspectRatio} rounded-2xl overflow-hidden group border border-slate-200/80 shadow-xl cursor-pointer select-none bg-slate-900 ${className}`}
+      className={`relative ${aspectRatio} rounded-2xl overflow-hidden group border border-slate-200/80 shadow-xl cursor-pointer select-none ${
+        isContain
+          ? "bg-gradient-to-b from-slate-100 via-white to-slate-50"
+          : "bg-slate-900"
+      } ${className}`}
       onClick={() => setActive(!active)}
       onMouseLeave={() => setActive(false)}
     >
@@ -43,12 +51,22 @@ export function ImageColorMask({
         src={src}
         alt={alt}
         fill
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        className={
+          isContain
+            ? "object-contain p-4 sm:p-6 drop-shadow-xl transition-transform duration-700 ease-out group-hover:scale-105"
+            : "object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+        }
         sizes={sizes}
       />
 
       {/* Default subtle gradient for unhovered readability */}
-      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/60 via-transparent to-transparent z-10 transition-opacity duration-500 group-hover:opacity-0" />
+      <div
+        className={`absolute inset-0 z-10 transition-opacity duration-500 group-hover:opacity-0 ${
+          isContain
+            ? "bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"
+            : "bg-gradient-to-t from-slate-950/60 via-transparent to-transparent"
+        }`}
+      />
       <div className="absolute bottom-5 left-6 z-20 transition-opacity duration-500 group-hover:opacity-0">
         <span className="text-[11px] uppercase font-semibold text-[#00AEEF] tracking-wider block mb-1">
           {badge}

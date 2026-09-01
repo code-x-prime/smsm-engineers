@@ -464,6 +464,7 @@ export default function Home() {
                       specs={prod.specs}
                       href={prod.link}
                       aspectRatio="aspect-[16/10]"
+                      objectFit={prod.id === "automatic-dispenser" ? "contain" : "cover"}
                     />
                   </div>
 
