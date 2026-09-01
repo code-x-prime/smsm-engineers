@@ -292,16 +292,16 @@ export function Header() {
           </nav>
 
           {/* Right Action Stack */}
-          <div className="flex items-center gap-2 sm:gap-3">
-            <a href="tel:+918130720777" className="hidden xl:inline-flex h-10 w-10 items-center justify-center border border-slate-200 rounded-full hover:bg-slate-50 hover:border-[#00AEEF]/40 hover:-translate-y-0.5 transition-all text-[#071A35]">
+          <div className="flex items-center gap-2 sm:gap-2.5 shrink-0">
+            <a href="tel:+918130720777" className="hidden 2xl:inline-flex h-9 w-9 items-center justify-center border border-slate-200 rounded-full hover:bg-slate-50 hover:border-[#00AEEF]/40 hover:-translate-y-0.5 transition-all text-[#071A35]">
               <IconPhone className="h-4 w-4 text-[#0A4ABF]" />
             </a>
-            <a href="mailto:support@smsmengineers.in" className="hidden xl:inline-flex h-10 w-10 items-center justify-center border border-slate-200 rounded-full hover:bg-slate-50 hover:border-[#00AEEF]/40 hover:-translate-y-0.5 transition-all text-[#071A35]">
+            <a href="mailto:support@smsmengineers.in" className="hidden 2xl:inline-flex h-9 w-9 items-center justify-center border border-slate-200 rounded-full hover:bg-slate-50 hover:border-[#00AEEF]/40 hover:-translate-y-0.5 transition-all text-[#071A35]">
               <IconMail className="h-4 w-4 text-[#0A4ABF]" />
             </a>
             <Link
               href="/query-form"
-              className="hidden sm:inline-flex items-center gap-2 bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-5 py-3 rounded-full hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-4px_rgba(0,174,239,0.5)] transition-all whitespace-nowrap shrink-0"
+              className="hidden sm:inline-flex items-center gap-1.5 bg-[#00AEEF] text-[#071A35] font-semibold text-xs uppercase tracking-wider px-4 py-2.5 rounded-full hover:bg-white hover:-translate-y-0.5 hover:shadow-[0_8px_20px_-4px_rgba(0,174,239,0.5)] transition-all whitespace-nowrap shrink-0"
             >
               Request Quote <IconArrowUpRight className="h-4 w-4" />
             </Link>
