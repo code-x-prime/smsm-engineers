@@ -20,6 +20,14 @@ const slides = [
   {
     img: "/images/hero.png",
     tagline: "Trusted Tinting Solutions Partner — Serving Since 2013",
+    title1: "One",
+    titleHighlight: "Solution",
+    title2: "For All Your Tinting Needs",
+    desc: "Delivering complete color tinting excellence from innovation to application — colorants, dispensers, shade cards, and the engineering behind them."
+  },
+  {
+    img: "/images/hero_about.png",
+    tagline: "Precision Machinery & Manufacturing",
     title1: "Paint Mixing &",
     titleHighlight: "Tinting Machine",
     title2: "Manufacturer in India",
