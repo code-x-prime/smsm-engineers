@@ -32,6 +32,22 @@ export const metadata: Metadata = {
     title: "Paint Mixing & Tinting Machine Manufacturer in India | SMSM Engineers",
     description: "SMSM Engineers manufactures automatic paint dispensers, paint mixing machines, universal stainers, gyroshaker mixers and complete paint tinting solutions in India.",
   },
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://www.smsmengineers.com",
+  },
 };
 
 export default function RootLayout({
