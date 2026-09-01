@@ -50,14 +50,14 @@ export function PartnerMarquee({ title = "Trusted by Paint Operators & Corporate
           {clientLogos.concat(clientLogos).map((logo, idx) => (
             <div
               key={`${logo.name}-${idx}`}
-              className="relative h-20 sm:h-24 w-44 sm:w-56 shrink-0 bg-white border border-slate-200/90 rounded-2xl px-5 py-3.5 flex items-center justify-center shadow-[0_2px_8px_rgba(7,26,53,0.04)] hover:shadow-[0_8px_24px_rgba(7,26,53,0.1)] hover:border-[#00AEEF]/50 transition-all duration-300 hover:scale-[1.04] group cursor-pointer"
+              className="relative h-20 sm:h-24 w-44 sm:w-56 shrink-0 bg-white border border-slate-200/90 rounded-2xl px-5 py-3.5 flex items-center justify-center shadow-[0_2px_8px_rgba(7,26,53,0.04)] hover:shadow-[0_8px_24px_rgba(7,26,53,0.12)] hover:border-[#00AEEF]/60 transition-all duration-300 hover:scale-[1.04] group cursor-pointer"
             >
               <div className="relative h-full w-full flex items-center justify-center">
                 <Image
                   src={logo.src}
                   alt={logo.name}
                   fill
-                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain filter grayscale contrast-115 opacity-75 transition-all duration-300 group-hover:grayscale-0 group-hover:contrast-100 group-hover:opacity-100 group-hover:scale-105"
                   sizes="(max-width: 768px) 180px, 230px"
                 />
               </div>
