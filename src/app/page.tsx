@@ -625,8 +625,13 @@ export default function Home() {
             <Reveal>
               <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow">
                 <div className="flex gap-4 items-center">
-                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF] grid place-items-center bg-gradient-to-br from-[#0A4ABF] to-[#071A35] text-white font-medium font-display">
-                    PB
+                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF]">
+                    <Image
+                      src="/images/priyanka_bhardwaj_face.jpg"
+                      alt="Mrs. Priyanka Bhardwaj"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <h3 className="text-xl font-medium text-[#071A35] font-display">Mrs. Priyanka Bhardwaj</h3>
