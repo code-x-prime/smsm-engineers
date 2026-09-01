@@ -14,7 +14,7 @@ import { Counter } from "@/components/Counter";
 import { Reveal } from "@/components/Reveal";
 import { PartnerMarquee } from "@/components/PartnerMarquee";
 import { ImageColorMask } from "@/components/ImageColorMask";
-import { DownloadSection } from "@/components/DownloadSection";
+
 
 const slides = [
   {
@@ -648,7 +648,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#00AEEF] pl-4">
-                  &ldquo;SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India&apos;s fast paced and competitive environment.&rdquo;
+                  &ldquo;SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India&apos;s fast paced and competitive environment. Our vision is to set new benchmarks in operational excellence and client satisfaction across every project we undertake.&rdquo;
                 </p>
               </div>
             </Reveal>
@@ -671,7 +671,7 @@ export default function Home() {
                   </div>
                 </div>
                 <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#0A4ABF] pl-4">
-                  &ldquo;SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions.&rdquo;
+                  &ldquo;SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions. Our commitment to quality and timely execution drives every decision, empowering our teams to deliver consistent results and build lasting relationships with clients nationwide.&rdquo;
                 </p>
               </div>
             </Reveal>
@@ -780,9 +780,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
-      {/* SECTION 9: DOWNLOAD CENTER (Software & Brochures) */}
-      <DownloadSection />
 
       <PartnerMarquee title="Trusted by Leading Global Paint Brands & Operators" />
 
