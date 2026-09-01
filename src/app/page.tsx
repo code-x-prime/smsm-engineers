@@ -638,7 +638,7 @@ export default function Home() {
                 <div className="flex gap-4 items-center">
                   <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF]">
                     <Image
-                      src="/images/priyanka_bhardwaj_portrait.jpg"
+                      src="/images/priyanka_bhardwaj_face.jpg"
                       alt="Mrs. Priyanka Bhardwaj"
                       fill
                       className="object-cover"
