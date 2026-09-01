@@ -72,8 +72,8 @@ export default function About() {
     {
       name: "Acharya Umesh Bhardwaj",
       role: "Chairman & Executive Director",
-      image: "/images/umesh_bhardwaj.jpg",
-      imagePosition: "50% 16%",
+      image: "/images/umesh_bhardwaj_face.jpg",
+      imagePosition: "50% 50%",
       signature: "/images/signature_umesh.png",
       quote: "SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India's fast paced and competitive environment.",
       accent: "#00AEEF",

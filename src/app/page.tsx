@@ -14,6 +14,7 @@ import { Counter } from "@/components/Counter";
 import { Reveal } from "@/components/Reveal";
 import { PartnerMarquee } from "@/components/PartnerMarquee";
 import { ImageColorMask } from "@/components/ImageColorMask";
+import { DownloadSection } from "@/components/DownloadSection";
 
 const slides = [
   {
@@ -742,6 +743,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* SECTION 9: DOWNLOAD CENTER (Software & Brochures) */}
+      <DownloadSection />
 
       <PartnerMarquee title="Trusted by Leading Global Paint Brands & Operators" />
 

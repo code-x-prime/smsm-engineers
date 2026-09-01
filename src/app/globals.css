@@ -134,16 +134,11 @@ html {
   color: #0a4abf;
 }
 
-/* Google reCAPTCHA v3's auto-injected floating badge sits in the same
-   bottom-right corner as our fixed WhatsApp button. Keep the badge visible
-   (Google's terms require showing it or the attribution text — we show
-   both) but shift it up so the two never overlap. */
+/* Google reCAPTCHA v3 floating badge:
+   Fixed at bottom-right with highest z-index so it never slips behind page sections */
 .grecaptcha-badge {
-  bottom: 88px !important;
-}
-
-@media (min-width: 768px) {
-  .grecaptcha-badge {
-    bottom: 100px !important;
-  }
+  bottom: 14px !important;
+  right: 14px !important;
+  z-index: 999999 !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15) !important;
 }

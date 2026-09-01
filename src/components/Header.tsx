@@ -86,7 +86,7 @@ const navList: Nav[] = [
           { label: "Color Consultancy", to: "/services/color-consultancy", desc: "Spectrophotometric calibration", icon: IconStack },
           { label: "Technical Support", to: "/services/technical-support", desc: "Remote diagnostic support & hotlines", icon: IconHelpCircle },
           { label: "Engineering Consultancy", to: "/services/engineering-consultancy", desc: "Coating factory layouts & lines planning", icon: IconSettings },
-          { label: "Downloads & Credentials", to: "/services/downloads", desc: "Official recommendation letters & DIPP PDFs", icon: IconDownload },
+          { label: "Downloads & Credentials", to: "/downloads", desc: "Software installers, brochures & technical manuals", icon: IconDownload },
         ],
       },
     ],
