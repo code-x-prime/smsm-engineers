@@ -8,7 +8,7 @@ import {
   ArrowRight, ChevronLeft, ChevronRight, Shield, Settings,
   Layers, Sliders, RefreshCw, Cpu, Database,
   Award, ShieldCheck, CheckCircle2,
-  HeartHandshake, ArrowUpRight,
+  HeartHandshake, ArrowUpRight, Syringe,
 } from "lucide-react";
 import { Counter } from "@/components/Counter";
 import { Reveal } from "@/components/Reveal";
@@ -198,6 +198,17 @@ export default function Home() {
       achievements: ["50,000+ units deployed", "IS 8472 engineering compliance"],
       icon: DropletIcon,
       color: "from-[#0A4ABF] to-[#00AEEF]",
+    },
+        {
+      name: "SMSM Healthcare",
+      industry: "Medical Equipment Calibration & Sanitization Pumps",
+      desc: "SMSM Healthcare provides calibration, maintenance, and setup services for hospital operations, clean-air ventilation control grids, and medical diagnostic pumps.",
+      achievements: [
+        "Maintenance SLAs with 15 regional hospital networks",
+        "ISO 13485 aligned medical calibration systems",
+      ],
+      icon: Syringe,
+      color: "from-[#00AEEF] to-[#071A35]",
     },
     {
       name: "UB Foundation",
