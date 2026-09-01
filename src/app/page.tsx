@@ -93,7 +93,7 @@ export default function Home() {
       name: "COLORANT",
       category: "Tinting Systems",
       desc: "Our universal paint colorants represent a decade of chemical refinement. Synthesized locally at ACT India plants, these colorants support both water-based emulsions and solvent-based paints without viscosity shifts.",
-      specs: ["100% Zero VOC Formulations", "Weather weathering tested (Delta E < 0.5)", "Compatible with acrylic and solvent coatings"],
+      specs: ["100% Zero VOC Formulations", "Weathering Tested (Delta E < 0.5)", "Compatible with acrylic and solvent coatings"],
       imageSide: "left",
       image: "/images/product_colorant.png",
       color: "from-[#0A4ABF]/20 via-[#071A35]/35 to-transparent",
@@ -137,7 +137,7 @@ export default function Home() {
       name: "UNIVERSAL STAINER",
       category: "Tinting Systems",
       desc: "Concentrated POS manual stainer squeeze bottles. Designed for quick micro-shade changes and formulation calibrations at dealer shops.",
-      specs: ["High pigment solid ratio (up to 60%)", "Calibrated drop nozzles", " Weather weather fastness"],
+      specs: ["High pigment solid ratio (up to 60%)", "Calibrated drop nozzles", "Excellent Weather Fastness"],
       imageSide: "left",
       image: "/images/product_universal_stainer.png",
       color: "from-[#00AEEF]/30 via-[#071A35]/40 to-transparent",
@@ -464,7 +464,7 @@ export default function Home() {
           <Reveal className="text-center max-w-3xl mx-auto">
             <span className="text-[#0A4ABF] text-xs uppercase tracking-widest font-semibold block mb-2">Our Catalog</span>
             <h2 className="section-heading text-4xl md:text-5xl text-[#071A35] font-display">
-              Preserved Industrial Products
+              Precision Industrial Products
             </h2>
           </Reveal>
 
@@ -528,7 +528,7 @@ export default function Home() {
           <Reveal className="text-center max-w-3xl mx-auto">
             <span className="text-[#00AEEF] text-xs uppercase tracking-widest font-semibold block mb-2">Our Capabilities</span>
             <h2 className="section-heading text-4xl md:text-5xl font-display">
-              Preserved Technical Services
+              Professional Technical Services
             </h2>
           </Reveal>
 
