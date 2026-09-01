@@ -23,6 +23,14 @@ const contactBodySchema = zod.object({
   region: zod.string().optional(),
   partnershipType: zod.string().optional(),
   recaptchaToken: zod.string().optional(),
+  cvAttachment: zod
+    .object({
+      filename: zod.string(),
+      content: zod.string(),
+      contentType: zod.string().optional(),
+      size: zod.number().optional(),
+    })
+    .optional(),
 });
 
 async function verifyRecaptcha(token: string | undefined): Promise<boolean> {
@@ -175,19 +183,33 @@ export async function POST(req: Request) {
       })
       .join("");
 
+    const attachments = [];
+    if (body.cvAttachment && body.cvAttachment.content) {
+      const base64Clean = body.cvAttachment.content.includes(",")
+        ? body.cvAttachment.content.split(",").pop()!
+        : body.cvAttachment.content;
+      attachments.push({
+        filename: body.cvAttachment.filename || "Resume.pdf",
+        content: Buffer.from(base64Clean, "base64"),
+        contentType: body.cvAttachment.contentType || "application/pdf",
+      });
+    }
+
     const mailOptions = {
       from: process.env.MAIL_FROM || "SMSM Web Portal <portal@smsmengineers.in>",
       to: process.env.NOTIFICATION_EMAIL || "support@smsmengineers.in",
       replyTo: body.email,
       subject: `[${meta.sourcePage}] ${body.subject ? body.subject + " — " : ""}New ${meta.title} — ${displayName}`,
+      attachments,
       text: [
         `New submission from: ${meta.sourcePage} (${meta.sourceUrl})`,
         `Submitted: ${submittedAt} IST`,
+        body.cvAttachment ? `Attached CV: ${body.cvAttachment.filename}` : "",
         "",
         ...meta.fields
           .filter(({ key }) => body[key])
           .map(({ label, key }) => `${label}: ${body[key]}`),
-      ].join("\n"),
+      ].filter(Boolean).join("\n"),
       html: `
         <div style="font-family: -apple-system, Segoe UI, Roboto, sans-serif; max-width: 640px; margin: 0 auto; background: #ffffff;">
           <div style="background: linear-gradient(135deg, #071A35, #0A4ABF); padding: 28px 32px; border-radius: 12px 12px 0 0;">
@@ -202,6 +224,10 @@ export async function POST(req: Request) {
             </p>
           </div>
           <div style="border: 1px solid #E2E8F0; border-top: none; border-radius: 0 0 12px 12px; overflow: hidden;">
+            ${body.cvAttachment ? `
+            <div style="padding: 12px 20px; background: #EFF6FF; border-bottom: 1px solid #BFDBFE; font-size: 13px; color: #1E40AF;">
+              📎 <strong>Attached CV / Resume:</strong> ${escapeHtml(body.cvAttachment.filename)} ${body.cvAttachment.size ? `(${(body.cvAttachment.size / (1024 * 1024)).toFixed(2)} MB)` : ""} — <em>(See email attachment)</em>
+            </div>` : ""}
             <table style="width: 100%; border-collapse: collapse;">
               ${fieldRows}
             </table>

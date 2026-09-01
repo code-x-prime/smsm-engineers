@@ -8,7 +8,8 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import {
   ChevronDown, Send, CheckCircle2, AlertCircle, ArrowRight,
-  Award, Briefcase, GraduationCap, Users, Heart, FileText, Settings, Cpu
+  Award, Briefcase, GraduationCap, Users, Heart, FileText, Settings, Cpu,
+  UploadCloud, Trash2, Paperclip
 } from "lucide-react";
 import { Reveal } from "@/components/Reveal";
 import { getRecaptchaToken } from "@/lib/recaptcha";
@@ -115,6 +116,57 @@ export default function Careers() {
     { value: "24h", label: "Response Time" },
   ];
 
+  const [cvFile, setCvFile] = useState<{
+    filename: string;
+    content: string;
+    contentType: string;
+    size: number;
+  } | null>(null);
+  const [cvError, setCvError] = useState<string | null>(null);
+
+  const MAX_FILE_SIZE = 5 * 1024 * 1024; // 5 MB
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setCvError(null);
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    if (file.size > MAX_FILE_SIZE) {
+      const sizeMb = (file.size / (1024 * 1024)).toFixed(2);
+      setCvError(`File size exceeds 5 MB limit (Selected file: ${sizeMb} MB). Maximum allowed size is 5 MB.`);
+      e.target.value = "";
+      return;
+    }
+
+    const isValidType =
+      file.type === "application/pdf" ||
+      file.type === "application/msword" ||
+      file.type === "application/vnd.openxmlformats-officedocument.wordprocessingml.document" ||
+      /\.(pdf|doc|docx)$/i.test(file.name);
+
+    if (!isValidType) {
+      setCvError("Invalid file format. Please upload your CV as a PDF, DOC, or DOCX document.");
+      e.target.value = "";
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = () => {
+      setCvFile({
+        filename: file.name,
+        content: reader.result as string,
+        contentType: file.type || "application/pdf",
+        size: file.size,
+      });
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleRemoveCv = () => {
+    setCvFile(null);
+    setCvError(null);
+  };
+
   const onSubmit = async (data: ApplyFormData) => {
     setStatus("submitting");
     try {
@@ -122,11 +174,18 @@ export default function Careers() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...data, type: "career", recaptchaToken }),
+        body: JSON.stringify({
+          ...data,
+          cvAttachment: cvFile,
+          type: "career",
+          recaptchaToken,
+        }),
       });
       if (response.ok) {
         setStatus("success");
         reset();
+        setCvFile(null);
+        setCvError(null);
       } else {
         setStatus("error");
       }
@@ -341,6 +400,67 @@ export default function Careers() {
                     className="w-full bg-slate-50 border border-slate-300 p-3 text-sm rounded-xl focus:outline-none focus:border-[#00AEEF] text-[#071A35]"
                     placeholder="Briefly state your relevant background..."
                   />
+                </div>
+
+                {/* CV / Resume Upload Box */}
+                <div>
+                  <div className="flex items-center justify-between mb-2">
+                    <label className="block text-xs uppercase font-semibold text-[#071A35] tracking-wider">
+                      Attach CV / Resume (Max 5 MB) *
+                    </label>
+                    <span className="text-[11px] text-slate-400 font-mono">PDF, DOC, DOCX</span>
+                  </div>
+
+                  {/* Warning message if file size exceeds 5MB */}
+                  {cvError && (
+                    <div className="mb-3 p-3 bg-rose-50 border border-rose-200 rounded-xl flex items-center gap-2.5 text-rose-700 text-xs font-medium animate-fadeIn">
+                      <AlertCircle className="h-4 w-4 shrink-0 text-rose-600" />
+                      <span>{cvError}</span>
+                    </div>
+                  )}
+
+                  {!cvFile ? (
+                    <label className="border-2 border-dashed border-slate-300 hover:border-[#00AEEF] bg-slate-50 hover:bg-[#00AEEF]/5 rounded-xl p-5 flex flex-col items-center justify-center cursor-pointer transition-all group">
+                      <div className="h-11 w-11 rounded-full bg-[#00AEEF]/10 text-[#00AEEF] grid place-items-center mb-2 group-hover:scale-110 transition-transform">
+                        <UploadCloud className="h-5 w-5" />
+                      </div>
+                      <span className="text-sm font-medium text-[#071A35] group-hover:text-[#0A4ABF] transition-colors">
+                        Click to upload or drag & drop your CV
+                      </span>
+                      <span className="text-xs text-slate-400 mt-1">
+                        PDF, Word DOC, or DOCX (Strict limit: <strong>5 MB</strong>)
+                      </span>
+                      <input
+                        type="file"
+                        accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+                        onChange={handleFileChange}
+                        className="hidden"
+                      />
+                    </label>
+                  ) : (
+                    <div className="p-3.5 bg-emerald-50/90 border border-emerald-200 rounded-xl flex items-center justify-between gap-3 animate-fadeIn">
+                      <div className="flex items-center gap-3 min-w-0">
+                        <div className="h-10 w-10 rounded-lg bg-emerald-600 text-white grid place-items-center shrink-0 shadow-sm">
+                          <FileText className="h-5 w-5" />
+                        </div>
+                        <div className="min-w-0">
+                          <p className="text-xs font-semibold text-slate-800 truncate">{cvFile.filename}</p>
+                          <p className="text-[11px] text-emerald-700 font-mono flex items-center gap-1.5 mt-0.5">
+                            <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                            {(cvFile.size / (1024 * 1024)).toFixed(2)} MB • Ready to send with application
+                          </p>
+                        </div>
+                      </div>
+                      <button
+                        type="button"
+                        onClick={handleRemoveCv}
+                        className="p-2 text-slate-400 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors shrink-0"
+                        title="Remove uploaded CV"
+                      >
+                        <Trash2 className="h-4 w-4" />
+                      </button>
+                    </div>
+                  )}
                 </div>
 
                 {status === "success" && (
