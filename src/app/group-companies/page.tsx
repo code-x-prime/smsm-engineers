@@ -22,7 +22,7 @@ export default function GroupCompanies() {
       achievements: [
         "2,000+ metric tons annual output capacity",
         "Formulation supplier to 3 of India's top 5 paint brands",
-        "Weather weather fastness validated under ISO standard frameworks",
+        "Weather-fastness tested and validated according to applicable ISO testing standards.",
       ],
       ctaText: "Inquire Chemical Solutions",
       color: "from-[#0A4ABF] to-[#071A35]",
