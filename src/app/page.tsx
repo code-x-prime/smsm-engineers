@@ -480,7 +480,6 @@ export default function Home() {
                       alt={prod.name}
                       badge={prod.category}
                       title={prod.name}
-                      subtitle={`Product 0${idx + 1}`}
                       specs={prod.specs}
                       href={prod.link}
                       aspectRatio="aspect-[16/10]"
@@ -629,50 +628,54 @@ export default function Home() {
             <h2 className="section-heading text-3xl md:text-5xl text-[#071A35] font-display">Board of Directors Message</h2>
           </Reveal>
 
-          <div className="grid md:grid-cols-2 gap-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-stretch">
             {/* Chairman Message */}
-            <Reveal>
-              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow">
-                <div className="flex gap-4 items-center">
-                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#00AEEF]">
-                    <Image
-                      src="/images/umesh_bhardwaj_face.jpg"
-                      alt="Acharya Umesh Bhardwaj"
-                      fill
-                      className="object-cover"
-                    />
+            <Reveal className="h-full">
+              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow h-full flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-center">
+                    <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#00AEEF] bg-slate-100">
+                      <Image
+                        src="/images/umesh_bhardwaj_face.jpg"
+                        alt="Acharya Umesh Bhardwaj"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium text-[#071A35] font-display">Acharya Umesh Bhardwaj</h3>
+                      <p className="text-xs text-slate-400 font-semibold uppercase">Chairman & Executive Director</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-medium text-[#071A35] font-display">Acharya Umesh Bhardwaj</h3>
-                    <p className="text-xs text-slate-400 font-semibold uppercase">Chairman & Executive Director</p>
-                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#00AEEF] pl-4">
+                    &ldquo;SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India&apos;s fast paced and competitive environment. Our vision is to set new benchmarks in operational excellence and client satisfaction across every project we undertake.&rdquo;
+                  </p>
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#00AEEF] pl-4">
-                  &ldquo;SMSM Engineers aims to be recognized as the industry leader through its unique service offerings, specialized high quality solutions, and value added services. We are dedicated to safeguarding the interests of both outbound and inbound clients while strengthening the reputation of SMSM in India&apos;s fast paced and competitive environment. Our vision is to set new benchmarks in operational excellence and client satisfaction across every project we undertake.&rdquo;
-                </p>
               </div>
             </Reveal>
 
             {/* MD Message */}
-            <Reveal>
-              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow">
-                <div className="flex gap-4 items-center">
-                  <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF]">
-                    <Image
-                      src="/images/priyanka_bhardwaj_executive_face.jpg"
-                      alt="Mrs. Priyanka Bhardwaj"
-                      fill
-                      className="object-cover"
-                    />
+            <Reveal className="h-full">
+              <div className="bg-white border border-slate-200 p-8 md:p-12 rounded-xl space-y-6 hover:shadow-lg transition-shadow h-full flex flex-col justify-between">
+                <div className="space-y-6">
+                  <div className="flex gap-4 items-center">
+                    <div className="h-16 w-16 rounded-full relative overflow-hidden shrink-0 border-2 border-[#0A4ABF] bg-slate-100">
+                      <Image
+                        src="/images/priyanka_bhardwaj_executive_face.jpg"
+                        alt="Mrs. Priyanka Bhardwaj"
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-medium text-[#071A35] font-display">Mrs. Priyanka Bhardwaj</h3>
+                      <p className="text-xs text-slate-400 font-semibold uppercase">Managing Director</p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="text-xl font-medium text-[#071A35] font-display">Mrs. Priyanka Bhardwaj</h3>
-                    <p className="text-xs text-slate-400 font-semibold uppercase">Managing Director</p>
-                  </div>
+                  <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#0A4ABF] pl-4">
+                    &ldquo;SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions. Our commitment to quality and timely execution drives every decision, empowering our teams to deliver consistent results and build lasting relationships with clients nationwide.&rdquo;
+                  </p>
                 </div>
-                <p className="text-slate-600 text-sm leading-relaxed italic font-light border-l-4 border-[#0A4ABF] pl-4">
-                  &ldquo;SMSM Engineers operates on the twin pillars of operational precision and human resource excellence. Through structured support channels, we coordinate field technician dispatches in under 24 hours, ensuring seamless service delivery across diverse regions. Our commitment to quality and timely execution drives every decision, empowering our teams to deliver consistent results and build lasting relationships with clients nationwide.&rdquo;
-                </p>
               </div>
             </Reveal>
           </div>

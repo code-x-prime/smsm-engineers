@@ -84,7 +84,6 @@ export default function ProductsPage() {
                     alt={p.name}
                     badge={p.category}
                     title={p.name}
-                    subtitle={`Item 0${idx + 1}`}
                     specs={[p.spec]}
                     href={`/products/${p.slug}`}
                     aspectRatio="aspect-[16/11]"

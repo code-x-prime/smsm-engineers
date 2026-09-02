@@ -174,7 +174,7 @@ export function Footer() {
           </div>
 
           <div className="mt-16 pt-8 border-t border-slate-200 flex flex-col md:flex-row md:items-center justify-between gap-4 text-xs text-slate-400">
-            <div>© {new Date().getFullYear()} SMSM Engineers. All rights reserved. | Designed by <a href="https://groxmedia.in/" target="_blank" rel="noopener noreferrer" className="underline hover:text-[#00AEEF] transition-colors">Grox Media</a></div>
+            <div>© {new Date().getFullYear()} SMSM Engineers. All rights reserved.</div>
             <div className="flex gap-3">
               <span className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500">ISO-Aligned Quality Systems</span>
               <span className="px-3 py-1.5 rounded-full bg-white border border-slate-200 text-slate-500">Make in India</span>
