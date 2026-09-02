@@ -149,11 +149,61 @@ export default async function ProductDetailPage({ params }: PageProps) {
     "name": product.name,
     "description": product.desc,
     "category": product.category,
+    "image": `https://www.smsmengineers.com${product.image}`,
+    "brand": {
+      "@type": "Brand",
+      "name": "SMSM Engineers",
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "SMSM Engineers Private Limited",
+    },
     "offers": {
       "@type": "Offer",
+      "url": `https://www.smsmengineers.com/products/${slug}`,
       "availability": "https://schema.org/InStock",
       "priceCurrency": "INR",
-      "price": "Call for quote",
+      "price": "0",
+      "priceSpecification": {
+        "@type": "PriceSpecification",
+        "price": "0",
+        "priceCurrency": "INR",
+        "description": "Contact us for pricing",
+      },
+      "seller": {
+        "@type": "Organization",
+        "name": "SMSM Engineers Private Limited",
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "IN",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail",
+        "returnFees": "https://schema.org/FreeReturn",
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "IN",
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "DAY",
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 3,
+            "maxValue": 7,
+            "unitCode": "DAY",
+          },
+        },
+      },
     },
   };
 
